@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>f6f2b4ad-0b11-4919-bf8b-08de6fe76170</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ExampleGallery</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)AnimatedControlExample.xaml.cs">
+      <DependentUpon>AnimatedControlExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ArcOptions.xaml.cs">
+      <DependentUpon>ArcOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)BitmapRotation.xaml.cs">
+      <DependentUpon>BitmapRotation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)BurningTextExample.xaml.cs">
+      <DependentUpon>BurningTextExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CanvasControlExample.xaml.cs">
+      <DependentUpon>CanvasControlExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ControlTransforms.xaml.cs">
+      <DependentUpon>ControlTransforms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CustomFonts.xaml.cs">
+      <DependentUpon>CustomFonts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Direct3DInteropExample.xaml.cs">
+      <DependentUpon>Direct3DInteropExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)DrawImageEmulations.xaml.cs">
+      <DependentUpon>DrawImageEmulations.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\AppIconGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\DeveloperTools.xaml.cs">
+      <DependentUpon>DeveloperTools.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)DpiExample.xaml.cs">
+      <DependentUpon>DpiExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)EffectsExample.xaml.cs">
+      <DependentUpon>EffectsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\ExampleDefinition.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\ExamplePage.xaml.cs">
+      <DependentUpon>ExamplePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)GameOfLife.xaml.cs">
+      <DependentUpon>GameOfLife.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)GeometryOperations.xaml.cs">
+      <DependentUpon>GeometryOperations.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ImageSourceUpdateRegion.xaml.cs">
+      <DependentUpon>ImageSourceUpdateRegion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\ThumbnailGenerator.xaml.cs">
+      <DependentUpon>ThumbnailGenerator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)LayersExample.xaml.cs">
+      <DependentUpon>LayersExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\NavigationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\RelayCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Particles\ExplosionParticleSystem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Particles\ExplosionSmokeParticleSystem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Particles\Particle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Particles\ParticleExample.xaml.cs">
+      <DependentUpon>ParticleExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Particles\ParticleSystem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Particles\SmokePlumeParticleSystem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ShapesExample.xaml.cs">
+      <DependentUpon>ShapesExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)StrokeStyles.xaml.cs">
+      <DependentUpon>StrokeStyles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\Utils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TextDirectionsExample.xaml.cs">
+      <DependentUpon>TextDirectionsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)TextLayouts.xaml.cs">
+      <DependentUpon>TextLayouts.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)AnimatedControlExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ControlTransforms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)CustomFonts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Direct3DInteropExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)DrawImageEmulations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Infrastructure\DeveloperTools.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Infrastructure\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Infrastructure\ThumbnailGenerator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)DpiExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)GameOfLife.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)GeometryOperations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)CanvasControlExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)BitmapRotation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)BurningTextExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ArcOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)EffectsExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Infrastructure\ExamplePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ImageSourceUpdateRegion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)LayersExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Infrastructure\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Particles\ParticleExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ShapesExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Infrastructure\SharedResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)StrokeStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)TextDirectionsExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)TextLayouts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Particles\explosion.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Particles\smoke.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\AnimatedControlNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\AnimatedControlWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ArcOptionsNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ArcOptionsWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\BitmapRotationNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\BitmapRotationWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\BurningTextNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\BurningTextWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\CanvasControlNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\CanvasControlWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ControlTransformsNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ControlTransformsWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\CustomFontsNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\CustomFontsWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\DeveloperToolsNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\DeveloperToolsWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\Direct3DInteropNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\Direct3DInteropWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\DPINarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\DPIWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\DrawImageEmulationsNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\DrawImageEmulationsWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\EffectsNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\EffectsWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\GameofLifeNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\GameofLifeWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\GeometryOperationsNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\GeometryOperationsWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ImageSourceUpdateRegionNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ImageSourceUpdateRegionWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\LayersNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\LayersWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ParticleSystemNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ParticleSystemWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ShapesNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ShapesWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\AboutNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\AboutWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\StrokeStylesNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\StrokeStylesWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TextDirectionsNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TextDirectionsWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TextLayoutsNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TextLayoutsWide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)BitmapOrientation\orientation_0.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)BitmapOrientation\orientation_1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)BitmapOrientation\orientation_2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)BitmapOrientation\orientation_3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)BitmapOrientation\orientation_4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)BitmapOrientation\orientation_5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)BitmapOrientation\orientation_6.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)BitmapOrientation\orientation_7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)BitmapOrientation\orientation_8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)BitmapOrientation\orientation_9.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)BitmapOrientation\orientation_65535.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

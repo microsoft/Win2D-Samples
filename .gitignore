@@ -1,0 +1,9 @@
+obj/
+packages/
+Debug/
+Release/
+*sdf
+*suo
+
+nuget.config
+/update.cmd
