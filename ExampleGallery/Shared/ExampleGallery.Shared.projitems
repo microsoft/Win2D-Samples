@@ -68,6 +68,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ImageSourceUpdateRegion.xaml.cs">
       <DependentUpon>ImageSourceUpdateRegion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\GameLoopSynchronizationContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\ThumbnailGenerator.xaml.cs">
       <DependentUpon>ThumbnailGenerator.xaml</DependentUpon>
     </Compile>
