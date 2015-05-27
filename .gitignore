@@ -4,6 +4,7 @@ Debug/
 Release/
 *sdf
 *suo
+*.user
 
 nuget.config
 /update.cmd
