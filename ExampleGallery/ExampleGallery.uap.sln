@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleGallery.uap", "UAP\ExampleGallery.uap.csproj", "{F6867923-3A6E-4102-B546-E3A6A5F8EC36}"
+EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ExampleGallery.Shared", "Shared\ExampleGallery.Shared.shproj", "{F6F2B4AD-0B11-4919-BF8B-08DE6FE76170}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleGallery.Effects", "Effects\ExampleGallery.Effects.csproj", "{2B157B97-CBF7-4014-8655-1456F2807F43}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleGallery.uap", "UAP\ExampleGallery.uap.csproj", "{F6867923-3A6E-4102-B546-E3A6A5F8EC36}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
