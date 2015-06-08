@@ -512,9 +512,11 @@ namespace ExampleGallery
     {
         Queue<Vector2> points = new Queue<Vector2>();
         const int maxPoints = 100;
+        CanvasAnimatedControl animatedControl;
 
         public TouchPointsRenderer(CanvasAnimatedControl animatedControl)
         {
+            this.animatedControl = animatedControl;
             animatedControl.Input.PointerPressed += OnPointerPressed;
             animatedControl.Input.PointerMoved += OnPointerMoved;
         }
@@ -522,6 +524,7 @@ namespace ExampleGallery
         private void OnPointerPressed(object sender, PointerEventArgs args)
         {
             points.Clear();
+            animatedControl.Invalidate();
         }
 
         private void OnPointerMoved(object sender, PointerEventArgs args)
@@ -538,6 +541,7 @@ namespace ExampleGallery
                     points.Enqueue(new Vector2((float)point.Position.X, (float)point.Position.Y));
                 }
             }
+            animatedControl.Invalidate();
         }
 
         public void Draw(CanvasDrawingSession ds)
