@@ -12,9 +12,10 @@
 
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Effects;
+using Microsoft.Graphics.Canvas.UI;
 using Microsoft.Graphics.Canvas.UI.Xaml;
 using System;
-using System.Diagnostics;
+using System.Collections.Generic;
 using System.Numerics;
 using Windows.UI;
 using Windows.UI.Xaml;
@@ -34,14 +35,52 @@ namespace ExampleGallery
         // that implements the rules of the cellular automaton.
         CanvasRenderTarget currentSurface, nextSurface;
 
-        public bool Slow { get; set; }
-        public bool Paused { get; set; }
+        static TimeSpan normalTargetElapsedTime = TimeSpan.FromSeconds(1.0 / 30.0);
+        static TimeSpan slowTargetElapsedTime = TimeSpan.FromSeconds(0.25);
 
-        Stopwatch timer;
-        TimeSpan lastTime;
+        public bool Slow
+        {
+            get
+            {
+                return canvas.TargetElapsedTime != normalTargetElapsedTime;
+            }
+            set
+            {
+                if (value)
+                    canvas.TargetElapsedTime = slowTargetElapsedTime;
+                else
+                    canvas.TargetElapsedTime = normalTargetElapsedTime;
+            }
+        }
+
+        public bool Paused
+        {
+            get
+            {
+                return canvas.Paused;
+            }
+            set
+            {
+                canvas.Paused = value;
+            }
+        }
 
         bool isPointerDown;
         int lastPointerX, lastPointerY;
+
+        struct IntPoint
+        {
+            public int X;
+            public int Y;
+
+            public IntPoint(int x, int y)
+            {
+                X = x;
+                Y = y;
+            }
+        }
+
+        List<IntPoint> hitPoints = new List<IntPoint>();
 
         ConvolveMatrixEffect countNeighborsEffect;
         DiscreteTransferEffect liveOrDieEffect;
@@ -51,11 +90,10 @@ namespace ExampleGallery
         public GameOfLife()
         {
             this.InitializeComponent();
-
-            timer = Stopwatch.StartNew();
+            canvas.TargetElapsedTime = normalTargetElapsedTime;
         }
 
-        void Canvas_CreateResources(CanvasControl sender, object args)
+        void Canvas_CreateResources(CanvasAnimatedControl sender, CanvasCreateResourcesEventArgs args)
         {
             const float defaultDpi = 96;
 
@@ -68,30 +106,7 @@ namespace ExampleGallery
             RandomizeSimulation(null, null);
         }
 
-        void Canvas_Draw(CanvasControl sender, CanvasDrawEventArgs args)
-        {
-            // Update the simulation state.
-            if (!Paused)
-            {
-                var currentTime = timer.Elapsed;
-                var elapsed = (currentTime - lastTime).TotalSeconds;
-
-                if (elapsed >= (Slow ? 0.25 : 1f / 30))
-                {
-                    UpdateSimulation();
-                    lastTime = currentTime;
-                }
-            }
-
-            // Display the current surface.
-            invertEffect.Source = currentSurface;
-            transformEffect.TransformMatrix = GetDisplayTransform(sender);
-            args.DrawingSession.DrawImage(transformEffect);
-
-            sender.Invalidate();
-        }
-
-        void UpdateSimulation()
+        void Canvas_Update(ICanvasAnimatedControl sender, CanvasAnimatedUpdateEventArgs args)
         {
             // Use the current surface as input.
             countNeighborsEffect.Source = currentSurface;
@@ -106,6 +121,16 @@ namespace ExampleGallery
             var tmp = currentSurface;
             currentSurface = nextSurface;
             nextSurface = tmp;
+        }
+
+        void Canvas_Draw(ICanvasAnimatedControl sender, CanvasAnimatedDrawEventArgs args)
+        {
+            ApplyHitPoints();
+
+            // Display the current surface.
+            invertEffect.Source = currentSurface;
+            transformEffect.TransformMatrix = GetDisplayTransform(sender);
+            args.DrawingSession.DrawImage(transformEffect);
         }
 
         void CreateEffects()
@@ -172,9 +197,12 @@ namespace ExampleGallery
 
             invertEffect = new LinearTransferEffect
             {
-                RedSlope   = -1, RedOffset   = 1,
-                GreenSlope = -1, GreenOffset = 1,
-                BlueSlope  = -1, BlueOffset  = 1,
+                RedSlope = -1,
+                RedOffset = 1,
+                GreenSlope = -1,
+                GreenOffset = 1,
+                BlueSlope = -1,
+                BlueOffset = 1,
             };
 
             // Step 4: insert our own DPI compensation effect to stop the system trying to
@@ -206,45 +234,64 @@ namespace ExampleGallery
         }
 
         // Initializes the simulation to a random state.
-        void RandomizeSimulation(object sender, RoutedEventArgs e)
+        async void RandomizeSimulation(object sender, RoutedEventArgs e)
         {
-            Random random = new Random();
-
-            var colors = new Color[simulationW * simulationH];
-
-            for (int i = 0; i < colors.Length; i++)
+            await canvas.RunOnGameLoopThreadAsync(() =>
             {
-                colors[i] = (random.NextDouble() < 0.25) ? Colors.White : Colors.Black;
-            }
+                Random random = new Random();
 
-            currentSurface.SetPixelColors(colors);
+                var colors = new Color[simulationW * simulationH];
+
+                for (int i = 0; i < colors.Length; i++)
+                {
+                    colors[i] = (random.NextDouble() < 0.25) ? Colors.White : Colors.Black;
+                }
+
+                currentSurface.SetPixelColors(colors);
+
+                canvas.Invalidate();
+            });
         }
 
         // Clears the simulation state.
-        void ClearSimulation(object sender, RoutedEventArgs e)
+        async void ClearSimulation(object sender, RoutedEventArgs e)
         {
-            using (var ds = currentSurface.CreateDrawingSession())
+            await canvas.RunOnGameLoopThreadAsync(() =>
             {
-                ds.Clear(Colors.Black);
-            }
+                using (var ds = currentSurface.CreateDrawingSession())
+                {
+                    ds.Clear(Colors.Black);
+                }
+
+                canvas.Invalidate();
+            });
         }
 
         void Canvas_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            isPointerDown = true;
-            lastPointerX = lastPointerY = int.MaxValue;
+            lock (hitPoints)
+            {
+                isPointerDown = true;
+                lastPointerX = lastPointerY = int.MaxValue;
 
-            ProcessPointerInput(e);
+                ProcessPointerInput(e);
+            }
         }
 
         void Canvas_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            isPointerDown = false;
+            lock (hitPoints)
+            {
+                isPointerDown = false;
+            }
         }
 
         void Canvas_PointerMoved(object sender, PointerRoutedEventArgs e)
         {
-            ProcessPointerInput(e);
+            lock (hitPoints)
+            {
+                ProcessPointerInput(e);
+            }
         }
 
         // Toggles the color of cells when they are clicked on.
@@ -268,12 +315,34 @@ namespace ExampleGallery
                 var y = canvas.ConvertDipsToPixels(pos.Y);
 
                 // If the point is within the bounds of the rendertarget, and not the same as the last point...
-                if (x >= 0 && 
-                    y >= 0 && 
-                    x < simulationW && 
-                    y < simulationH && 
+                if (x >= 0 &&
+                    y >= 0 &&
+                    x < simulationW &&
+                    y < simulationH &&
                     ((x != lastPointerX || y != lastPointerY)))
                 {
+                    // We avoid manipulating GPU resources from inside an input event handler
+                    // (since we'd need to handle device lost and possible concurrent running with CreateResources).
+                    // Instead, we collect up a list of points and process them from the Draw handler.                    
+                    hitPoints.Add(new IntPoint(x, y));
+
+                    lastPointerX = x;
+                    lastPointerY = y;
+                }
+            }
+
+            canvas.Invalidate();
+        }
+
+        void ApplyHitPoints()
+        {
+            lock (hitPoints)
+            {
+                foreach (var point in hitPoints)
+                {
+                    var x = point.X;
+                    var y = point.Y;
+
                     // Read the current color.
                     var cellColor = currentSurface.GetPixelColors(x, y, 1, 1);
 
@@ -282,14 +351,13 @@ namespace ExampleGallery
 
                     // Set the new color.
                     currentSurface.SetPixelColors(cellColor, x, y, 1, 1);
-
-                    lastPointerX = x;
-                    lastPointerY = y;
                 }
+
+                hitPoints.Clear();
             }
         }
 
-        static Matrix3x2 GetDisplayTransform(CanvasControl canvas)
+        static Matrix3x2 GetDisplayTransform(ICanvasAnimatedControl canvas)
         {
             var outputSize = canvas.Size.ToVector2();
             var sourceSize = new Vector2(canvas.ConvertPixelsToDips(simulationW), canvas.ConvertPixelsToDips(simulationH));

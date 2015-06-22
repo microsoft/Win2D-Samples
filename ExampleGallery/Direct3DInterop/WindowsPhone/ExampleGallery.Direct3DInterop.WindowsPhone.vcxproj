@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\packages\Win2D.0.0.20\build\native\Win2D.props" Condition="Exists('..\..\packages\Win2D.0.0.20\build\native\Win2D.props')" />
+  <Import Project="..\..\packages\Win2D.0.0.21\build\native\Win2D.props" Condition="Exists('..\..\packages\Win2D.0.0.21\build\native\Win2D.props')" />
   <Import Project="..\..\packages\directxtk_windowsphone_8_1.2015.3.27.2\build\native\directxtk_windowsphone_8_1.props" Condition="Exists('..\..\packages\directxtk_windowsphone_8_1.2015.3.27.2\build\native\directxtk_windowsphone_8_1.props')" />
   <ItemGroup>
     <None Include="packages.config" />
@@ -139,8 +139,8 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\directxtk_windowsphone_8_1.2015.3.27.2\build\native\directxtk_windowsphone_8_1.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\directxtk_windowsphone_8_1.2015.3.27.2\build\native\directxtk_windowsphone_8_1.props'))" />
     <Error Condition="!Exists('..\..\packages\directxtk_windowsphone_8_1.2015.3.27.2\build\native\directxtk_windowsphone_8_1.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\directxtk_windowsphone_8_1.2015.3.27.2\build\native\directxtk_windowsphone_8_1.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Win2D.0.0.20\build\native\Win2D.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Win2D.0.0.20\build\native\Win2D.props'))" />
-    <Error Condition="!Exists('..\..\packages\Win2D.0.0.20\build\native\Win2D.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Win2D.0.0.20\build\native\Win2D.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Win2D.0.0.21\build\native\Win2D.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Win2D.0.0.21\build\native\Win2D.props'))" />
+    <Error Condition="!Exists('..\..\packages\Win2D.0.0.21\build\native\Win2D.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Win2D.0.0.21\build\native\Win2D.targets'))" />
   </Target>
-  <Import Project="..\..\packages\Win2D.0.0.20\build\native\Win2D.targets" Condition="Exists('..\..\packages\Win2D.0.0.20\build\native\Win2D.targets')" />
+  <Import Project="..\..\packages\Win2D.0.0.21\build\native\Win2D.targets" Condition="Exists('..\..\packages\Win2D.0.0.21\build\native\Win2D.targets')" />
 </Project>
