@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Win2D.0.0.21\build\win\Win2D.props" Condition="Exists('..\packages\Win2D.0.0.21\build\win\Win2D.props')" />
+  <Import Project="..\packages\Win2D.0.0.22\build\win\Win2D.props" Condition="Exists('..\packages\Win2D.0.0.22\build\win\Win2D.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -101,6 +101,10 @@
       <Project>{2b157b97-cbf7-4014-8655-1456f2807f43}</Project>
       <Name>ExampleGallery.Effects</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BackgroundTask\UAP\ExampleGallery.BackgroundTask.uap.csproj">
+      <Project>{d77eb5be-c840-4ade-b4f6-1ba9512c4768}</Project>
+      <Name>ExampleGallery.BackgroundTask.uap</Name>
+    </ProjectReference>
     <SDKReference Include="WindowsMobile, Version=10.0.0.1" />
   </ItemGroup>
   <ItemGroup>
@@ -171,10 +175,10 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Win2D.0.0.21\build\win\Win2D.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Win2D.0.0.21\build\win\Win2D.props'))" />
-    <Error Condition="!Exists('..\packages\Win2D.0.0.21\build\win\Win2D.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Win2D.0.0.21\build\win\Win2D.targets'))" />
+    <Error Condition="!Exists('..\packages\Win2D.0.0.22\build\win\Win2D.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Win2D.0.0.22\build\win\Win2D.props'))" />
+    <Error Condition="!Exists('..\packages\Win2D.0.0.22\build\win\Win2D.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Win2D.0.0.22\build\win\Win2D.targets'))" />
   </Target>
-  <Import Project="..\packages\Win2D.0.0.21\build\win\Win2D.targets" Condition="Exists('..\packages\Win2D.0.0.21\build\win\Win2D.targets')" />
+  <Import Project="..\packages\Win2D.0.0.22\build\win\Win2D.targets" Condition="Exists('..\packages\Win2D.0.0.22\build\win\Win2D.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
