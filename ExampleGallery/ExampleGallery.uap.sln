@@ -9,10 +9,18 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ExampleGallery.Shared", "Sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleGallery.Effects", "Effects\ExampleGallery.Effects.csproj", "{2B157B97-CBF7-4014-8655-1456F2807F43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleGallery.BackgroundTask.uap", "BackgroundTask\UAP\ExampleGallery.BackgroundTask.uap.csproj", "{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ExampleGallery.BackgroundTask.Shared", "BackgroundTask\Shared\ExampleGallery.BackgroundTask.Shared.shproj", "{75A7926B-B1AE-4806-B332-9561BFE0EDF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExampleGallery.BackgroundTask", "ExampleGallery.BackgroundTask", "{25FD9CFB-C91F-4CCC-92A8-427255CDB8F2}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shared\ExampleGallery.Shared.projitems*{f6f2b4ad-0b11-4919-bf8b-08de6fe76170}*SharedItemsImports = 13
+		BackgroundTask\Shared\ExampleGallery.BackgroundTask.Shared.projitems*{d77eb5be-c840-4ade-b4f6-1ba9512c4768}*SharedItemsImports = 4
 		Shared\ExampleGallery.Shared.projitems*{f6867923-3a6e-4102-b546-e3a6a5f8ec36}*SharedItemsImports = 4
+		BackgroundTask\Shared\ExampleGallery.BackgroundTask.Shared.projitems*{75a7926b-b1ae-4806-b332-9561bfe0edf9}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -53,8 +61,24 @@ Global
 		{2B157B97-CBF7-4014-8655-1456F2807F43}.Release|Win32.Build.0 = Release|Win32
 		{2B157B97-CBF7-4014-8655-1456F2807F43}.Release|x64.ActiveCfg = Release|x64
 		{2B157B97-CBF7-4014-8655-1456F2807F43}.Release|x64.Build.0 = Release|x64
+		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}.Debug|ARM.ActiveCfg = Debug|ARM
+		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}.Debug|ARM.Build.0 = Debug|ARM
+		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}.Debug|Win32.Build.0 = Debug|Win32
+		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}.Debug|x64.ActiveCfg = Debug|x64
+		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}.Debug|x64.Build.0 = Debug|x64
+		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}.Release|ARM.ActiveCfg = Release|ARM
+		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}.Release|ARM.Build.0 = Release|ARM
+		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}.Release|Win32.ActiveCfg = Release|Win32
+		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}.Release|Win32.Build.0 = Release|Win32
+		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}.Release|x64.ActiveCfg = Release|x64
+		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768} = {25FD9CFB-C91F-4CCC-92A8-427255CDB8F2}
+		{75A7926B-B1AE-4806-B332-9561BFE0EDF9} = {25FD9CFB-C91F-4CCC-92A8-427255CDB8F2}
 	EndGlobalSection
 EndGlobal
