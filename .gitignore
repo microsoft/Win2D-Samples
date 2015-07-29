@@ -7,4 +7,5 @@ Release/
 *.user
 
 nuget.config
+project.lock.json
 /update.cmd
