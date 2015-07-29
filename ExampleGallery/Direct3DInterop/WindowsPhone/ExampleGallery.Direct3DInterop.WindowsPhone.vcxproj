@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\packages\Win2D.0.0.23\build\native\Win2D.props" Condition="Exists('..\..\packages\Win2D.0.0.23\build\native\Win2D.props')" />
   <Import Project="..\..\packages\directxtk_windowsphone_8_1.2015.3.27.2\build\native\directxtk_windowsphone_8_1.props" Condition="Exists('..\..\packages\directxtk_windowsphone_8_1.2015.3.27.2\build\native\directxtk_windowsphone_8_1.props')" />
   <ItemGroup>
     <None Include="packages.config" />
@@ -48,8 +47,12 @@
   </ItemGroup>
   <PropertyGroup Label="Configuration">
     <PlatformToolset Condition="'$(ApplicationType)' == 'Windows Store' And '$(ApplicationTypeRevision)' == '8.1'">v120</PlatformToolset>
-    <PlatformToolset Condition="'$(ApplicationType)' == 'Windows Store' And '$(ApplicationTypeRevision)' == '8.2'">v140</PlatformToolset>
+    <PlatformToolset Condition="'$(ApplicationType)' == 'Windows Store' And '$(ApplicationTypeRevision)' == '10.0'">v140</PlatformToolset>
     <PlatformToolset Condition="'$(ApplicationType)' == 'Windows Phone'">v120_wp81</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.10240.0</WindowsTargetPlatformMinVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
@@ -139,8 +142,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\directxtk_windowsphone_8_1.2015.3.27.2\build\native\directxtk_windowsphone_8_1.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\directxtk_windowsphone_8_1.2015.3.27.2\build\native\directxtk_windowsphone_8_1.props'))" />
     <Error Condition="!Exists('..\..\packages\directxtk_windowsphone_8_1.2015.3.27.2\build\native\directxtk_windowsphone_8_1.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\directxtk_windowsphone_8_1.2015.3.27.2\build\native\directxtk_windowsphone_8_1.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Win2D.0.0.23\build\native\Win2D.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Win2D.0.0.23\build\native\Win2D.props'))" />
-    <Error Condition="!Exists('..\..\packages\Win2D.0.0.23\build\native\Win2D.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Win2D.0.0.23\build\native\Win2D.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Win2D.win81.1.0.0\build\native\Win2D.win81.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Win2D.win81.1.0.0\build\native\Win2D.win81.targets'))" />
   </Target>
-  <Import Project="..\..\packages\Win2D.0.0.23\build\native\Win2D.targets" Condition="Exists('..\..\packages\Win2D.0.0.23\build\native\Win2D.targets')" />
+  <Import Project="..\..\packages\Win2D.win81.1.0.0\build\native\Win2D.win81.targets" Condition="Exists('..\..\packages\Win2D.win81.1.0.0\build\native\Win2D.win81.targets')" />
 </Project>
