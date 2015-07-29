@@ -17,12 +17,13 @@ These sample projects show how to use the Win2D graphics API.
 - **Simple Sample** is, yup, you guessed it! Pretty much the simplest possible app that 
   uses Win2D - it's our version of the venerable "hello world".
 
-Each sample contains two different Visual Studio solution files. The *.81.sln 
-version is for Windows 8.1 and Windows Phone 8.1, while *.uap.sln is for 
-Windows 10 (Universal Windows Platform).
+Each sample contains two different Visual Studio solution files. The *.uap.sln 
+version is for Windows 10 (Universal Windows Platform), while *.81.sln is for 
+Windows 8.1 and Windows Phone 8.1.
 
-These samples reference the [Win2D NuGet package](http://www.nuget.org/packages/Win2D), 
-which will be automatically downloaded when you build them, so there is no need to 
+These samples reference the NuGet packages [Win2D.uwp](http://www.nuget.org/packages/Win2D.uwp) 
+or [Win2D.win81](http://www.nuget.org/packages/Win2D.win81), which will be 
+automatically downloaded when you build the sample, so there is no need to 
 separately install Win2D itself. Win2D [source code](http://github.com/Microsoft/Win2D) 
 is also available for those who like to see how the sausage is made.
 
