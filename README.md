@@ -7,9 +7,8 @@ These sample projects show how to use the Win2D graphics API.
   Win2D, with a menu to select between them. Start here to get an idea of what Win2D can 
   do and how use it.
 
-    - *Example Gallery is also available in the Store for
-      [Windows](http://apps.microsoft.com/windows/en-us/app/win2d-example-gallery/b668cfe1-e280-4c1e-adc1-09b7981ab084) and
-      [Phone](http://www.windowsphone.com/en-us/store/app/win2d-example-gallery/8797b9cb-1443-475f-9a43-dd959de6fcc1)*.
+    - *Example Gallery is also available in the
+      [Store](https://www.microsoft.com/store/apps/9NBLGGGXWT9F).*
 
 - **CoreWindow Example** is a C# application that draws directly to a CoreWindow, 
   without using XAML.
