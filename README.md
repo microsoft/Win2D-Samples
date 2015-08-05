@@ -26,4 +26,13 @@ automatically downloaded when you build the sample, so there is no need to
 separately install Win2D itself. Win2D [source code](http://github.com/Microsoft/Win2D) 
 is also available for those who like to see how the sausage is made.
 
+An additional set of unofficial samples were created during a July 2015
+[app building exercise](http://blogs.msdn.com/b/win2d/archive/2015/08/05/win2d-app-building-samples.aspx):
+
+- [Harrydactyl: Cooper's silly game with dinosaurs](http://github.com/coopp/Harry)
+- [Shawn's Terrific Universal App for photogRaph Tweaking](http://github.com/shawnhar/stuart)
+- [Age and Gender Guesser](http://github.com/austinkinross/age-gender-guesser)
+- [Rubik’s Cube Solver](http://github.com/austinkinross/rubiks-cube-solver) (work-in-progress)
+- [SvgWin2D](http://github.com/damyanp/SvgWin2D) (work-in-progress)
+
 For more information about Win2D, see its [documentation](http://microsoft.github.io/Win2D).
