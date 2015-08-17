@@ -50,6 +50,7 @@ namespace ExampleGallery
             new ExampleDefinition("Video Effect", typeof(BasicVideoEffectExample)),
             new ExampleDefinition("Camera Effect", typeof(CameraEffectExample)),
             new ExampleDefinition("Ink", typeof(InkExample)),
+            new ExampleDefinition("Gradient Mesh", typeof(GradientMeshExample)),
 #endif
             new ExampleDefinition("Particle System", typeof(ParticleExample)),
             new ExampleDefinition("Geometry Operations", typeof(GeometryOperations)),
@@ -65,6 +66,7 @@ namespace ExampleGallery
             new ExampleDefinition("Custom Control", typeof(CustomControlExample)),
             new ExampleDefinition("Keyboard Input", typeof(KeyboardInputExample)),
             new ExampleDefinition("Direct3D Interop", typeof(Direct3DInteropExample)),
+            new ExampleDefinition("Virtual Image Source", typeof(VirtualImageSourceExample)),
             new ExampleDefinition("Image Source Update Region", typeof(ImageSourceUpdateRegion)),
             new ExampleDefinition("DPI", typeof(DpiExample)),
             new ExampleDefinition("Control Transforms", typeof(ControlTransforms)),
