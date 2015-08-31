@@ -5,6 +5,7 @@
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Geometry;
 using Microsoft.Graphics.Canvas.Text;
+using Microsoft.Graphics.Canvas.UI;
 using Microsoft.Graphics.Canvas.UI.Xaml;
 using System;
 using System.Collections.Generic;
@@ -184,6 +185,11 @@ namespace ExampleGallery
             }
 
             needToCreateSizeDepdendentResources = false;
+
+            if(args.Reason != CanvasCreateResourcesReason.FirstTime)
+            {
+                needsInkSurfaceValidation = true;
+            }
         }
 
         private void DrawSelectionLasso(CanvasControl sender, CanvasDrawingSession ds)
@@ -478,6 +484,21 @@ namespace ExampleGallery
 
             if (canvasControl != null)
                 canvasControl.Invalidate();
+        }
+
+        private void control_Unloaded(object sender, RoutedEventArgs e)
+        {
+            // Explicitly remove references to allow the Win2D controls to get garbage collected
+            canvasControl.RemoveFromVisualTree();
+            canvasControl = null;
+
+            // If we don't unregister these events, the control will leak.
+            inkCanvas.InkPresenter.UnprocessedInput.PointerPressed -= UnprocessedInput_PointerPressed;
+            inkCanvas.InkPresenter.UnprocessedInput.PointerMoved -= UnprocessedInput_PointerMoved;
+            inkCanvas.InkPresenter.UnprocessedInput.PointerReleased -= UnprocessedInput_PointerReleased;
+            inkCanvas.InkPresenter.StrokeInput.StrokeStarted -= StrokeInput_StrokeStarted;
+            inkCanvas.InkPresenter.StrokesCollected -= InkPresenter_StrokesCollected;
+            inkCanvas.InkPresenter.StrokesErased -= InkPresenter_StrokesErased;
         }
     }
 }
