@@ -8,19 +8,27 @@ using System.Collections.Generic;
 
 namespace ExampleGallery.Effects
 {
+    /// <summary>
+    /// Win2D Emboss Effect http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_EmbossEffect.htm
+    /// Amount - min is 0f, max is 10f, default is 1f
+    /// </summary>
     public sealed class VariableVideoEffect : IBasicVideoEffect
     {
-        private VideoEncodingProperties _currentEncodingProperties;
         private CanvasDevice _canvasDevice;
         private IPropertySet _configuration;
 
+        /// <summary>
+        /// The intensity of the Emboss Effect
+        /// </summary>
         public float Amount
         {
             get
             {
+                //check to see if there is an "Amount" key and get the value
                 if (_configuration != null && _configuration.ContainsKey("Amount"))
                     return (float)_configuration["Amount"];
 
+                //otherwise use the Default value of 1
                 return 1f;
             }
             set
@@ -31,12 +39,12 @@ namespace ExampleGallery.Effects
 
         public void SetProperties(IPropertySet configuration)
         {
+            //the PropertySet passed in the VideoEffectDefinition instance
             _configuration = configuration;
         }
 
         public void SetEncodingProperties(VideoEncodingProperties encodingProperties, IDirect3DDevice device)
         {
-            _currentEncodingProperties = encodingProperties;
             _canvasDevice = CanvasDevice.CreateFromDirect3D11Device(device);
         }
 

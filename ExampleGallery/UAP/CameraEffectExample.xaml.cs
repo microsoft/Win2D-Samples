@@ -15,6 +15,7 @@ using Windows.Storage.Streams;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
 
 namespace ExampleGallery
 {
@@ -27,12 +28,15 @@ namespace ExampleGallery
         const string noEffect = "No effect";
         const string displacementEffect = "Displacement effect";
         const string rotatingTilesEffect = "Rotating tiles effect";
+        const string variableEffect = "Variable effect";
+
+        private IPropertySet effectPropertySet = null;
 
         public List<string> PossibleEffects
         {
             get
             {
-                return new List<string> { noEffect, displacementEffect, rotatingTilesEffect };
+                return new List<string> { noEffect, displacementEffect, rotatingTilesEffect, variableEffect };
             }
         }
 
@@ -107,6 +111,9 @@ namespace ExampleGallery
             {
                 await mediaCapture.ClearEffectsAsync(MediaStreamType.VideoPreview);
             }
+
+            variableEffectValueSlider.Visibility = Visibility.Collapsed;
+            effectPropertySet = null;
         }
 
         private void EffectCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -117,6 +124,17 @@ namespace ExampleGallery
                 effect = (string)e.AddedItems[0];
 
             var task = SetEffect(effect);
+        }
+
+        private void VariableEffectValueSlider_OnValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            if (sender == null || e == null || effectPropertySet == null) return;
+
+            //prevent changes smaller than .01 to update the effect
+            if (Math.Abs(e.OldValue - e.NewValue) < 0.1) return;
+
+            //update the Amount value in the PropertySet used by the VariableVideoEffect
+            effectPropertySet["Amount"] = (float)e.NewValue;
         }
 
         private async Task SetEffect(string effect)
@@ -137,20 +155,28 @@ namespace ExampleGallery
         {
             await ResetEffectsAsync();
 
-            string typeName = null;
+            VideoEffectDefinition videoEffectDefinition = null;
 
             switch (effect)
             {
-                case displacementEffect: typeName = typeof(DisplacementEffect).FullName; break;
-                case rotatingTilesEffect: typeName = typeof(RotatedTilesEffect).FullName; break;
+                case displacementEffect:
+                    videoEffectDefinition = new VideoEffectDefinition(typeof(DisplacementEffect).FullName, new PropertySet());
+                    break;
+                case rotatingTilesEffect:
+                    videoEffectDefinition = new VideoEffectDefinition(typeof(RotatedTilesEffect).FullName, new PropertySet());
+                    break;
+                case variableEffect:
+                    variableEffectValueSlider.Visibility = Visibility.Visible;
+                    effectPropertySet = new PropertySet();
+                    effectPropertySet["Amount"] = variableEffectValueSlider.Value;
+                    videoEffectDefinition = new VideoEffectDefinition(typeof(VariableVideoEffect).FullName, effectPropertySet);
+                    break;
             }
 
-            if (typeName == null)
+            if (videoEffectDefinition == null)
                 return;
 
-            await mediaCapture.AddVideoEffectAsync(
-                new VideoEffectDefinition(typeName, new PropertySet()),
-                MediaStreamType.VideoPreview);
+            await mediaCapture.AddVideoEffectAsync(videoEffectDefinition, MediaStreamType.VideoPreview);
         }
 
         // This example generates a custom thumbnail image (not just a rendering capture like most examples).
