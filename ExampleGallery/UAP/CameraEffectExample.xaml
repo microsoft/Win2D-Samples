@@ -24,6 +24,14 @@ Licensed under the MIT License. See LICENSE.txt in the project root for license 
             <ProgressRing x:Name="progressRing"/>
             <CaptureElement x:Name="captureElement" Width="Auto" Height="Auto"/>
             <TextBlock x:Name="progressText" FontSize="{StaticResource TextStyleLargeFontSize}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+            <Slider x:Name="variableEffectValueSlider" 
+                    Header="Emboss Intensity"
+                    Minimum="0"
+                    Value="1"
+                    Maximum="10"
+                    Visibility="Collapsed"
+                    ValueChanged="VariableEffectValueSlider_OnValueChanged"
+                    Margin="10,0" />
         </StackPanel>
         <ComboBox x:Name="effectCombo" ItemsSource="{Binding ElementName=control, Path=PossibleEffects}"
                   SelectionChanged="EffectCombo_SelectionChanged" />
