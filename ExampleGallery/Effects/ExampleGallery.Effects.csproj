@@ -96,6 +96,7 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DynamicBlurVideoEffect.cs" />
     <Compile Include="ExampleVideoEffect.cs" />
     <Compile Include="DisplacementEffect.cs" />
     <Compile Include="RotatedTilesEffect.cs" />
