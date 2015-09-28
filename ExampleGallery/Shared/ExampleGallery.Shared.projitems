@@ -96,6 +96,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Particles\ParticleSystem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Particles\SmokePlumeParticleSystem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PrintingExample.xaml.cs">
+      <DependentUpon>PrintingExample.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ShapesExample.xaml.cs">
       <DependentUpon>ShapesExample.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)TextLayouts.xaml.cs">
       <DependentUpon>TextLayouts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)TextOutlines.xaml.cs">
+      <DependentUpon>TextOutlines.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)VectorArt.xaml.cs">
       <DependentUpon>VectorArt.xaml</DependentUpon>
@@ -213,6 +219,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)PrintingExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)ShapesExample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -230,6 +240,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)TextLayouts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)TextOutlines.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -283,6 +297,8 @@
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\LayersWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ParticleSystemNarrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ParticleSystemWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\PrintingNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\PrintingWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ShapesNarrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ShapesWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\AboutNarrow.png" />
@@ -293,6 +309,8 @@
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TextDirectionsWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TextLayoutsNarrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TextLayoutsWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TextOutlinesNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TextOutlinesWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\VectorArtNarrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\VectorArtWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)BitmapOrientation\orientation_0.jpg" />
