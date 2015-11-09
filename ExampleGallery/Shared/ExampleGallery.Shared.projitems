@@ -120,6 +120,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)TextOutlines.xaml.cs">
       <DependentUpon>TextOutlines.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)FontMetrics.xaml.cs">
+      <DependentUpon>FontMetrics.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)VectorArt.xaml.cs">
       <DependentUpon>VectorArt.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)VirtualControlExample.xaml.cs">
       <DependentUpon>VirtualControlExample.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\FontPickerComboBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)AnimatedControlExample.xaml">
@@ -254,6 +258,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)FontMetrics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)VectorArt.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -294,6 +302,8 @@
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\DrawImageEmulationsWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\EffectsNarrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\EffectsWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\FontMetricsNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\FontMetricsWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\GameofLifeNarrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\GameofLifeWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\GeometryOperationsNarrow.png" />
