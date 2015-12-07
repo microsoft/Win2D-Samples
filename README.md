@@ -10,15 +10,20 @@ These sample projects show how to use the Win2D graphics API.
     - *Example Gallery is also available in the
       [Store](https://www.microsoft.com/store/apps/9NBLGGGXWT9F).*
 
+- **Composition Example** shows how to use Win2D to draw onto a Windows.UI.Composition 
+  drawing surface or swapchain.
+
 - **CoreWindow Example** is a C# application that draws directly to a CoreWindow, 
   without using XAML.
 
 - **Simple Sample** is, yup, you guessed it! Pretty much the simplest possible app that 
   uses Win2D - it's our version of the venerable "hello world".
 
-Each sample contains two different Visual Studio solution files. The *.uap.sln 
-version is for Windows 10 (Universal Windows Platform), while *.81.sln is for 
-Windows 8.1 and Windows Phone 8.1.
+Most of the samples contain two different Visual Studio solution files. The *.uap.sln 
+version is for Windows 10 (Universal Windows Platform), while *.81.sln is for Windows 8.1 
+and Windows Phone 8.1.
+
+Composition Example only contains a .uap.sln, because it does not support Windows 8.1.
 
 These samples reference the NuGet packages [Win2D.uwp](http://www.nuget.org/packages/Win2D.uwp) 
 or [Win2D.win81](http://www.nuget.org/packages/Win2D.win81), which will be 
