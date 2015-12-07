@@ -5,6 +5,7 @@ Release/
 *sdf
 *suo
 *.user
+*.opendb
 
 nuget.config
 project.lock.json
