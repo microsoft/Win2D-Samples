@@ -23,7 +23,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
-    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
   </PropertyGroup>
   <PropertyGroup>
@@ -127,6 +127,16 @@
       <DependentUpon>InkExample.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpriteBatchPerf.xaml.cs">
+      <DependentUpon>SpriteBatchPerf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpriteSheets\SpriteSheet.cs" />
+    <Compile Include="SpriteSheets\SpriteSheets.xaml.cs">
+      <DependentUpon>SpriteSheets.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VirtualBitmapExample.xaml.cs">
+      <DependentUpon>VirtualBitmapExample.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="ExampleGallery.uap.appxmanifest">
@@ -144,12 +154,19 @@
     <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="Assets\WideLogo.scale-100.png" />
     <Content Include="Assets\InkThumbnailStrokes.bin" />
+    <Content Include="SpriteSheets\ForestTiles.png" />
+    <Content Include="SpriteSheets\WizardIdleRight.png" />
+    <Content Include="SpriteSheets\WizardWalkRight.png" />
     <Content Include="Thumbnails\CameraEffectNarrow.png" />
     <Content Include="Thumbnails\CameraEffectWide.png" />
     <Content Include="Thumbnails\GradientMeshNarrow.png" />
     <Content Include="Thumbnails\GradientMeshWide.png" />
     <Content Include="Thumbnails\InkNarrow.png" />
     <Content Include="Thumbnails\InkWide.png" />
+    <Content Include="Thumbnails\SpriteBatchPerformanceNarrow.png" />
+    <Content Include="Thumbnails\SpriteBatchPerformanceWide.png" />
+    <Content Include="Thumbnails\SpriteSheetsNarrow.png" />
+    <Content Include="Thumbnails\SpriteSheetsWide.png" />
     <Content Include="Thumbnails\VideoEffectNarrow.png" />
     <Content Include="Thumbnails\VideoEffectWide.png" />
     <Content Include="..\Shared\Symbols.ttf">
@@ -158,6 +175,8 @@
     <Content Include="..\Shared\imageTiger.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Thumbnails\VirtualBitmapNarrow.png" />
+    <Content Include="Thumbnails\VirtualBitmapWide.png" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="BasicVideoEffectExample.xaml">
@@ -177,6 +196,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="PlatformResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpriteBatchPerf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpriteSheets\SpriteSheets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VirtualBitmapExample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -52,6 +52,9 @@ namespace ExampleGallery
             new ExampleDefinition("Video Effect", typeof(BasicVideoEffectExample)),
 #endif
             new ExampleDefinition("Particle System", typeof(ParticleExample)),
+#if WINDOWS_UWP
+            new ExampleDefinition("Sprite Sheets", typeof(SpriteSheets)),
+#endif
             new ExampleDefinition("Vector Art", typeof(VectorArt)),
 
             // Show capabilities of the API.
@@ -78,6 +81,9 @@ namespace ExampleGallery
             new ExampleDefinition("Custom Control", typeof(CustomControlExample)),
             new ExampleDefinition("Virtual Control", typeof(VirtualControlExample)),
             new ExampleDefinition("Animated Control", typeof(AnimatedControlExample)),
+#if WINDOWS_UWP
+            new ExampleDefinition("Virtual Bitmap", typeof(VirtualBitmapExample)),
+#endif
             new ExampleDefinition("Direct3D Interop", typeof(Direct3DInteropExample)),
             new ExampleDefinition("Keyboard Input", typeof(KeyboardInputExample)),
             new ExampleDefinition("Background Task", typeof(BackgroundTaskExample)),
@@ -88,9 +94,13 @@ namespace ExampleGallery
             // Tests for internal use by the Win2D team.
             new ExampleDefinition("Image Source Update Region", typeof(ImageSourceUpdateRegion)),
             new ExampleDefinition("DPI", typeof(DpiExample)),
+            new ExampleDefinition("Effect Region Mapping", typeof(EffectRegionMapping)),
             new ExampleDefinition("Control Transforms", typeof(ControlTransforms)),
             new ExampleDefinition("DrawImage Emulations", typeof(DrawImageEmulations)),
             new ExampleDefinition("Bitmap Rotation", typeof(BitmapRotation)),
+#if WINDOWS_UWP
+            new ExampleDefinition("SpriteBatch Performance", typeof(SpriteBatchPerf)),
+#endif
             new ExampleDefinition("Developer Tools", typeof(DeveloperTools)),
             new ExampleDefinition("About", typeof(About)),
         };

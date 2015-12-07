@@ -36,6 +36,8 @@ namespace ExampleGallery
             DashStyle = CanvasDashStyle.Dash
         };
         bool inlineObjectsEnabledChanged;
+        bool textDirectionChanged;
+        bool typographyChanged;
 
         //
         // This is stored as a local static so that SpecialGlyph has access to it.
@@ -82,6 +84,7 @@ namespace ExampleGallery
 
         public bool ShowPerCharacterLayoutBounds { get; set; }
         public bool ShowLayoutBounds { get; set; }
+        public bool ShowLayoutBoundsWithTrailingWhitespace { get; set; }
         public bool ShowDrawBounds { get; set; }
 
         bool needsResourceRecreation;
@@ -100,10 +103,18 @@ namespace ExampleGallery
         public List<TextSampleOption> TextSampleOptions { get { return Utils.GetEnumAsList<TextSampleOption>(); } }
         public TextSampleOption CurrentTextSampleOption { get; set; }
 
+        public List<CanvasTextDirection> TextDirectionOptions { get { return Utils.GetEnumAsList<CanvasTextDirection>(); } }
+        public CanvasTextDirection CurrentTextDirection { get; set; }
+
+        public List<CanvasTypographyFeatureName> TypographyOptions { get { return Utils.GetEnumAsList<CanvasTypographyFeatureName>(); } }
+        public CanvasTypographyFeatureName CurrentTypographyOption { get; set; }
+
         public TextLayouts()
         {
+            DataContext = this;
+
             this.InitializeComponent();
-            
+
             CurrentTextSampleOption = TextSampleOption.QuickBrownFox;
             ShowPerCharacterLayoutBounds = true;
             UseEllipsisTrimming = true;
@@ -141,6 +152,8 @@ namespace ExampleGallery
             selectionTextBrush.EndPoint = textBrush.EndPoint;
 
             inlineObjectsEnabledChanged = true;
+            textDirectionChanged = true;
+            typographyChanged = true;
 
             needsResourceRecreation = false;
             resourceRealizationSize = targetSize;
@@ -204,7 +217,8 @@ namespace ExampleGallery
 
         void EnsureInlineObjects()
         {
-            if (!inlineObjectsEnabledChanged) return;
+            if (!inlineObjectsEnabledChanged) 
+                return;
 
             //
             // Changing this option doesn't require re-recreation of the text layout.
@@ -223,6 +237,34 @@ namespace ExampleGallery
             }
 
             inlineObjectsEnabledChanged = false;
+        }
+
+        void EnsureTextDirection()
+        {
+            if (!textDirectionChanged) 
+                return;
+
+            textLayout.Direction = CurrentTextDirection;
+
+            textDirectionChanged = false;
+        }
+
+        void EnsureTypography()
+        {
+            if (!typographyChanged)
+                return;
+
+            CanvasTypography typography = null;
+            
+            if (CurrentTypographyOption != CanvasTypographyFeatureName.None)
+            {
+                typography = new CanvasTypography();
+                typography.AddFeature(CurrentTypographyOption, 1u);
+            }
+
+            textLayout.SetTypography(0, testString.Length, typography);
+
+            typographyChanged = false;
         }
 
         private void Canvas_Draw(CanvasControl sender, CanvasDrawEventArgs args)
@@ -246,6 +288,10 @@ namespace ExampleGallery
 
             EnsureInlineObjects();
 
+            EnsureTextDirection();
+
+            EnsureTypography();
+
             args.DrawingSession.DrawTextLayout(textLayout, 0, 0, textBrush);
 
             if (ShowPerCharacterLayoutBounds)
@@ -262,6 +308,11 @@ namespace ExampleGallery
             if (ShowDrawBounds)
             {
                 args.DrawingSession.DrawRectangle(textLayout.DrawBounds, Colors.Green, 2);
+            }
+
+            if (ShowLayoutBoundsWithTrailingWhitespace)
+            {
+                args.DrawingSession.DrawRectangle(textLayout.LayoutBoundsIncludingTrailingWhitespace, Colors.DarkRed, 2);
             }
 
             if (ShowLayoutBounds)
@@ -332,6 +383,20 @@ namespace ExampleGallery
         private void UseInlineObjectsClicked(object sender, RoutedEventArgs e)
         {
             inlineObjectsEnabledChanged = true;
+
+            canvas.Invalidate();
+        }
+
+        private void TextDirectionChanged(object sender, RoutedEventArgs e)
+        {
+            textDirectionChanged = true;
+
+            canvas.Invalidate();
+        }
+
+        private void TypographyChanged(object sender, RoutedEventArgs e)
+        {
+            typographyChanged = true;
 
             canvas.Invalidate();
         }
