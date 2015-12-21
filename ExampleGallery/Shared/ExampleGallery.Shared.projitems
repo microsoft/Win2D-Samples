@@ -129,6 +129,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)FontMetrics.xaml.cs">
       <DependentUpon>FontMetrics.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CustomTextLayouts.xaml.cs">
+      <DependentUpon>CustomTextLayouts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)VectorArt.xaml.cs">
       <DependentUpon>VectorArt.xaml</DependentUpon>
     </Compile>
@@ -276,6 +279,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)CustomTextLayouts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)VectorArt.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -286,8 +293,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)Particles\explosion.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Particles\smoke.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Particles\explosion.dds" />
+    <Content Include="$(MSBuildThisFileDirectory)Particles\smoke.dds" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\CustomEffectsNarrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\CustomEffectsWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\AnimatedControlNarrow.png" />
@@ -306,6 +313,8 @@
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ControlTransformsWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\CustomFontsNarrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\CustomFontsWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\CustomTextLayoutsNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\CustomTextLayoutsWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\DeveloperToolsNarrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\DeveloperToolsWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\Direct3DInteropNarrow.png" />
