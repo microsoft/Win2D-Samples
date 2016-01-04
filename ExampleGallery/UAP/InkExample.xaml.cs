@@ -5,10 +5,10 @@
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Geometry;
 using Microsoft.Graphics.Canvas.Text;
-using Microsoft.Graphics.Canvas.UI;
 using Microsoft.Graphics.Canvas.UI.Xaml;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -27,21 +27,22 @@ namespace ExampleGallery
 {
     public sealed partial class InkExample : UserControl
     {
-        CanvasRenderTarget renderTarget;
-
-        List<Point> selectionPolylinePoints;
-
-        Rect? selectionBoundingRect;
+        InkManager inkManager = new InkManager();
 
         InkSynchronizer inkSynchronizer;
 
+        IReadOnlyList<InkStroke> pendingDry;
+        int deferredDryDelay;
+
+        CanvasRenderTarget renderTarget;
+
+        List<Point> selectionPolylinePoints;
+        Rect? selectionBoundingRect;
+
         CanvasTextFormat textFormat;
 
-        bool needsClear;
-
-        bool needsInkSurfaceValidation;
-
-        bool needToCreateSizeDepdendentResources;
+        bool needToCreateSizeDependentResources;
+        bool needToRedrawInkSurface;
 
         bool showTextLabels;
 
@@ -55,16 +56,12 @@ namespace ExampleGallery
         public List<DryInkRenderingType> DryInkRenderingTypes { get { return Utils.GetEnumAsList<DryInkRenderingType>(); } }
         public DryInkRenderingType SelectedDryInkRenderingType { get; set; }
 
-        // Since this app uses custom drying, it can't use the built-in stroke container on the ink canvas.
-        InkManager inkManager = new InkManager();
-        List<InkStroke> strokeList = new List<InkStroke>();
-
         public InkExample()
         {
             this.InitializeComponent();
 
             inkCanvas.InkPresenter.InputDeviceTypes = Windows.UI.Core.CoreInputDeviceTypes.Mouse | Windows.UI.Core.CoreInputDeviceTypes.Pen | Windows.UI.Core.CoreInputDeviceTypes.Touch;
-            
+
             // By default, pen barrel button or right mouse button is processed for inking
             // Set the configuration to instead allow processing these input on the UI thread
             inkCanvas.InkPresenter.InputProcessingConfiguration.RightDragAction = InkInputRightDragAction.LeaveUnprocessed;
@@ -72,7 +69,7 @@ namespace ExampleGallery
             inkCanvas.InkPresenter.UnprocessedInput.PointerPressed += UnprocessedInput_PointerPressed;
             inkCanvas.InkPresenter.UnprocessedInput.PointerMoved += UnprocessedInput_PointerMoved;
             inkCanvas.InkPresenter.UnprocessedInput.PointerReleased += UnprocessedInput_PointerReleased;
-            
+
             inkCanvas.InkPresenter.StrokeInput.StrokeStarted += StrokeInput_StrokeStarted;
 
             inkCanvas.InkPresenter.StrokesCollected += InkPresenter_StrokesCollected;
@@ -87,17 +84,19 @@ namespace ExampleGallery
             SelectColor(color0);
             showTextLabels = true;
 
-            needToCreateSizeDepdendentResources = true;
+            needToCreateSizeDependentResources = true;
         }
 
         private void InkPresenter_StrokesCollected(InkPresenter sender, InkStrokesCollectedEventArgs args)
         {
-            strokeList.AddRange(args.Strokes);
-            
             foreach (var s in args.Strokes)
             {
                 inkManager.AddStroke(s);
             }
+
+            Debug.Assert(pendingDry == null);
+
+            pendingDry = inkSynchronizer.BeginDry();
 
             canvasControl.Invalidate();
         }
@@ -112,17 +111,10 @@ namespace ExampleGallery
         private void InkPresenter_StrokesErased(InkPresenter sender, InkStrokesErasedEventArgs args)
         {
             var removed = args.Strokes;
-            foreach (var s in removed)
-            {
-                strokeList.Remove(s);
-            }
+            var strokeList = inkManager.GetStrokes().Except(removed).ToList();
 
             inkManager = new InkManager();
-
-            foreach (var s in strokeList)
-            {
-                inkManager.AddStroke(s);
-            }
+            strokeList.ForEach(inkManager.AddStroke);
 
             ClearSelection();
 
@@ -166,6 +158,9 @@ namespace ExampleGallery
             renderTarget = new CanvasRenderTarget(canvasControl, canvasControl.Size);
 
             textFormat.FontSize = (float)canvasControl.Size.Width / 10.0f;
+
+            needToCreateSizeDependentResources = false;
+            needToRedrawInkSurface = true;
         }
 
         private async Task LoadThumbnailResources(CanvasControl sender)
@@ -185,19 +180,11 @@ namespace ExampleGallery
             {
                 args.TrackAsyncAction(LoadThumbnailResources(sender).AsAsyncAction());
             }
-
-            needToCreateSizeDepdendentResources = false;
-
-            if(args.Reason != CanvasCreateResourcesReason.FirstTime)
-            {
-                needsInkSurfaceValidation = true;
-            }
         }
 
         private void DrawSelectionLasso(CanvasControl sender, CanvasDrawingSession ds)
         {
             if (selectionPolylinePoints == null) return;
-
             if (selectionPolylinePoints.Count == 0) return;
 
             CanvasPathBuilder selectionLasso = new CanvasPathBuilder(canvasControl);
@@ -214,8 +201,10 @@ namespace ExampleGallery
 
         private void DrawSelectionBoundingRect(CanvasDrawingSession ds)
         {
-            if (selectionBoundingRect == null) return;
-            if ((selectionBoundingRect.Value.Width == 0) || (selectionBoundingRect.Value.Height == 0) || selectionBoundingRect.Value.IsEmpty)
+            if (selectionBoundingRect == null ||
+                selectionBoundingRect.Value.Width == 0 ||
+                selectionBoundingRect.Value.Height == 0 ||
+                selectionBoundingRect.Value.IsEmpty)
             {
                 return;
             }
@@ -307,38 +296,55 @@ namespace ExampleGallery
 
         private void canvasControl_Draw(CanvasControl sender, CanvasDrawEventArgs args)
         {
-            if(needToCreateSizeDepdendentResources)
+            if (needToCreateSizeDependentResources)
             {
                 CreateSizeDependentResources();
             }
 
-            if(needsClear || needsInkSurfaceValidation)
+            if (needToRedrawInkSurface)
             {
                 ClearInkSurface();
+                DrawStrokeCollectionToInkSurface(inkManager.GetStrokes());
+
+                needToRedrawInkSurface = false;
             }
-            if(needsInkSurfaceValidation)
-            {
-                DrawStrokeCollectionToInkSurface(strokeList);
-            }
-            needToCreateSizeDepdendentResources = false;
-            needsClear = false;
-            needsInkSurfaceValidation = false;
 
             DrawBackgroundText(args.DrawingSession);
 
-            var strokes = inkSynchronizer.BeginDry();
+            if (pendingDry != null && deferredDryDelay == 0)
+            {
+                // Incremental draw only.
+                DrawStrokeCollectionToInkSurface(pendingDry);
 
-            DrawStrokeCollectionToInkSurface(strokes); // Incremental draw only.
-
-            inkSynchronizer.EndDry();
+                // Register to call EndDry on the next-but-one draw,
+                // by which time our dry ink will be visible.
+                deferredDryDelay = 1;
+                CompositionTarget.Rendering += DeferredEndDry;
+            }
 
             args.DrawingSession.DrawImage(renderTarget);
 
             DrawForegroundText(args.DrawingSession);
-
             DrawSelectionBoundingRect(args.DrawingSession);
-
             DrawSelectionLasso(sender, args.DrawingSession);
+        }
+
+        private void DeferredEndDry(object sender, object e)
+        {
+            Debug.Assert(pendingDry != null);
+
+            if (deferredDryDelay > 0)
+            {
+                deferredDryDelay--;
+            }
+            else
+            {
+                CompositionTarget.Rendering -= DeferredEndDry;
+
+                pendingDry = null;
+
+                inkSynchronizer.EndDry();
+            }
         }
 
         const string saveFileName = "savedFile.bin";
@@ -346,14 +352,10 @@ namespace ExampleGallery
         private void DeleteSelected_Clicked(object sender, RoutedEventArgs e)
         {
             inkManager.DeleteSelected();
-            strokeList.Clear();
-
-            var strokes = inkManager.GetStrokes();
-            strokeList.AddRange(strokes);
 
             selectionBoundingRect = null;
 
-            needsInkSurfaceValidation = true;
+            needToRedrawInkSurface = true;
 
             canvasControl.Invalidate();
         }
@@ -362,10 +364,7 @@ namespace ExampleGallery
         {
             await inkManager.LoadAsync(stream.AsInputStream());
 
-            strokeList.Clear();
-            strokeList.AddRange(inkManager.GetStrokes());
-
-            needsInkSurfaceValidation = true;
+            needToRedrawInkSurface = true;
         }
 
         private async void Load_Clicked(object sender, RoutedEventArgs e)
@@ -403,10 +402,9 @@ namespace ExampleGallery
 
         private void Clear_Clicked(object sender, RoutedEventArgs e)
         {
-            strokeList.Clear();
             inkManager = new InkManager();
 
-            needsClear = true;
+            needToRedrawInkSurface = true;
 
             canvasControl.Invalidate();
         }
@@ -477,16 +475,14 @@ namespace ExampleGallery
             // the strokes that have been collected so far.
             //
 
-            needsInkSurfaceValidation = true;
+            needToRedrawInkSurface = true;
 
             canvasControl.Invalidate();
         }
 
         private void Canvas_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            needToCreateSizeDepdendentResources = true;
-
-            needsInkSurfaceValidation = true;
+            needToCreateSizeDependentResources = true;
 
             canvasControl.Invalidate();
         }
@@ -495,7 +491,7 @@ namespace ExampleGallery
         {
             showTextLabels = true;
 
-            if(canvasControl != null)
+            if (canvasControl != null)
                 canvasControl.Invalidate();
         }
 
