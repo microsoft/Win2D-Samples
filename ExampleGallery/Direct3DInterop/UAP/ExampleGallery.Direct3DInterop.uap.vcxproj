@@ -22,7 +22,7 @@
     <NuGetPackageImportStamp>c59169d0</NuGetPackageImportStamp>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|ARM" Condition="'$(ApplicationType)' != ''">
+    <ProjectConfiguration Include="Debug|ARM">
       <Configuration>Debug</Configuration>
       <Platform>ARM</Platform>
     </ProjectConfiguration>
@@ -30,11 +30,11 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64" Condition="'$(ApplicationType)' != 'Windows Phone'">
+    <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|ARM" Condition="'$(ApplicationType)' != ''">
+    <ProjectConfiguration Include="Release|ARM">
       <Configuration>Release</Configuration>
       <Platform>ARM</Platform>
     </ProjectConfiguration>
@@ -42,21 +42,19 @@
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64" Condition="'$(ApplicationType)' != 'Windows Phone'">
+    <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Configuration">
-    <PlatformToolset Condition="'$(ApplicationType)' == 'Windows Store' And '$(ApplicationTypeRevision)' == '8.1'">v120</PlatformToolset>
-    <PlatformToolset Condition="'$(ApplicationType)' == 'Windows Store' And '$(ApplicationTypeRevision)' == '10.0'">v140</PlatformToolset>
-    <PlatformToolset Condition="'$(ApplicationType)' == 'Windows Phone'">v120_wp81</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+  <PropertyGroup>
     <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.10240.0</WindowsTargetPlatformMinVersion>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+  <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalOptions>/DNTDDI_VERSION=0x0A000001 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -149,7 +147,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\directxtk_uwp.2015.7.29.1\build\native\directxtk_uwp.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\directxtk_uwp.2015.7.29.1\build\native\directxtk_uwp.props'))" />
     <Error Condition="!Exists('..\..\packages\directxtk_uwp.2015.7.29.1\build\native\directxtk_uwp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\directxtk_uwp.2015.7.29.1\build\native\directxtk_uwp.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Win2D.uwp.1.12.0\build\native\Win2D.uwp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Win2D.uwp.1.12.0\build\native\Win2D.uwp.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Win2D.uwp.1.13.0\build\native\Win2D.uwp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Win2D.uwp.1.13.0\build\native\Win2D.uwp.targets'))" />
   </Target>
-  <Import Project="..\..\packages\Win2D.uwp.1.12.0\build\native\Win2D.uwp.targets" Condition="Exists('..\..\packages\Win2D.uwp.1.12.0\build\native\Win2D.uwp.targets')" />
+  <Import Project="..\..\packages\Win2D.uwp.1.13.0\build\native\Win2D.uwp.targets" Condition="Exists('..\..\packages\Win2D.uwp.1.13.0\build\native\Win2D.uwp.targets')" />
 </Project>
