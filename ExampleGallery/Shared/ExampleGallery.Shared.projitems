@@ -79,6 +79,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)GeometryOperations.xaml.cs">
       <DependentUpon>GeometryOperations.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)HistogramExample.xaml.cs">
+      <DependentUpon>HistogramExample.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ImageSourceUpdateRegion.xaml.cs">
       <DependentUpon>ImageSourceUpdateRegion.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)TextLayouts.xaml.cs">
       <DependentUpon>TextLayouts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)TypographyExample.xaml.cs">
+      <DependentUpon>TypographyExample.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)TextOutlines.xaml.cs">
       <DependentUpon>TextOutlines.xaml</DependentUpon>
@@ -227,6 +233,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)HistogramExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)ImageSourceUpdateRegion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -268,6 +278,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)TextLayouts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)TypographyExample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -333,6 +347,8 @@
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\GameofLifeWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\GeometryOperationsNarrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\GeometryOperationsWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\HistogramNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\HistogramWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ImageSourceUpdateRegionNarrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\ImageSourceUpdateRegionWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\KeyboardInputNarrow.png" />
@@ -357,6 +373,8 @@
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TextLayoutsWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TextOutlinesNarrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TextOutlinesWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TypographyNarrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Thumbnails\TypographyWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\VectorArtNarrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Thumbnails\VectorArtWide.png" />
     <Content Include="$(MSBuildThisFileDirectory)BitmapOrientation\orientation_0.jpg" />
