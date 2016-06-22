@@ -41,3 +41,8 @@ An additional set of unofficial samples were created during a July 2015
 - [SvgWin2D](http://github.com/damyanp/SvgWin2D) (work-in-progress)
 
 For more information about Win2D, see its [documentation](http://microsoft.github.io/Win2D).
+
+---
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact
+[opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
