@@ -7,6 +7,7 @@ Release/
 *.user
 *.opendb
 *.VC.db
+.vs/
 
 nuget.config
 project.lock.json
