@@ -51,12 +51,12 @@
     <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.10240.0</WindowsTargetPlatformMinVersion>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalOptions>/DNTDDI_VERSION=0x0A000002 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/DNTDDI_VERSION=0x0A000003 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
   </ItemDefinitionGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
@@ -150,7 +150,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\directxtk_uwp.2015.7.29.1\build\native\directxtk_uwp.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\directxtk_uwp.2015.7.29.1\build\native\directxtk_uwp.props'))" />
     <Error Condition="!Exists('..\..\packages\directxtk_uwp.2015.7.29.1\build\native\directxtk_uwp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\directxtk_uwp.2015.7.29.1\build\native\directxtk_uwp.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Win2D.uwp.1.20.0\build\native\Win2D.uwp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Win2D.uwp.1.20.0\build\native\Win2D.uwp.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Win2D.uwp.1.21.0\build\native\Win2D.uwp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Win2D.uwp.1.21.0\build\native\Win2D.uwp.targets'))" />
   </Target>
-  <Import Project="..\..\packages\Win2D.uwp.1.20.0\build\native\Win2D.uwp.targets" Condition="Exists('..\..\packages\Win2D.uwp.1.20.0\build\native\Win2D.uwp.targets')" />
+  <Import Project="..\..\packages\Win2D.uwp.1.21.0\build\native\Win2D.uwp.targets" Condition="Exists('..\..\packages\Win2D.uwp.1.21.0\build\native\Win2D.uwp.targets')" />
 </Project>

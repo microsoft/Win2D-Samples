@@ -23,7 +23,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.15063.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
   </PropertyGroup>
   <PropertyGroup>
@@ -134,6 +134,9 @@
     <Compile Include="SpriteSheets\SpriteSheets.xaml.cs">
       <DependentUpon>SpriteSheets.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SvgExample.xaml.cs">
+      <DependentUpon>SvgExample.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VirtualBitmapExample.xaml.cs">
       <DependentUpon>VirtualBitmapExample.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,7 @@
   <ItemGroup>
     <Content Include="RuntimeDirectives.rd.xml" />
     <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\sample.svg" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\Square71x71Logo.scale-100.png" />
@@ -167,6 +171,8 @@
     <Content Include="Thumbnails\SpriteBatchPerformanceWide.png" />
     <Content Include="Thumbnails\SpriteSheetsNarrow.png" />
     <Content Include="Thumbnails\SpriteSheetsWide.png" />
+    <Content Include="Thumbnails\SvgNarrow.png" />
+    <Content Include="Thumbnails\SvgWide.png" />
     <Content Include="Thumbnails\VideoEffectNarrow.png" />
     <Content Include="Thumbnails\VideoEffectWide.png" />
     <Content Include="..\Shared\Symbols.ttf">
@@ -202,6 +208,10 @@
     <Page Include="SpriteBatchPerf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SvgExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="SpriteSheets\SpriteSheets.xaml">
       <SubType>Designer</SubType>
