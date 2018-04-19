@@ -3,33 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleGallery.uap", "UAP\ExampleGallery.uap.csproj", "{F6867923-3A6E-4102-B546-E3A6A5F8EC36}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ExampleGallery.Shared", "Shared\ExampleGallery.Shared.shproj", "{F6F2B4AD-0B11-4919-BF8B-08DE6FE76170}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleGallery.uap", "ExampleGallery.uap.csproj", "{F6867923-3A6E-4102-B546-E3A6A5F8EC36}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleGallery.Effects", "Effects\ExampleGallery.Effects.csproj", "{2B157B97-CBF7-4014-8655-1456F2807F43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleGallery.BackgroundTask.uap", "BackgroundTask\UAP\ExampleGallery.BackgroundTask.uap.csproj", "{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleGallery.BackgroundTask.uap", "BackgroundTask\ExampleGallery.BackgroundTask.uap.csproj", "{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ExampleGallery.BackgroundTask.Shared", "BackgroundTask\Shared\ExampleGallery.BackgroundTask.Shared.shproj", "{75A7926B-B1AE-4806-B332-9561BFE0EDF9}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackgroundTask", "BackgroundTask", "{25FD9CFB-C91F-4CCC-92A8-427255CDB8F2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Direct3DInterop", "Direct3DInterop", "{6B9906EF-68AA-481A-B40B-3D36C24B39CB}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExampleGallery.Direct3DInterop.Shared", "Direct3DInterop\Shared\ExampleGallery.Direct3DInterop.Shared.vcxitems", "{8E486BCA-FE9B-4F99-9D2E-A277905E84EB}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExampleGallery.Direct3DInterop.uap", "Direct3DInterop\UAP\ExampleGallery.Direct3DInterop.uap.vcxproj", "{A81F96D0-4924-40E3-A463-3CB9EE55AA93}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExampleGallery.Direct3DInterop.uap", "Direct3DInterop\ExampleGallery.Direct3DInterop.uap.vcxproj", "{A81F96D0-4924-40E3-A463-3CB9EE55AA93}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Direct3DInterop\Shared\ExampleGallery.Direct3DInterop.Shared.vcxitems*{8e486bca-fe9b-4f99-9d2e-a277905e84eb}*SharedItemsImports = 9
-		Direct3DInterop\Shared\ExampleGallery.Direct3DInterop.Shared.vcxitems*{a81f96d0-4924-40e3-a463-3cb9ee55aa93}*SharedItemsImports = 4
-		Shared\ExampleGallery.Shared.projitems*{f6f2b4ad-0b11-4919-bf8b-08de6fe76170}*SharedItemsImports = 13
-		BackgroundTask\Shared\ExampleGallery.BackgroundTask.Shared.projitems*{d77eb5be-c840-4ade-b4f6-1ba9512c4768}*SharedItemsImports = 4
-		Shared\ExampleGallery.Shared.projitems*{f6867923-3a6e-4102-b546-e3a6a5f8ec36}*SharedItemsImports = 4
-		BackgroundTask\Shared\ExampleGallery.BackgroundTask.Shared.projitems*{75a7926b-b1ae-4806-b332-9561bfe0edf9}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
 		Debug|Win32 = Debug|Win32
@@ -97,10 +79,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{D77EB5BE-C840-4ADE-B4F6-1BA9512C4768} = {25FD9CFB-C91F-4CCC-92A8-427255CDB8F2}
-		{75A7926B-B1AE-4806-B332-9561BFE0EDF9} = {25FD9CFB-C91F-4CCC-92A8-427255CDB8F2}
-		{8E486BCA-FE9B-4F99-9D2E-A277905E84EB} = {6B9906EF-68AA-481A-B40B-3D36C24B39CB}
-		{A81F96D0-4924-40E3-A463-3CB9EE55AA93} = {6B9906EF-68AA-481A-B40B-3D36C24B39CB}
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3211CDB4-72DF-41AD-AE56-4CD818EDA294}
 	EndGlobalSection
 EndGlobal

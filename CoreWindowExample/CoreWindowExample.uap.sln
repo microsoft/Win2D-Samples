@@ -3,15 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWindowExample.uap", "UAP\CoreWindowExample.uap.csproj", "{3AA4FCFF-99F7-4746-957F-79303E9A8952}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CoreWindowExample.Shared", "Shared\CoreWindowExample.Shared.shproj", "{FD83BF4B-D82C-463A-BE38-84F8B9374CCF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWindowExample.uap", "CoreWindowExample.uap.csproj", "{3AA4FCFF-99F7-4746-957F-79303E9A8952}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Shared\CoreWindowExample.Shared.projitems*{fd83bf4b-d82c-463a-be38-84f8b9374ccf}*SharedItemsImports = 13
-		Shared\CoreWindowExample.Shared.projitems*{3aa4fcff-99f7-4746-957f-79303e9a8952}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
 		Debug|Win32 = Debug|Win32
@@ -42,5 +36,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1E24103-61D2-49D2-8575-45C02F7468E4}
 	EndGlobalSection
 EndGlobal
