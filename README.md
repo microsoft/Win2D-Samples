@@ -19,6 +19,9 @@ These sample projects show how to use the Win2D graphics API.
 - **Simple Sample** is, yup, you guessed it! Pretty much the simplest possible app that 
   uses Win2D - it's our version of the venerable "hello world".
 
+- **[Win2D-MazeGame](https://github.com/microsoft/Win2DMazeGame)** (in a separate repository)
+  is the skeleton of a classic maze chase game for Windows 10, written in C# and using Win2D.
+
 These samples reference the NuGet package [Win2D.uwp](http://www.nuget.org/packages/Win2D.uwp), 
 which will be automatically downloaded when you build the sample, so there is no need to 
 separately install Win2D itself. Win2D [source code](http://github.com/Microsoft/Win2D) 
