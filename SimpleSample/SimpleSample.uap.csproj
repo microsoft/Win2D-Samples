@@ -156,7 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Graphics.Win2D">
-      <Version>0.1.0.71-CI</Version>
+      <Version>0.5.0.12</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.11</Version>
