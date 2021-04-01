@@ -2,7 +2,10 @@
 
 These sample projects show how to use the Win2D graphics API.
 
-- **Example Gallery** is the main Win2D demo and sample application. This is a C# XAML 
+- This gallery is currently being updated to use **Project Reunion**.  UWP is in preview in ProjectReunion.0.5.0. 
+  Because these samples are UWP, they are using **ProjectReunion 0.5.0-prerelease**
+
+- [Not yet updated for Reunion] **Example Gallery** is the main Win2D demo and sample application. This is a C# XAML 
   application, and contains many different examples showing various capabilities of 
   Win2D, with a menu to select between them. Start here to get an idea of what Win2D can 
   do and how use it.
@@ -10,16 +13,16 @@ These sample projects show how to use the Win2D graphics API.
     - *Example Gallery is also available in the
       [Store](https://www.microsoft.com/store/apps/9NBLGGGXWT9F).*
 
-- **Composition Example** shows how to use Win2D to draw onto a Windows.UI.Composition 
+- [Not yet updated for Reunion] **Composition Example** shows how to use Win2D to draw onto a Windows.UI.Composition 
   drawing surface or swapchain.
 
-- **CoreWindow Example** is a C# application that draws directly to a CoreWindow, 
+- [Not yet updated for Reunion] **CoreWindow Example** is a C# application that draws directly to a CoreWindow, 
   without using XAML.
 
 - **Simple Sample** is, yup, you guessed it! Pretty much the simplest possible app that 
   uses Win2D - it's our version of the venerable "hello world".
 
-- **[Win2D-MazeGame](https://github.com/microsoft/Win2DMazeGame)** (in a separate repository)
+- [Not yet updated for Reunion] **[Win2D-MazeGame](https://github.com/microsoft/Win2DMazeGame)** (in a separate repository)
   is the skeleton of a classic maze chase game for Windows 10, written in C# and using Win2D.
 
 These samples reference the NuGet package [Win2D.uwp](http://www.nuget.org/packages/Win2D.uwp), 
