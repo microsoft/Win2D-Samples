@@ -77,9 +77,9 @@ Licensed under the MIT License. See LICENSE.txt in the project root for license 
                       SelectionChanged="TimestepTypeOptionsCombo_SelectionChanged"/>
         </StackPanel>
 
-        <canvas:CanvasAnimatedControl x:Name="animatedControl" Grid.Row="0" Grid.Column="1"                                      
+        <!--<canvas:CanvasAnimatedControl x:Name="animatedControl" Grid.Row="0" Grid.Column="1"                                      
                                       CreateResources="OnCreateResources" Draw="OnDraw" Update="OnUpdate"
-                                      PointerPressed="OnPointerPressed" PointerMoved="OnPointerMoved"/>
+                                      PointerPressed="OnPointerPressed" PointerMoved="OnPointerMoved"/>-->
 
     </Grid>
 </UserControl>

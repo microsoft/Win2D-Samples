@@ -3,8 +3,8 @@
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
 using Microsoft.Graphics.Canvas.UI.Xaml;
-using Windows.UI;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI;
+using Microsoft.UI.Xaml.Controls;
 
 namespace SimpleSample
 {

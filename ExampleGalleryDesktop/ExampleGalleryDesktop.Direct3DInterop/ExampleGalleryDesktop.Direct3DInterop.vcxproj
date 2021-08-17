@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\ExampleGallery\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('..\..\ExampleGallery\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.props')" />
+  <Import Project="..\..\ExampleGallery\packages\Microsoft.ProjectReunion.WinUI.0.8.2\build\native\Microsoft.ProjectReunion.WinUI.props" Condition="Exists('..\..\ExampleGallery\packages\Microsoft.ProjectReunion.WinUI.0.8.2\build\native\Microsoft.ProjectReunion.WinUI.props')" />
+  <Import Project="..\..\ExampleGallery\packages\Microsoft.ProjectReunion.Foundation.0.8.2\build\native\Microsoft.ProjectReunion.Foundation.props" Condition="Exists('..\..\ExampleGallery\packages\Microsoft.ProjectReunion.Foundation.0.8.2\build\native\Microsoft.ProjectReunion.Foundation.props')" />
+  <Import Project="..\..\ExampleGallery\packages\Microsoft.ProjectReunion.0.8.2\build\native\Microsoft.ProjectReunion.props" Condition="Exists('..\..\ExampleGallery\packages\Microsoft.ProjectReunion.0.8.2\build\native\Microsoft.ProjectReunion.props')" />
+  <PropertyGroup Label="Globals">
+    <CppWinRTOptimized>true</CppWinRTOptimized>
+    <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
+    <MinimalCoreWin>true</MinimalCoreWin>
+    <ProjectGuid>{4fa0b1ca-f4b0-4e3c-a1bd-e9ee507118b0}</ProjectGuid>
+    <ProjectName>ExampleGalleryDesktop.Direct3DInterop</ProjectName>
+    <RootNamespace>ExampleGalleryDesktop_Direct3DInterop</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
+    <AppContainerApplication>true</AppContainerApplication>
+    <ApplicationType>Windows Store</ApplicationType>
+    <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+    <WindowsTargetPlatformVersion Condition=" '$(WindowsTargetPlatformVersion)' == '' ">10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.17763.0</WindowsTargetPlatformMinVersion>
+    <DesktopCompatible>true</DesktopCompatible>
+    <UseWinUI>true</UseWinUI>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|arm64">
+      <Configuration>Debug</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|arm64">
+      <Configuration>Release</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <GenerateManifest>false</GenerateManifest>
+    <DesktopCompatible>true</DesktopCompatible>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <PreprocessorDefinitions>_WINRT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalUsingDirectories>$(WindowsSDK_WindowsMetadata);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <ModuleDefinitionFile>ExampleGalleryDesktop_Direct3DInterop.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Class.h">
+      <DependentUpon>Class.cpp</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="TeapotRenderer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Class.cpp" />
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="SpriteBatchPerformance.cpp" />
+    <ClCompile Include="TeapotRenderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="Class.idl">
+      <SubType>Code</SubType>
+      <DependentUpon>Class.cpp</DependentUpon>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ExampleGalleryDesktop_Direct3DInterop.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="PropertySheet.props" />
+    <Text Include="readme.txt">
+      <DeploymentContent>false</DeploymentContent>
+    </Text>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\ExampleGallery\packages\Microsoft.ProjectReunion.Foundation.0.8.2\build\native\Microsoft.ProjectReunion.Foundation.targets" Condition="Exists('..\..\ExampleGallery\packages\Microsoft.ProjectReunion.Foundation.0.8.2\build\native\Microsoft.ProjectReunion.Foundation.targets')" />
+    <Import Project="..\..\ExampleGallery\packages\Microsoft.ProjectReunion.WinUI.0.8.2\build\native\Microsoft.ProjectReunion.WinUI.targets" Condition="Exists('..\..\ExampleGallery\packages\Microsoft.ProjectReunion.WinUI.0.8.2\build\native\Microsoft.ProjectReunion.WinUI.targets')" />
+    <Import Project="..\..\ExampleGallery\packages\Microsoft.Graphics.Win2D.0.8.1.150-CI\build\native\Microsoft.Graphics.Win2D.targets" Condition="Exists('..\..\ExampleGallery\packages\Microsoft.Graphics.Win2D.0.8.1.150-CI\build\native\Microsoft.Graphics.Win2D.targets')" />
+    <Import Project="..\..\ExampleGallery\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.targets" Condition="Exists('..\..\ExampleGallery\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.targets')" />
+    <Import Project="..\..\ExampleGallery\packages\directxtk12_uwp.2021.8.2.1\build\native\directxtk12_uwp.targets" Condition="Exists('..\..\ExampleGallery\packages\directxtk12_uwp.2021.8.2.1\build\native\directxtk12_uwp.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\ExampleGallery\packages\Microsoft.ProjectReunion.0.8.2\build\native\Microsoft.ProjectReunion.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\ExampleGallery\packages\Microsoft.ProjectReunion.0.8.2\build\native\Microsoft.ProjectReunion.props'))" />
+    <Error Condition="!Exists('..\..\ExampleGallery\packages\Microsoft.ProjectReunion.Foundation.0.8.2\build\native\Microsoft.ProjectReunion.Foundation.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\ExampleGallery\packages\Microsoft.ProjectReunion.Foundation.0.8.2\build\native\Microsoft.ProjectReunion.Foundation.props'))" />
+    <Error Condition="!Exists('..\..\ExampleGallery\packages\Microsoft.ProjectReunion.Foundation.0.8.2\build\native\Microsoft.ProjectReunion.Foundation.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\ExampleGallery\packages\Microsoft.ProjectReunion.Foundation.0.8.2\build\native\Microsoft.ProjectReunion.Foundation.targets'))" />
+    <Error Condition="!Exists('..\..\ExampleGallery\packages\Microsoft.ProjectReunion.WinUI.0.8.2\build\native\Microsoft.ProjectReunion.WinUI.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\ExampleGallery\packages\Microsoft.ProjectReunion.WinUI.0.8.2\build\native\Microsoft.ProjectReunion.WinUI.props'))" />
+    <Error Condition="!Exists('..\..\ExampleGallery\packages\Microsoft.ProjectReunion.WinUI.0.8.2\build\native\Microsoft.ProjectReunion.WinUI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\ExampleGallery\packages\Microsoft.ProjectReunion.WinUI.0.8.2\build\native\Microsoft.ProjectReunion.WinUI.targets'))" />
+    <Error Condition="!Exists('..\..\ExampleGallery\packages\Microsoft.Graphics.Win2D.0.8.1.150-CI\build\native\Microsoft.Graphics.Win2D.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\ExampleGallery\packages\Microsoft.Graphics.Win2D.0.8.1.150-CI\build\native\Microsoft.Graphics.Win2D.targets'))" />
+    <Error Condition="!Exists('..\..\ExampleGallery\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\ExampleGallery\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.props'))" />
+    <Error Condition="!Exists('..\..\ExampleGallery\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\ExampleGallery\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.targets'))" />
+    <Error Condition="!Exists('..\..\ExampleGallery\packages\directxtk12_uwp.2021.8.2.1\build\native\directxtk12_uwp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\ExampleGallery\packages\directxtk12_uwp.2021.8.2.1\build\native\directxtk12_uwp.targets'))" />
+  </Target>
+</Project>

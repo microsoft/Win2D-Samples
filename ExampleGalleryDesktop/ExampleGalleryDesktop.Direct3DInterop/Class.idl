@@ -1,0 +1,9 @@
+namespace ExampleGalleryDesktop_Direct3DInterop
+{
+    [default_interface]
+    runtimeclass Class
+    {
+        Class();
+        Int32 MyProperty;
+    }
+}
