@@ -9,7 +9,7 @@ using System.Numerics;
 using System.Threading.Tasks;
 using Windows.Foundation;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     // ParticleSystem is an abstract class that provides the basic functionality to
     // create a particle effect. Different subclasses will have different effects,

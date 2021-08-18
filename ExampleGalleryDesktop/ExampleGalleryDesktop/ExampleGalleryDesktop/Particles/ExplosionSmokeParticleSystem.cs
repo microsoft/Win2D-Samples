@@ -5,7 +5,7 @@
 using Microsoft.Graphics.Canvas;
 using System;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     // ExplosionSmokeParticleSystem is a specialization of ParticleSystem which creates a circular
     // pattern of smoke. It should be combined with ExplosionParticleSystem for best effect.

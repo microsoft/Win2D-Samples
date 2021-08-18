@@ -5,7 +5,7 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("ExampleGallery.BackgroundTask")]
+[assembly: AssemblyTitle("ExampleGalleryDesktop.BackgroundTask")]
 [assembly: AssemblyProduct("Win2D")]
 [assembly: AssemblyCompany("Microsoft Corporation")]
 [assembly: AssemblyCopyright("Copyright (c) Microsoft Corporation")]

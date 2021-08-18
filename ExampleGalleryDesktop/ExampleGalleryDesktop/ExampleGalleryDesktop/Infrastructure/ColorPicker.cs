@@ -11,7 +11,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml;
 using Windows.UI;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     class ColorPicker : UserControl
     {

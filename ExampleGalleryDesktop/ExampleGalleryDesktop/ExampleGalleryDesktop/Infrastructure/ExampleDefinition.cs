@@ -4,7 +4,7 @@
 
 using System;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     public class ExampleDefinition
     {

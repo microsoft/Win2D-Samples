@@ -13,7 +13,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     //
     // This control is used by the TextDirectionsExample to draw arrows

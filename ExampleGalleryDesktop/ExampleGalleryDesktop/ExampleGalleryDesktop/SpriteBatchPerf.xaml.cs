@@ -2,7 +2,7 @@
 //
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-using ExampleGallery.Direct3DInterop.SpriteBatchPerformance;
+using ExampleGalleryDesktop.Direct3DInterop.SpriteBatchPerformance;
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Text;
 using Microsoft.Graphics.Canvas.UI.Xaml;
@@ -23,7 +23,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     public sealed partial class SpriteBatchPerf : UserControl, INotifyPropertyChanged
     {

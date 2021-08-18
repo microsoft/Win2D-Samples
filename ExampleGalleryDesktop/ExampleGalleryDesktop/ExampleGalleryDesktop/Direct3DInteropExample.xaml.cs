@@ -2,7 +2,7 @@
 //
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-using ExampleGallery.Direct3DInterop;
+using ExampleGalleryDesktop.Direct3DInterop;
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Effects;
 using Microsoft.Graphics.Canvas.Text;
@@ -15,7 +15,7 @@ using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     public sealed partial class Direct3DInteropExample : Page
     {
@@ -26,7 +26,7 @@ namespace ExampleGallery
         public float BloomBlur { get; set; }
 
 
-        // The TeapotRenderer class is provided by the ExampleGallery.Direct3DInterop project,
+        // The TeapotRenderer class is provided by the ExampleGalleryDesktop.Direct3DInterop project,
         // which is written in C++/CX. It uses interop to combine Direct3D rendering with Win2D.
         TeapotRenderer teapot;
 

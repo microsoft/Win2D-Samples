@@ -7,7 +7,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     // Pop quiz: what does this code do?
     //

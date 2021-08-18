@@ -28,7 +28,7 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Media.Imaging;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     // How this works:
     //  - Instantiate each example in turn

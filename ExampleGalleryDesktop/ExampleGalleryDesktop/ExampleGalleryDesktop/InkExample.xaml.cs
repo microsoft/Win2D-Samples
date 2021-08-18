@@ -24,7 +24,7 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Media;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     public sealed partial class InkExample : UserControl
     {

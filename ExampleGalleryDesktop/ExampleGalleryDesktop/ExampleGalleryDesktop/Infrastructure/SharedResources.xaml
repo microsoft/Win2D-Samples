@@ -8,7 +8,7 @@ Licensed under the MIT License. See LICENSE.txt in the project root for license 
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ExampleGallery">
+    xmlns:local="using:ExampleGalleryDesktop">
 
     <!-- Styles shared between all target platforms -->
 

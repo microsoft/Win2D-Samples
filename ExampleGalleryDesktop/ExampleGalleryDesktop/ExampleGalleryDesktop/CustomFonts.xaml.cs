@@ -15,7 +15,7 @@ using Windows.UI.Core;
 using Windows.UI.Input;
 using Microsoft.UI.Xaml.Controls;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     public sealed partial class CustomFonts : UserControl
     {

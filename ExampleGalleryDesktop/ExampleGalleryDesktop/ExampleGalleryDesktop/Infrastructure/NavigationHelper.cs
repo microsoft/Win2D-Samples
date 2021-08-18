@@ -10,7 +10,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     /// <summary>
     /// NavigationHelper aids in navigation between pages.  It provides commands used to 

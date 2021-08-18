@@ -17,7 +17,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     //
     // This sample demonstrates a way to use subscript and superscript with

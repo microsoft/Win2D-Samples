@@ -31,7 +31,7 @@ using Microsoft.UI.Xaml.Controls;
 // case where we're drawing glyphs using DrawGlyphRun to a CanvasDrawingSession.
 //
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     public sealed partial class GlyphRotation : UserControl
     {

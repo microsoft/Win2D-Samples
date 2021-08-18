@@ -12,7 +12,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.Storage;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     static class Utils
     {

@@ -16,7 +16,7 @@ using Windows.Foundation;
 using Windows.UI;
 using Microsoft.UI.Xaml.Controls;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     public sealed partial class LayersExample : UserControl
     {

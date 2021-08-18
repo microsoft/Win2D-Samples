@@ -23,7 +23,7 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Input;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     public sealed partial class AnimatedControlExample : UserControl
     {

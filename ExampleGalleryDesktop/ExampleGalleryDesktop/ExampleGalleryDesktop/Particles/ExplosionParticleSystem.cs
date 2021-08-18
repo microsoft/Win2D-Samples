@@ -7,7 +7,7 @@ using System;
 using System.Numerics;
 using System.Threading.Tasks;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     // ExplosionParticleSystem is a specialization of ParticleSystem which creates a fiery explosion.
     // It should be combined with ExplosionSmokeParticleSystem for best effect.

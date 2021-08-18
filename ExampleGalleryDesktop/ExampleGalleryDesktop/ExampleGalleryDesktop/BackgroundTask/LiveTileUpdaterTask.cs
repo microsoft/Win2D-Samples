@@ -17,7 +17,7 @@ using Windows.Storage;
 using Microsoft.UI;
 using Windows.UI.Notifications;
 
-namespace ExampleGallery.BackgroundTask
+namespace ExampleGalleryDesktop.BackgroundTask
 {
     //
     // The actual background task.

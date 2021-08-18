@@ -15,7 +15,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     // Implements Conway's Game of Life using GPU image effects.
     public sealed partial class GameOfLife : UserControl

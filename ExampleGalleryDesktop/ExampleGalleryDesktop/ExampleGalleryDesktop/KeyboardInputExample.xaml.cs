@@ -18,7 +18,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     //
     // This example is a simple typing game that demonstrates marshaling

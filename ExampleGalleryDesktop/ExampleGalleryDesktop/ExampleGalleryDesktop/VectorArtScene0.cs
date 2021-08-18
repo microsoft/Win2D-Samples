@@ -7,7 +7,7 @@ using System.Numerics;
 using Windows.Foundation;
 using Windows.UI;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     partial class VectorArt
     {
