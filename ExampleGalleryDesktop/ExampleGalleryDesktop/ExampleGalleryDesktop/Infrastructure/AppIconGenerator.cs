@@ -4,6 +4,7 @@
 
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Effects;
+using Microsoft.UI;
 using System;
 using System.IO;
 using System.Linq;

@@ -15,8 +15,9 @@ using System.Numerics;
 using Windows.Foundation;
 using Windows.Storage;
 using Windows.UI;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 namespace ExampleGallery
 {
@@ -305,7 +306,7 @@ namespace ExampleGallery
             canvasControl = null;
         }
 
-        private void canvasControl_PointerPressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void canvasControl_PointerPressed(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             if (!svgSupported)
                 return;
@@ -314,7 +315,7 @@ namespace ExampleGallery
             canvasControl.Invalidate();
         }
 
-        private void canvasControl_PointerMoved(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void canvasControl_PointerMoved(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             if (pointerDrag == null)
                 return; // Nothing to do
@@ -323,7 +324,7 @@ namespace ExampleGallery
             canvasControl.Invalidate();
         }
 
-        private void canvasControl_PointerReleased(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void canvasControl_PointerReleased(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             if (pointerDrag == null)
                 return; // Nothing to do

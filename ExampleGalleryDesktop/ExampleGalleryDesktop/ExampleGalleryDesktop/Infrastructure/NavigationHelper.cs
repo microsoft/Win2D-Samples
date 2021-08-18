@@ -6,9 +6,9 @@ using System;
 using System.Collections.Generic;
 using Windows.System;
 using Windows.UI.Core;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Navigation;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Navigation;
 
 namespace ExampleGallery
 {
@@ -42,8 +42,8 @@ namespace ExampleGallery
     /// </code>
     /// 
     /// 2) Register the page to call into the NavigationHelper whenever the page participates 
-    ///     in navigation by overriding the <see cref="Windows.UI.Xaml.Controls.Page.OnNavigatedTo"/> 
-    ///     and <see cref="Windows.UI.Xaml.Controls.Page.OnNavigatedFrom"/> events.
+    ///     in navigation by overriding the <see cref="Microsoft.UI.Xaml.Controls.Page.OnNavigatedTo"/> 
+    ///     and <see cref="Microsoft.UI.Xaml.Controls.Page.OnNavigatedFrom"/> events.
     /// <code>
     ///     protected override void OnNavigatedTo(NavigationEventArgs e)
     ///     {
@@ -186,7 +186,7 @@ namespace ExampleGallery
 
         /// <summary>
         /// Virtual method used by the <see cref="GoBackCommand"/> property
-        /// to invoke the <see cref="Windows.UI.Xaml.Controls.Frame.GoBack"/> method.
+        /// to invoke the <see cref="Microsoft.UI.Xaml.Controls.Frame.GoBack"/> method.
         /// </summary>
         public virtual void GoBack()
         {
@@ -194,7 +194,7 @@ namespace ExampleGallery
         }
         /// <summary>
         /// Virtual method used by the <see cref="GoForwardCommand"/> property
-        /// to invoke the <see cref="Windows.UI.Xaml.Controls.Frame.GoForward"/> method.
+        /// to invoke the <see cref="Microsoft.UI.Xaml.Controls.Frame.GoForward"/> method.
         /// </summary>
         public virtual void GoForward()
         {

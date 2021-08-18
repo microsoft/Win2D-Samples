@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Popups;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 namespace ExampleGallery
 {
@@ -175,7 +175,7 @@ namespace ExampleGallery
         private async void checkLeaks_Click(object sender, RoutedEventArgs e)
         {
             var leakCheckFrame = new Frame();
-            leakCheckFrame.HorizontalContentAlignment = Windows.UI.Xaml.HorizontalAlignment.Stretch;
+            leakCheckFrame.HorizontalContentAlignment = Microsoft.UI.Xaml.HorizontalAlignment.Stretch;
             leakCheckFrame.Height = 500;
 
             panel.Children.Add(leakCheckFrame);

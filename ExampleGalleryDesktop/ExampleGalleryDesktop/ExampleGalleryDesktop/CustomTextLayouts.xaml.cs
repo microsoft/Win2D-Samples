@@ -11,9 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using Windows.Foundation;
-using Windows.UI;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 namespace ExampleGallery
 {
@@ -274,7 +274,7 @@ namespace ExampleGallery
             else if (CurrentLayoutShapeOption == LayoutShapeOption.TextOutline)
             {
                 CanvasTextFormat textFormat = new CanvasTextFormat();
-                textFormat.FontWeight = Windows.UI.Text.FontWeights.ExtraBold;
+                textFormat.FontWeight = Microsoft.UI.Text.FontWeights.ExtraBold;
                 textFormat.WordWrapping = CanvasWordWrapping.NoWrap;
                 textFormat.FontFamily = fontPicker.CurrentFontFamily;
                 CanvasTextLayout textLayout = new CanvasTextLayout(sender, textLayoutBoxInput.Text, textFormat, 0, 0);
@@ -1094,14 +1094,14 @@ namespace ExampleGallery
             needsLayout = true;
         }
 
-        private void Canvas_PointerPressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void Canvas_PointerPressed(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             pointerPressPosition = e.GetCurrentPoint(canvas).Position;
             canvas.Invalidate();
             e.Handled = true;
         }
 
-        private void Canvas_PointerMoved(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void Canvas_PointerMoved(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             if (e.Pointer.IsInContact)
             {

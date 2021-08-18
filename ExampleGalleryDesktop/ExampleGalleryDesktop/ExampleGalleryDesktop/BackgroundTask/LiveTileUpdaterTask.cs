@@ -14,7 +14,7 @@ using Windows.ApplicationModel.Background;
 using Windows.Data.Xml.Dom;
 using Windows.Foundation;
 using Windows.Storage;
-using Windows.UI;
+using Microsoft.UI;
 using Windows.UI.Notifications;
 
 namespace ExampleGallery.BackgroundTask

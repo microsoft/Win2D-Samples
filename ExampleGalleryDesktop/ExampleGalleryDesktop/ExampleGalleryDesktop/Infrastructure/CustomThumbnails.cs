@@ -4,10 +4,11 @@
 
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Text;
+using Microsoft.UI;
+using Microsoft.UI.Xaml;
 using System;
 using Windows.Storage.Streams;
 using Windows.UI;
-using Windows.UI.Xaml;
 
 namespace ExampleGallery
 {
