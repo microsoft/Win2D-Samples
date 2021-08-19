@@ -1,0 +1,187 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>ExampleGalleryDesktop_2</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>x86;x64;arm64</Platforms>
+    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    <UseWinUI>true</UseWinUI>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="ArcOptions.xaml" />
+    <None Remove="BackgroundTaskExample.xaml" />
+    <None Remove="BitmapRotation.xaml" />
+    <None Remove="BlankWindow1.xaml" />
+    <None Remove="BlankWindow2.xaml" />
+    <None Remove="CameraEffectExample.xaml" />
+    <None Remove="DrawImageEmulations.xaml" />
+    <None Remove="EffectRegionMapping.xaml" />
+    <None Remove="EffectsExample.xaml" />
+    <None Remove="FontMetrics.xaml" />
+    <None Remove="GlyphRotation.xaml" />
+    <None Remove="GradientMeshExample.xaml" />
+    <None Remove="HistogramExample.xaml" />
+    <None Remove="ImageSourceUpdateRegion.xaml" />
+    <None Remove="imageTiger.jpg" />
+    <None Remove="Infrastructure\About.xaml" />
+    <None Remove="Infrastructure\DeveloperTools.xaml" />
+    <None Remove="Infrastructure\ExamplePage.xaml" />
+    <None Remove="Infrastructure\MainPage.xaml" />
+    <None Remove="Infrastructure\SharedResources.xaml" />
+    <None Remove="Infrastructure\ThumbnailGenerator.xaml" />
+    <None Remove="InkExample.xaml" />
+    <None Remove="Mandelbrot.xaml" />
+    <None Remove="PlatformResources.xaml" />
+    <None Remove="PrintingExample.xaml" />
+    <None Remove="ShapesExample.xaml" />
+    <None Remove="StrokeStyles.xaml" />
+    <None Remove="SubscriptSuperscript.xaml" />
+    <None Remove="SvgExample.xaml" />
+    <None Remove="TextDirectionsExample.xaml" />
+    <None Remove="TextLayouts.xaml" />
+    <None Remove="TextOutlines.xaml" />
+    <None Remove="TypographyExample.xaml" />
+    <None Remove="UserControl1.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="BasicVideoEffectExample.xaml" />
+    <None Remove="VectorArt.xaml" />
+    <None Remove="VirtualBitmapExample.xaml" />
+    <None Remove="VirtualControlExample.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="imageTiger.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.2" />
+    <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.2" />
+    <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.2" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ExampleGalleryDesktop.BackgroundTask\ExampleGalleryDesktop.BackgroundTask.csproj" />
+    <ProjectReference Include="..\..\ExampleGalleryDesktop.Effects\ExampleGalleryDesktop.Effects.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="BlankWindow2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="ArcOptions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="BackgroundTaskExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="BasicVideoEffectExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="BitmapRotation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="CameraEffectExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="DrawImageEmulations.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="EffectRegionMapping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="EffectsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <!--<Generator>MSBuild:Compile</Generator>-->
+    </Page>
+    <Page Update="FontMetrics.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="GlyphRotation.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="GradientMeshExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="HistogramExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="ImageSourceUpdateRegion.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Infrastructure\About.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Infrastructure\DeveloperTools.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Infrastructure\ExamplePage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Infrastructure\MainPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Infrastructure\SharedResources.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Infrastructure\ThumbnailGenerator.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="InkExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Mandelbrot.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="PlatformResources.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="PrintingExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="ShapesExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="StrokeStyles.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="SubscriptSuperscript.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="SvgExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="TextDirectionsExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="TextLayouts.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="TextOutlines.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="TypographyExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="UserControl1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="BlankWindow1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="VectorArt.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="VirtualBitmapExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="VirtualControlExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+</Project>
