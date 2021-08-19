@@ -17,7 +17,7 @@ using Windows.Data.Xml.Dom;
 using Windows.Foundation;
 using Windows.Storage;
 
-namespace ExampleGallery.BackgroundTask
+namespace ExampleGalleryDesktop.BackgroundTask
 {
     //
     // The actual background task.

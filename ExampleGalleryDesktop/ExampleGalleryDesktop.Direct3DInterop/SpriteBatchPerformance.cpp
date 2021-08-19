@@ -10,7 +10,7 @@ using namespace winrt::Microsoft::Graphics::Canvas;
 using namespace winrt::Windows::Foundation::Numerics;
 using namespace winrt::Windows::Graphics::DirectX::Direct3D11;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     namespace Direct3DInterop
     {

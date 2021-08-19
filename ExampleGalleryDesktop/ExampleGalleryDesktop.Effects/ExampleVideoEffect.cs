@@ -14,7 +14,7 @@ using Windows.Media.Effects;
 using Windows.Media.MediaProperties;
 using Windows.UI.Text;
 
-namespace ExampleGallery.Effects
+namespace ExampleGalleryDesktop.Effects
 {
     public sealed class ExampleVideoEffect : IBasicVideoEffect
     {

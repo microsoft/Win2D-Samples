@@ -5,7 +5,7 @@
 #include "pch.h"
 #include "TeapotRenderer.h"
 
-using namespace ExampleGallery::Direct3DInterop;
+using namespace ExampleGalleryDesktop::Direct3DInterop;
 
 
 TeapotRenderer::TeapotRenderer(ICanvasResourceCreator const& resourceCreator)

@@ -4,7 +4,7 @@
 
 #pragma once
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     namespace Direct3DInterop
     {

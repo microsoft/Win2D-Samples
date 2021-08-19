@@ -8,7 +8,7 @@ using Windows.ApplicationModel.Background;
 using Windows.Foundation;
 using Windows.Storage;
 
-namespace ExampleGallery.BackgroundTask
+namespace ExampleGalleryDesktop.BackgroundTask
 {
     //
     // This manages starting / stopping the live tile updating background task and 

@@ -14,7 +14,7 @@ using Windows.Graphics.DirectX.Direct3D11;
 using Windows.Media.Effects;
 using Windows.Media.MediaProperties;
 
-namespace ExampleGallery.Effects
+namespace ExampleGalleryDesktop.Effects
 {
     public sealed class RotatedTilesEffect : IBasicVideoEffect
     {
