@@ -14,7 +14,7 @@ using Windows.UI.Popups;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace ExampleGalleryDesktop_2
+namespace ExampleGalleryDesktop
 {
     public sealed partial class BasicVideoEffectExample : UserControl, ICustomThumbnailSource
     {
