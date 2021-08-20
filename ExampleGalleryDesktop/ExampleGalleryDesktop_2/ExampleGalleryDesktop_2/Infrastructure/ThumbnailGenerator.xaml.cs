@@ -171,7 +171,7 @@ namespace ExampleGalleryDesktop
             async Task CaptureThumbnail(UserControl exampleControl, ExampleDefinition exampleDefinition)
             {
                 CanvasControl canvasControl;
-                ICanvasAnimatedControl animatedControl;
+                //ICanvasAnimatedControl animatedControl;
                 MethodInfo drawMethod;
 
                 // If there are any ProgressRing indicators in the UI, wait for them to finish whatever they are doing.
@@ -190,11 +190,11 @@ namespace ExampleGalleryDesktop
                     // It's a CanvasControl!
                     await CaptureThumbnailFromCanvasControl(canvasControl, drawMethod);
                 }
-                else if (FindControlAndDrawMethod<ICanvasAnimatedControl, CanvasAnimatedDrawEventArgs>(exampleControl, out animatedControl, out drawMethod))
-                {
-                    // It's a CanvasAnimatedControl!
-                    await CaptureThumbnailFromAnimatedControl(animatedControl, drawMethod);
-                }
+                //else if (FindControlAndDrawMethod<ICanvasAnimatedControl, CanvasAnimatedDrawEventArgs>(exampleControl, out animatedControl, out drawMethod))
+                //{
+                //    // It's a CanvasAnimatedControl!
+                //    await CaptureThumbnailFromAnimatedControl(animatedControl, drawMethod);
+                //}
                 else
                 {
                     // This example does not use either of the Win2D controls, but we can still capture it via a XAML RenderTargetBitmap.
@@ -224,30 +224,30 @@ namespace ExampleGalleryDesktop
             }
 
 
-            async Task CaptureThumbnailFromAnimatedControl(ICanvasAnimatedControl animatedControl, MethodInfo drawMethod)
-            {
-                // Wait for the control to be ready.
-                while (!animatedControl.ReadyToDraw)
-                {
-                    await Task.Delay(1);
-                }
+            //async Task CaptureThumbnailFromAnimatedControl(ICanvasAnimatedControl animatedControl, MethodInfo drawMethod)
+            //{
+            //    // Wait for the control to be ready.
+            //    while (!animatedControl.ReadyToDraw)
+            //    {
+            //        await Task.Delay(1);
+            //    }
 
-                // Wait a while for any animations to settle into a good looking state.
-                await Task.Delay(TimeSpan.FromSeconds(animationDelay));
+            //    // Wait a while for any animations to settle into a good looking state.
+            //    await Task.Delay(TimeSpan.FromSeconds(animationDelay));
 
-                // Run the capture operation on the game loop thread.
-                await GameLoopSynchronizationContext.RunOnGameLoopThreadAsync(animatedControl, async () =>
-                {
-                    // Capture a thumbnail from the control.
-                    var timing = new CanvasTimingInformation
-                    {
-                        TotalTime = TimeSpan.FromSeconds(animationDelay),
-                        UpdateCount = (int)(animationDelay * 60),
-                    };
+            //    // Run the capture operation on the game loop thread.
+            //    await GameLoopSynchronizationContext.RunOnGameLoopThreadAsync(animatedControl, async () =>
+            //    {
+            //        // Capture a thumbnail from the control.
+            //        var timing = new CanvasTimingInformation
+            //        {
+            //            TotalTime = TimeSpan.FromSeconds(animationDelay),
+            //            UpdateCount = (int)(animationDelay * 60),
+            //        };
 
-                    await CaptureThumbnailFromControl(animatedControl, animatedControl.Size, drawMethod, ds => new CanvasAnimatedDrawEventArgs(ds, timing));
-                });
-            }
+            //        await CaptureThumbnailFromControl(animatedControl, animatedControl.Size, drawMethod, ds => new CanvasAnimatedDrawEventArgs(ds, timing));
+            //    });
+            //}
 
 
             async Task CaptureThumbnailFromXaml()
