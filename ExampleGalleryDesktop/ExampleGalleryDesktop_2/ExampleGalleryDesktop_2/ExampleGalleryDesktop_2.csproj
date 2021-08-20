@@ -10,6 +10,11 @@
     <UseWinUI>true</UseWinUI>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="BasicVideoEffectExample.xaml.cs" />
+    <Compile Remove="CameraEffectExample.xaml.cs" />
+    <Compile Remove="InkExample.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="ArcOptions.xaml" />
     <None Remove="BackgroundTaskExample.xaml" />
     <None Remove="BitmapRotation.xaml" />
@@ -139,6 +144,11 @@
     <None Remove="VirtualControlExample.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <Page Remove="BasicVideoEffectExample.xaml" />
+    <Page Remove="CameraEffectExample.xaml" />
+    <Page Remove="InkExample.xaml" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="imageTiger.jpg" />
     <Content Include="Thumbnails\AboutNarrow.png" />
     <Content Include="Thumbnails\AboutWide.png" />
@@ -251,14 +261,8 @@
     <Page Update="BackgroundTaskExample.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Update="BasicVideoEffectExample.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Update="BitmapRotation.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Update="CameraEffectExample.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
     <Page Update="DrawImageEmulations.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -301,9 +305,6 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
     <Page Update="Infrastructure\ThumbnailGenerator.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-    </Page>
-    <Page Update="InkExample.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
     <Page Update="Mandelbrot.xaml">

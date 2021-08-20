@@ -62,24 +62,24 @@ namespace ExampleGalleryDesktop
 
 
     // CustomControlExample replaces its normal UI with a single glow control when generating thumbnails.
-    partial class CustomControlExample
-    {
-        private void InitializeThumbnail()
-        {
-            if (ThumbnailGenerator.IsDrawingThumbnail)
-            {
-                Content = new GlowTextCustomControl()
-                {
-                    Text = "Glow",
-                    GlowAmount = 30,
-                    GlowColor = Colors.Yellow,
-                    TextColor = Colors.White,
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Center
-                };
-            }
-        }
-    }
+    //partial class CustomControlExample
+    //{
+    //    private void InitializeThumbnail()
+    //    {
+    //        if (ThumbnailGenerator.IsDrawingThumbnail)
+    //        {
+    //            Content = new GlowTextCustomControl()
+    //            {
+    //                Text = "Glow",
+    //                GlowAmount = 30,
+    //                GlowColor = Colors.Yellow,
+    //                TextColor = Colors.White,
+    //                HorizontalAlignment = HorizontalAlignment.Center,
+    //                VerticalAlignment = VerticalAlignment.Center
+    //            };
+    //        }
+    //    }
+    //}
 
 
     // Printing example doesn't have any Win2D content, so we need to draw one

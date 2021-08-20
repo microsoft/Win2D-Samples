@@ -76,7 +76,7 @@ namespace ExampleGalleryDesktop
             //new ExampleDefinition("Custom Text Layouts", typeof(CustomTextLayouts)),
 
             // Show how to use the API.
-            new ExampleDefinition("Custom Control", typeof(CustomControlExample)),
+            //new ExampleDefinition("Custom Control", typeof(CustomControlExample)),
             new ExampleDefinition("Virtual Control", typeof(VirtualControlExample)),
             //new ExampleDefinition("Animated Control", typeof(AnimatedControlExample)),
             new ExampleDefinition("Virtual Bitmap", typeof(VirtualBitmapExample)),

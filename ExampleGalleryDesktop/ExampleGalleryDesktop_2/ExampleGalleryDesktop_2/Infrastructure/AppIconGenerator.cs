@@ -225,9 +225,9 @@ namespace ExampleGalleryDesktop
         {
             string text = (iconInfo.Width < 42) ? "W" : "Win2D";
 
-            var burningText = new BurningTextExample();
+            //var burningText = new BurningTextExample();
 
-            burningText.DrawIcon(ds, text);
+            //burningText.DrawIcon(ds, text);
         }
 
 
