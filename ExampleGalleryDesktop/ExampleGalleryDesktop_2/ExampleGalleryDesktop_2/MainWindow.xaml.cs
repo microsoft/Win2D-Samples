@@ -26,12 +26,30 @@ namespace ExampleGalleryDesktop
         public MainWindow()
         {
             this.InitializeComponent();
+
+            // filling the Navigation Menu with the samples
+            var exampleDefinitions = ExampleDefinitions.Definitions;
+            foreach (ExampleDefinition ed in exampleDefinitions)
+            {
+                NavigationViewItem navItem = new NavigationViewItem();
+                navItem.Content = ed.Name;
+                ExampleMenu.MenuItems.Add(navItem);
+            }
+
             ContentFrame.Navigate(typeof(MainPage));
         }
 
         private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
-            ContentFrame.Navigate(typeof(ExamplePage), new ExampleDefinition("Arc Options", typeof(ArcOptions)));
+            if ((string) args.InvokedItem == "Home")
+            {
+                ContentFrame.Navigate(typeof(MainPage));
+            }
+            else
+            {
+                var invokedExample = ExampleDefinitions.Definitions.First(x => (string)x.Name == (string)args.InvokedItem);
+                ContentFrame.Navigate(typeof(ExamplePage), invokedExample);
+            }
         }
     }
 }

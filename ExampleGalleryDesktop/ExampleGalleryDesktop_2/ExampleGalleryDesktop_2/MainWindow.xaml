@@ -8,12 +8,10 @@
     mc:Ignorable="d">
 
     <NavigationView x:Name="ExampleMenu"
-                    ItemInvoked="NavView_ItemInvoked">
+                    ItemInvoked="NavView_ItemInvoked"
+                    IsSettingsVisible="False">
         <NavigationView.MenuItems>
-            <NavigationViewItem Icon="Play" Content="Menu Item1" Tag="SamplePage1" />
-            <NavigationViewItem Icon="Save" Content="Menu Item2" Tag="SamplePage2" />
-            <NavigationViewItem Icon="Refresh" Content="Menu Item3" Tag="SamplePage3" />
-            <NavigationViewItem Icon="Download" Content="Menu Item4" Tag="SamplePage4" />
+            <NavigationViewItem Icon="Home" Content="Home" Tag="HomePage" />
         </NavigationView.MenuItems>
         <Frame x:Name="ContentFrame" Margin="24"/>
     </NavigationView>
