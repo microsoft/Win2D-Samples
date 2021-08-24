@@ -11,33 +11,33 @@ namespace ExampleGalleryDesktop
 {
     public sealed partial class ExamplePage : Page
     {
-        private NavigationHelper navigationHelper;
+        //private NavigationHelper navigationHelper;
 
         public ExamplePage()
         {
             this.InitializeComponent();         
 
-            this.navigationHelper = new NavigationHelper(this);
+            //this.navigationHelper = new NavigationHelper(this);
 
             if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
             {
                 this.DataContext = new ExampleDefinition("An Example", null);
             }
 
-            if (this.navigationHelper.HasHardwareButtons)
-            {
-                this.backButton.Visibility = Visibility.Collapsed;
-            }
+            //if (this.navigationHelper.HasHardwareButtons)
+            //{
+            //    this.backButton.Visibility = Visibility.Collapsed;
+            //}
         }
 
-        public NavigationHelper NavigationHelper
-        {
-            get { return this.navigationHelper; }
-        }
+        //public NavigationHelper NavigationHelper
+        //{
+        //    get { return this.navigationHelper; }
+        //}
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {            
-            this.navigationHelper.OnNavigatedTo(e);
+            //this.navigationHelper.OnNavigatedTo(e);
 
             var example = e.Parameter as ExampleDefinition;
             if (example != null)
@@ -54,7 +54,7 @@ namespace ExampleGalleryDesktop
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            this.navigationHelper.OnNavigatedFrom(e);
+            //this.navigationHelper.OnNavigatedFrom(e);
         }
     }
 }

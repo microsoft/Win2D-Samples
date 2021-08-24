@@ -10,7 +10,7 @@ namespace ExampleGalleryDesktop
 {
     public sealed partial class MainPage : Page
     {
-        private NavigationHelper navigationHelper;
+        //private NavigationHelper navigationHelper;
 
         // We track the last visual state we set to avoid redundant GoToState calls
         // (these cause flickering on 8.1 apps running on Win10).
@@ -21,7 +21,7 @@ namespace ExampleGalleryDesktop
         {
             this.InitializeComponent();
 
-            this.navigationHelper = new NavigationHelper(this);
+            //this.navigationHelper = new NavigationHelper(this);
         }
 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e)
@@ -30,19 +30,19 @@ namespace ExampleGalleryDesktop
             this.Frame.Navigate(typeof(ExamplePage), example);
         }
 
-        public NavigationHelper NavigationHelper
-        {
-            get { return this.navigationHelper; }
-        }
+        //public NavigationHelper NavigationHelper
+        //{
+        //    get { return this.navigationHelper; }
+        //}
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.navigationHelper.OnNavigatedTo(e);
+            //this.navigationHelper.OnNavigatedTo(e);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            this.navigationHelper.OnNavigatedFrom(e);
+            //this.navigationHelper.OnNavigatedFrom(e);
         }
 
         private void OnSizeChanged(object sender, SizeChangedEventArgs e)

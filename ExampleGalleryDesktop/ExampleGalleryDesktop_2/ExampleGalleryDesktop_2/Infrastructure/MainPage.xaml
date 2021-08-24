@@ -88,7 +88,6 @@ Licensed under the MIT License. See LICENSE.txt in the project root for license 
         </VisualStateManager.VisualStateGroups>
 
 
-
         <Grid Margin="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
