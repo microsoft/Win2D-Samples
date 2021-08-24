@@ -40,7 +40,7 @@ namespace ExampleGallery
                     transparentPropertyInfo = item;
             }
 
-            // animatedControl.ClearColor = Colors.Transparent;
+            animatedControl.ClearColor = Colors.Transparent;
             clearColor.SelectedItem = transparentPropertyInfo;
 
             CurrentTimestepType = TimestepTypeOption.Fixed;
@@ -50,21 +50,20 @@ namespace ExampleGallery
         {
             get
             {
-                //return (int)animatedControl.TargetElapsedTime.Ticks;
-                return 0;
+                return (int)animatedControl.TargetElapsedTime.Ticks;
             }
 
             set
             {
-                //animatedControl.TargetElapsedTime = new TimeSpan(value);
-                //
-                //// If we're paused then do one step to allow the display to update for the new
-                //// value.
-                //if (animatedControl.Paused)
-                //{
-                //    step = true;
-                //    animatedControl.Paused = false;
-                //}
+                animatedControl.TargetElapsedTime = new TimeSpan(value);
+
+                // If we're paused then do one step to allow the display to update for the new
+                // value.
+                if (animatedControl.Paused)
+                {
+                    step = true;
+                    animatedControl.Paused = false;
+                }
             }
         }
 
@@ -187,36 +186,36 @@ namespace ExampleGallery
             {
                 touchPointsRenderer.OnPointerPressed();
             }
-            //animatedControl.Invalidate();
+            animatedControl.Invalidate();
         }
 
         private void OnPointerMoved(object sender, PointerRoutedEventArgs e)
         {
-            //lock (touchPointsRenderer)
-            //{
-            //    touchPointsRenderer.OnPointerMoved(e.GetIntermediatePoints(animatedControl));
-            //}
-            //animatedControl.Invalidate();
+            lock (touchPointsRenderer)
+            {
+                touchPointsRenderer.OnPointerMoved(e.GetIntermediatePoints(animatedControl));
+            }
+            animatedControl.Invalidate();
         }
 
         private void Pause_Checked(object sender, RoutedEventArgs e)
         {
             var button = (ToggleButton)sender;
-            //this.animatedControl.Paused = button.IsChecked.Value;
+            this.animatedControl.Paused = button.IsChecked.Value;
             this.stepButton.IsEnabled = true;
         }
 
         private void Pause_Unchecked(object sender, RoutedEventArgs e)
         {
             var button = (ToggleButton)sender;
-            //this.animatedControl.Paused = button.IsChecked.Value;
+            this.animatedControl.Paused = button.IsChecked.Value;
             this.stepButton.IsEnabled = false;
         }
 
         private void Step_Clicked(object sender, RoutedEventArgs e)
         {
             step = true;
-            //this.animatedControl.Paused = false;
+            this.animatedControl.Paused = false;
         }
 
         private void clearColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -225,13 +224,13 @@ namespace ExampleGallery
             if (selectedItem != null)
             {
                 var color = (Color)selectedItem.GetValue(null);
-                //animatedControl.ClearColor = color;
+                animatedControl.ClearColor = color;
             }
         }
 
         public void TimestepTypeOptionsCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //this.animatedControl.IsFixedTimeStep = CurrentTimestepType == TimestepTypeOption.Fixed;
+            this.animatedControl.IsFixedTimeStep = CurrentTimestepType == TimestepTypeOption.Fixed;
 
             targetElapsedTime.IsEnabled = CurrentTimestepType == TimestepTypeOption.Fixed;
         }
@@ -239,8 +238,8 @@ namespace ExampleGallery
         private void control_Unloaded(object sender, RoutedEventArgs e)
         {
             // Explicitly remove references to allow the Win2D controls to get garbage collected
-            //animatedControl.RemoveFromVisualTree();
-            //animatedControl = null;
+            animatedControl.RemoveFromVisualTree();
+            animatedControl = null;
         }
     }
 
