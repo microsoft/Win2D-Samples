@@ -28,5 +28,10 @@ namespace ExampleGalleryDesktop
             this.InitializeComponent();
             ContentFrame.Navigate(typeof(MainPage));
         }
+
+        private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+            ContentFrame.Navigate(typeof(ExamplePage), new ExampleDefinition("Arc Options", typeof(ArcOptions)));
+        }
     }
 }
