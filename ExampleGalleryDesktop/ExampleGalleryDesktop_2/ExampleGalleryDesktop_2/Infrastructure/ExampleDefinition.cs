@@ -83,7 +83,7 @@ namespace ExampleGalleryDesktop
             //new ExampleDefinition("Direct3D Interop", typeof(Direct3DInteropExample)),
             //new ExampleDefinition("Keyboard Input", typeof(KeyboardInputExample)),
             new ExampleDefinition("Background Task", typeof(BackgroundTaskExample)),
-            new ExampleDefinition("Printing", typeof(PrintingExample)),
+            //new ExampleDefinition("Printing", typeof(PrintingExample)),
 
             // Tests for internal use by the Win2D team.
             new ExampleDefinition("Image Source Update Region", typeof(ImageSourceUpdateRegion)),
