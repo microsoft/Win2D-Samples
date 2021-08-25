@@ -107,7 +107,7 @@ namespace ExampleGalleryDesktop
 
         async Task Canvas_CreateResourcesAsync(CanvasControl sender)
         {
-            bitmapTiger = await CanvasBitmap.LoadAsync(sender, "imageTiger.jpg");
+            bitmapTiger = await CanvasBitmap.LoadAsync(sender, new Uri("ms-appx:///imageTiger.jpg"), 96);
 
             CreateEffect();
         }

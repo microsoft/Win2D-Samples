@@ -125,7 +125,7 @@ namespace ExampleGalleryDesktop
 
         async Task canvasControl_CreateResourcesAsync(CanvasControl sender)
         {
-            tiger = await CanvasBitmap.LoadAsync(sender, "imageTiger.jpg");
+            tiger = await CanvasBitmap.LoadAsync(sender, new Uri("ms-appx:///imageTiger.jpg"), 96);
         }
 
         private void canvasControl_Draw(CanvasControl sender, CanvasDrawEventArgs args)

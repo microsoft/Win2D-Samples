@@ -55,7 +55,7 @@ namespace ExampleGalleryDesktop
 
         async Task Canvas_CreateResourcesAsync(CanvasControl sender)
         {
-            bitmap = await CanvasBitmap.LoadAsync(sender, "imageTiger.jpg");
+            bitmap = await CanvasBitmap.LoadAsync(sender, new Uri("ms-appx:///imageTiger.jpg"), 96);
 
             redBrush   = CreateGradientBrush(sender, 255, 0, 0);
             greenBrush = CreateGradientBrush(sender, 0, 255, 0);
