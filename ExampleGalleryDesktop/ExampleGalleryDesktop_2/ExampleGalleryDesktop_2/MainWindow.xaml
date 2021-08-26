@@ -9,7 +9,8 @@
 
     <NavigationView x:Name="ExampleMenu"
                     ItemInvoked="NavView_ItemInvoked"
-                    IsSettingsVisible="False">
+                    IsSettingsVisible="False"
+                    IsBackButtonVisible="Collapsed">
         <NavigationView.MenuItems>
             <NavigationViewItem Icon="Home" Content="Home" Tag="HomePage" />
         </NavigationView.MenuItems>
