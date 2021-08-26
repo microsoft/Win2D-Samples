@@ -55,12 +55,14 @@ namespace ExampleGalleryDesktop
 
         async Task<StorageFolder> PickOutputFolder(string title)
         {
+            var hwnd = ExampleGalleryDesktop_2.App.m_mainWindowHandle; // temporarily using a static variable to store the handle of the main window.
             var folderPicker = new FolderPicker
             {
                 CommitButtonText = title,
                 SuggestedStartLocation = PickerLocationId.Desktop,
                 FileTypeFilter = { ".png" },
             };
+            WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hwnd);
 
             return await folderPicker.PickSingleFolderAsync();
         }

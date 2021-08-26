@@ -109,7 +109,7 @@ namespace ExampleGalleryDesktop
 
         private async Task Open(CanvasVirtualBitmapOptions options)
         {
-            var hwnd = ExampleGalleryDesktop_2.App.m_mainWindowHandle; // temporarily using a static variable to store the main window.
+            var hwnd = ExampleGalleryDesktop_2.App.m_mainWindowHandle; // temporarily using a static variable to store the handle of the main window.
             var filePicker = new FileOpenPicker();
             filePicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
             filePicker.FileTypeFilter.Add("*");
