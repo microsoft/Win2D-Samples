@@ -24,6 +24,9 @@ namespace ExampleGalleryDesktop_2
 {
     public partial class App : Application
     {
+        // temporary way to access the current window from Example classes
+        public static IntPtr m_mainWindowHandle;
+
         /// <summary>
         /// Initializes the singleton application object. This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -44,6 +47,7 @@ namespace ExampleGalleryDesktop_2
         {
             m_window = new MainWindow();
             m_window.Activate();
+            m_mainWindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(m_window);
         }
 
 
