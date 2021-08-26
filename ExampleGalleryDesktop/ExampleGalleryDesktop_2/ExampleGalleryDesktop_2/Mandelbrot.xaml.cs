@@ -110,9 +110,18 @@ namespace ExampleGalleryDesktop
         }
 
 
-        void Display_DpiChanged(DisplayInformation sender, object args)
+        //void Display_DpiChanged(DisplayInformation sender, object args)
+        //{
+        //    displayDpi = sender.LogicalDpi;
+
+        //    // Manually call the ViewChanged handler to update DpiScale.
+        //    ScrollViewer_ViewChanged(null, null);
+        //}
+
+        void Display_DpiChanged(XamlRoot sender, object args)
         {
-            displayDpi = sender.LogicalDpi;
+            // in Reunion, DPI is represented in the XamlRoot
+            displayDpi = (float) sender.RasterizationScale;
 
             // Manually call the ViewChanged handler to update DpiScale.
             ScrollViewer_ViewChanged(null, null);
@@ -153,8 +162,9 @@ namespace ExampleGalleryDesktop
         void control_Loaded(object sender, RoutedEventArgs e)
         {
             // Initialize the display DPI, and listen for events in case this changes.
-            var display = DisplayInformation.GetForCurrentView();
-            display.DpiChanged += Display_DpiChanged;
+            // In WinUI3, DPI info found in XamlRoot
+            var display = XamlRoot;
+            display.Changed += Display_DpiChanged;
             Display_DpiChanged(display, null);
 
             // Initialize the help text depending on what input devices are available.
@@ -188,7 +198,8 @@ namespace ExampleGalleryDesktop
             canvas.RemoveFromVisualTree();
             canvas = null;
 
-            DisplayInformation.GetForCurrentView().DpiChanged -= Display_DpiChanged;
+            XamlRoot.Changed -= Display_DpiChanged;
+            //DisplayInformation.GetForCurrentView().DpiChanged -= Display_DpiChanged;
         }
     }
 }
