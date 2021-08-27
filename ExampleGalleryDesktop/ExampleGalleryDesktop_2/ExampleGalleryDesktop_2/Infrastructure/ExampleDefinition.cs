@@ -82,7 +82,7 @@ namespace ExampleGalleryDesktop
             new ExampleDefinition("Virtual Bitmap", typeof(VirtualBitmapExample)),
             //new ExampleDefinition("Direct3D Interop", typeof(Direct3DInteropExample)),
             //new ExampleDefinition("Keyboard Input", typeof(KeyboardInputExample)),
-            new ExampleDefinition("Background Task", typeof(BackgroundTaskExample)),
+            //new ExampleDefinition("Background Task", typeof(BackgroundTaskExample)),
             //new ExampleDefinition("Printing", typeof(PrintingExample)),
 
             // Tests for internal use by the Win2D team.
