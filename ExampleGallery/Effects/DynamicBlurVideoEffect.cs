@@ -10,7 +10,7 @@ using Windows.Media.MediaProperties;
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Effects;
 
-namespace ExampleGallery.Effects
+namespace ExampleGalleryDesktop.Effects
 {
     /// <summary>
     /// Win2D Gaussian Blur - http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_GaussianBlurEffect.htm

@@ -4,12 +4,13 @@
 
 #include "pch.h"
 
-using namespace Microsoft::Graphics::Canvas;
-using namespace Microsoft::WRL;
-using namespace Windows::Foundation::Numerics;
-using namespace Windows::Graphics::DirectX::Direct3D11;
+using namespace winrt;
+using namespace winrt::Microsoft::Graphics::Canvas;
+//using namespace Microsoft::WRL;
+using namespace winrt::Windows::Foundation::Numerics;
+using namespace winrt::Windows::Graphics::DirectX::Direct3D11;
 
-namespace ExampleGallery
+namespace ExampleGalleryDesktop
 {
     namespace Direct3DInterop
     {
@@ -17,9 +18,9 @@ namespace ExampleGallery
         {
             class D2DLock
             {
-                ComPtr<ID2D1Multithread> m_d2dMultithread;
+                com_ptr<ID2D1Multithread> m_d2dMultithread;
             public:
-                D2DLock(ComPtr<ID2D1Multithread> const& multiThread)
+                D2DLock(com_ptr<ID2D1Multithread> const& multiThread)
                     : m_d2dMultithread(multiThread)
                 {
                     if (m_d2dMultithread->GetMultithreadProtected())
@@ -50,16 +51,16 @@ namespace ExampleGallery
             //
             // This records how long something takes to execute on the GPU.
             //
-            public ref class GpuStopWatch sealed
+            class GpuStopWatch sealed
             {
-                ComPtr<ID2D1Multithread> m_d2dMultithread;
+                com_ptr<ID2D1Multithread> m_d2dMultithread;
 
-                ComPtr<ID3D11Device> m_d3dDevice;
-                ComPtr<ID3D11DeviceContext> m_deviceContext;
+                com_ptr<ID3D11Device> m_d3dDevice;
+                com_ptr<ID3D11DeviceContext> m_deviceContext;
                 
-                ComPtr<ID3D11Query> m_disjointQuery;
-                ComPtr<ID3D11Query> m_timestampStartQuery;
-                ComPtr<ID3D11Query> m_timestampEndQuery;
+                com_ptr<ID3D11Query> m_disjointQuery;
+                com_ptr<ID3D11Query> m_timestampStartQuery;
+                com_ptr<ID3D11Query> m_timestampEndQuery;
 
                 enum class State
                 {
@@ -69,12 +70,12 @@ namespace ExampleGallery
                 State m_state = State::New;
                 
             public:
-                GpuStopWatch(CanvasDevice^ canvasDevice)
+                GpuStopWatch(CanvasDevice const& canvasDevice)
                 {
                     // Get the ID2D1Multithread for the device
                     auto d2dDevice = GetWrappedResource<ID2D1Device>(canvasDevice);
 
-                    ComPtr<ID2D1Factory> factory;
+                    com_ptr<ID2D1Factory> factory;
                     d2dDevice->GetFactory(&factory);
                     
                     __abi_ThrowIfFailed(factory.As(&m_d2dMultithread));
@@ -122,8 +123,8 @@ namespace ExampleGallery
                         throw ref new Platform::FailureException();
                     
                     D2DLock lock(m_d2dMultithread);
-                    m_deviceContext->Begin(m_disjointQuery.Get());
-                    m_deviceContext->End(m_timestampStartQuery.Get());
+                    m_deviceContext->Begin(m_disjointQuery.get());
+                    m_deviceContext->End(m_timestampStartQuery.get());
 
                     m_state = State::Started;
                 }
@@ -137,8 +138,8 @@ namespace ExampleGallery
                         throw ref new Platform::FailureException();
                     
                     D2DLock lock(m_d2dMultithread);
-                    m_deviceContext->End(m_timestampEndQuery.Get());
-                    m_deviceContext->End(m_disjointQuery.Get());
+                    m_deviceContext->End(m_timestampEndQuery.get());
+                    m_deviceContext->End(m_disjointQuery.get());
 
                     m_state = State::Stopped;
                 }
@@ -175,7 +176,7 @@ namespace ExampleGallery
 
             private:
                 template<typename T>
-                void BlockAndGetQueryData(ComPtr<ID3D11Query> const& query, T* data)
+                void BlockAndGetQueryData(com_ptr<ID3D11Query> const& query, T* data)
                 {
                     HRESULT hr = S_FALSE;
                     
@@ -202,15 +203,15 @@ namespace ExampleGallery
             // time taken to process AddSprite is not counted towards the
             // scenario time.
             //
-            public interface class IScenarioRunner
+            interface IScenarioRunner
             {
-                virtual void AddSprite(CanvasBitmap^ bitmap, float4 tint, float2 position, float rotation) = 0;
-                virtual void RunScenario(CanvasDrawingSession^ drawingSession, CanvasSpriteSortMode sortMode) = 0;
+                virtual void AddSprite(CanvasBitmap const& bitmap, float4 tint, float2 position, float rotation) = 0;
+                virtual void RunScenario(CanvasDrawingSession const& drawingSession, CanvasSpriteSortMode sortMode) = 0;
             };
 
             struct Sprite
             {
-                CanvasBitmap^ Bitmap;
+                CanvasBitmap Bitmap;
                 float4 Tint;
                 float2 Position;
                 float Rotation;
@@ -219,24 +220,24 @@ namespace ExampleGallery
             //
             // This runner uses Win2D via C++/CX to draw the sprites.
             //
-            public ref class CppWin2DScenarioRunner sealed : public IScenarioRunner
+            class CppWin2DScenarioRunner sealed : public IScenarioRunner
             {
                 std::vector<Sprite> m_sprites;
 
             public:
-                virtual void AddSprite(CanvasBitmap^ bitmap, float4 tint, float2 position, float rotation)
+                virtual void AddSprite(CanvasBitmap const& bitmap, float4 tint, float2 position, float rotation)
                 {
                     m_sprites.push_back(Sprite{ bitmap, tint, position, rotation });
                 }
 
-                virtual void RunScenario(CanvasDrawingSession^ drawingSession, CanvasSpriteSortMode sortMode)
+                virtual void RunScenario(CanvasDrawingSession const& drawingSession, CanvasSpriteSortMode sortMode)
                 {
-                    auto spriteBatch = drawingSession->CreateSpriteBatch(sortMode);
+                    auto spriteBatch = drawingSession.CreateSpriteBatch(sortMode);
                     for (auto const& sprite : m_sprites)
                     {
-                        spriteBatch->Draw(sprite.Bitmap, sprite.Position, sprite.Tint, float2::zero(), sprite.Rotation, float2::one(), CanvasSpriteFlip::None);
+                        spriteBatch.Draw(sprite.Bitmap, sprite.Position, sprite.Tint, float2::zero(), sprite.Rotation, float2::one(), CanvasSpriteFlip::None);
                     }
-                    delete spriteBatch;
+                    //delete spriteBatch;
                 }
             };
 
@@ -244,17 +245,17 @@ namespace ExampleGallery
             //
             // This runner calls Direct2D's SpriteBatch APIs directly.
             //
-            public ref class Direct2DScenarioRunner sealed : public IScenarioRunner
+            class Direct2DScenarioRunner sealed : public IScenarioRunner
             {
                 std::vector<Sprite> m_sprites;
                 
             public:
-                virtual void AddSprite(CanvasBitmap^ bitmap, float4 tint, float2 position, float rotation)
+                virtual void AddSprite(CanvasBitmap const& bitmap, float4 tint, float2 position, float rotation)
                 {
                     m_sprites.push_back(Sprite{ bitmap, tint, position, rotation });
                 }
 
-                virtual void RunScenario(CanvasDrawingSession^ drawingSession, CanvasSpriteSortMode sortMode)
+                virtual void RunScenario(CanvasDrawingSession const& drawingSession, CanvasSpriteSortMode sortMode)
                 {
                     UNREFERENCED_PARAMETER(sortMode); // sort mode is ignored
 
@@ -281,7 +282,7 @@ namespace ExampleGallery
                     auto oldAntialiasMode = deviceContext->GetAntialiasMode();
                     deviceContext->SetAntialiasMode(D2D1_ANTIALIAS_MODE_ALIASED);
 
-                    ComPtr<ID2D1SpriteBatch> spriteBatch;
+                    com_ptr<ID2D1SpriteBatch> spriteBatch;
                     __abi_ThrowIfFailed(deviceContext->CreateSpriteBatch(&spriteBatch));
 
                     __abi_ThrowIfFailed(spriteBatch->AddSprites(
@@ -301,7 +302,7 @@ namespace ExampleGallery
                         if (bitmap != lastBitmap)
                         {
                             deviceContext->DrawSpriteBatch(
-                                spriteBatch.Get(),
+                                spriteBatch.get(),
                                 startIndex,
                                 endIndex - startIndex,
                                 lastBitmap);
@@ -316,7 +317,7 @@ namespace ExampleGallery
                     if (endIndex > startIndex)
                     {
                         deviceContext->DrawSpriteBatch(
-                            spriteBatch.Get(),
+                            spriteBatch.get(),
                             startIndex,
                             endIndex - startIndex,
                             lastBitmap);

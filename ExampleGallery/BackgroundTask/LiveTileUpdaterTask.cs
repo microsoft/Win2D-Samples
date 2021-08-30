@@ -5,6 +5,8 @@
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Effects;
 using Microsoft.Graphics.Canvas.Text;
+using Microsoft.UI;
+using Windows.UI.Notifications;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,10 +16,8 @@ using Windows.ApplicationModel.Background;
 using Windows.Data.Xml.Dom;
 using Windows.Foundation;
 using Windows.Storage;
-using Windows.UI;
-using Windows.UI.Notifications;
 
-namespace ExampleGallery.BackgroundTask
+namespace ExampleGalleryDesktop.BackgroundTask
 {
     //
     // The actual background task.
