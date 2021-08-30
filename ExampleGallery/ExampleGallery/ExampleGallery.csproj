@@ -13,6 +13,22 @@
     <Compile Remove="BasicVideoEffectExample.xaml.cs" />
     <Compile Remove="CameraEffectExample.xaml.cs" />
     <Compile Remove="InkExample.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\BasicVideoEffectExample.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\BurningTextExample.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\CameraEffectExample.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\ControlTransforms.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\CustomControlExample.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\CustomEffects.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\CustomFonts.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\CustomTextLayouts.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\Direct3DInteropExample.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\DpiExample.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\GameOfLife.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\GeometryOperations.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\InkExample.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\KeyboardInputExample.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\LayersExample.xaml.cs" />
+    <Compile Remove="UnsupportedExamples\SpriteBatchPerf.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="ArcOptions.xaml" />
@@ -140,6 +156,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="BasicVideoEffectExample.xaml" />
+    <None Remove="UnsupportedExamples\BasicVideoEffectExample.xaml" />
+    <None Remove="UnsupportedExamples\BurningTextExample.xaml" />
+    <None Remove="UnsupportedExamples\CameraEffectExample.xaml" />
+    <None Remove="UnsupportedExamples\ControlTransforms.xaml" />
+    <None Remove="UnsupportedExamples\CustomControlExample.xaml" />
+    <None Remove="UnsupportedExamples\CustomEffects.xaml" />
+    <None Remove="UnsupportedExamples\CustomFonts.xaml" />
+    <None Remove="UnsupportedExamples\CustomTextLayouts.xaml" />
+    <None Remove="UnsupportedExamples\Direct3DInteropExample.xaml" />
+    <None Remove="UnsupportedExamples\DpiExample.xaml" />
+    <None Remove="UnsupportedExamples\GameOfLife.xaml" />
+    <None Remove="UnsupportedExamples\GeometryOperations.xaml" />
+    <None Remove="UnsupportedExamples\InkExample.xaml" />
+    <None Remove="UnsupportedExamples\KeyboardInputExample.xaml" />
+    <None Remove="UnsupportedExamples\LayersExample.xaml" />
+    <None Remove="UnsupportedExamples\SpriteBatchPerf.xaml" />
     <None Remove="VectorArt.xaml" />
     <None Remove="VirtualBitmapExample.xaml" />
     <None Remove="VirtualControlExample.xaml" />
@@ -148,6 +180,22 @@
     <Page Remove="BasicVideoEffectExample.xaml" />
     <Page Remove="CameraEffectExample.xaml" />
     <Page Remove="InkExample.xaml" />
+    <Page Remove="UnsupportedExamples\BasicVideoEffectExample.xaml" />
+    <Page Remove="UnsupportedExamples\BurningTextExample.xaml" />
+    <Page Remove="UnsupportedExamples\CameraEffectExample.xaml" />
+    <Page Remove="UnsupportedExamples\ControlTransforms.xaml" />
+    <Page Remove="UnsupportedExamples\CustomControlExample.xaml" />
+    <Page Remove="UnsupportedExamples\CustomEffects.xaml" />
+    <Page Remove="UnsupportedExamples\CustomFonts.xaml" />
+    <Page Remove="UnsupportedExamples\CustomTextLayouts.xaml" />
+    <Page Remove="UnsupportedExamples\Direct3DInteropExample.xaml" />
+    <Page Remove="UnsupportedExamples\DpiExample.xaml" />
+    <Page Remove="UnsupportedExamples\GameOfLife.xaml" />
+    <Page Remove="UnsupportedExamples\GeometryOperations.xaml" />
+    <Page Remove="UnsupportedExamples\InkExample.xaml" />
+    <Page Remove="UnsupportedExamples\KeyboardInputExample.xaml" />
+    <Page Remove="UnsupportedExamples\LayersExample.xaml" />
+    <Page Remove="UnsupportedExamples\SpriteBatchPerf.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="imageTiger.jpg">
@@ -354,5 +402,9 @@
     <Page Update="VirtualControlExample.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UnsupportedExamples\" />
   </ItemGroup>
 </Project>
