@@ -254,8 +254,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ExampleGalleryDesktop.BackgroundTask\ExampleGalleryDesktop.BackgroundTask.csproj" />
-    <ProjectReference Include="..\..\ExampleGalleryDesktop.Effects\ExampleGalleryDesktop.Effects.csproj" />
+    <ProjectReference Include="..\ExampleGallery.BackgroundTask.csproj" />
+    <ProjectReference Include="..\ExampleGallery.Effects.csproj" />
   </ItemGroup>
 
   <ItemGroup>
