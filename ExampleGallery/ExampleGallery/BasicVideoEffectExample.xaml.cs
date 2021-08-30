@@ -2,7 +2,7 @@
 //
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-using ExampleGalleryDesktop.Effects;
+using ExampleGallery.Effects;
 using System;
 using System.Threading.Tasks;
 using Windows.Media.Core;
@@ -14,7 +14,7 @@ using Windows.UI.Popups;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     public sealed partial class BasicVideoEffectExample : UserControl, ICustomThumbnailSource
     {

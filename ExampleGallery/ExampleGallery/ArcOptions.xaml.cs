@@ -16,7 +16,7 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Input;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     public sealed partial class ArcOptions : UserControl
     {

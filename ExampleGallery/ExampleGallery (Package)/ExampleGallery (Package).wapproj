@@ -64,6 +64,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Graphics.Win2D" Version="0.8.2.23" />
     <PackageReference Include="Microsoft.ProjectReunion" Version="[0.8.2]">
       <IncludeAssets>build</IncludeAssets>
     </PackageReference>

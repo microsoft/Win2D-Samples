@@ -14,7 +14,7 @@ using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Popups;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     class AppIconGenerator
     {
@@ -40,7 +40,7 @@ namespace ExampleGalleryDesktop
 
         static AppInfo[] apps =
         {
-            new AppInfo("ExampleGalleryDesktop",     DrawExampleGalleryDesktopIcon,     Color.FromArgb(255, 0xE7, 0x59, 0x34)) { AddShadow = true },
+            new AppInfo("ExampleGallery",     DrawExampleGalleryIcon,     Color.FromArgb(255, 0xE7, 0x59, 0x34)) { AddShadow = true },
             new AppInfo("CoreWindowExample",  DrawCoreWindowIcon,         Colors.CornflowerBlue)                 { ImageScale = 0.6f },
             new AppInfo("SimpleSample",       DrawSimpleSampleIcon,       Colors.CornflowerBlue)                 { ImageScale = 0.6f },
             new AppInfo("CompositionExample", DrawCompositionExampleIcon, Colors.Goldenrod)                      { AddShadow = true, ImageScale = 0.6f },
@@ -221,7 +221,7 @@ namespace ExampleGalleryDesktop
 
 
         // Example Gallery reuses the existing drawing code in BurningTextExample to create its icon.
-        static void DrawExampleGalleryDesktopIcon(CanvasDrawingSession ds, IconInfo iconInfo)
+        static void DrawExampleGalleryIcon(CanvasDrawingSession ds, IconInfo iconInfo)
         {
             string text = (iconInfo.Width < 42) ? "W" : "Win2D";
 

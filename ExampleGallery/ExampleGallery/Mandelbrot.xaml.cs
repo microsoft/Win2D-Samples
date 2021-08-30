@@ -17,7 +17,7 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
 using System.Diagnostics;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     public sealed partial class Mandelbrot : UserControl
     {

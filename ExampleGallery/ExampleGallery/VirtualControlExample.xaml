@@ -6,10 +6,10 @@ Licensed under the MIT License. See LICENSE.txt in the project root for license 
 -->
 
 <UserControl
-    x:Class="ExampleGalleryDesktop.VirtualControlExample"
+    x:Class="ExampleGallery.VirtualControlExample"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ExampleGalleryDesktop"
+    xmlns:local="using:ExampleGallery"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"

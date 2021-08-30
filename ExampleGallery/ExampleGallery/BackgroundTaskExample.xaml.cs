@@ -2,7 +2,7 @@
 //
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-using ExampleGalleryDesktop.BackgroundTask;
+using ExampleGallery.BackgroundTask;
 using System;
 using System.Linq;
 using Windows.ApplicationModel.Background;
@@ -13,7 +13,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media.Imaging;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     public sealed partial class BackgroundTaskExample : UserControl
     {

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     /// <summary>
     /// A command whose sole purpose is to relay its functionality 

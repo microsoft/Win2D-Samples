@@ -16,7 +16,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     public sealed partial class GradientMeshExample : UserControl
     {

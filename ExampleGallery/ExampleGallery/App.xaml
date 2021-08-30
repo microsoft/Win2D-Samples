@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="ExampleGalleryDesktop_2.App"
+    x:Class="ExampleGallery.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ExampleGalleryDesktop"
+    xmlns:local="using:ExampleGallery"
     RequestedTheme="Dark">
     <Application.Resources>
         <ResourceDictionary>

@@ -5,7 +5,7 @@
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Documents;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     public sealed partial class About : UserControl
     {

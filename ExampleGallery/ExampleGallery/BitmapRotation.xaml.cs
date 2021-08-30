@@ -16,7 +16,7 @@ using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     public sealed partial class BitmapRotation : UserControl
     {

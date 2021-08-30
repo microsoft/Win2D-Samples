@@ -5,7 +5,7 @@
 using System;
 using System.Numerics;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     // Particles are the little bits that make up a particle system effect. Each particle
     // system is be comprised of many of these particles. They have basic physical properties,

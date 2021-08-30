@@ -8,7 +8,7 @@ using Windows.Globalization;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     public class FontPickerComboBox : UserControl
     {

@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "ExampleGalleryDesktop_2": {
+    "ExampleGallery": {
       "commandName": "Project",
       "nativeDebugging": true
     }

@@ -10,7 +10,7 @@ using System;
 using Windows.Storage.Streams;
 using Windows.UI;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     interface ICustomThumbnailSource
     {

@@ -6,7 +6,7 @@ using Microsoft.Graphics.Canvas;
 using System;
 using System.Numerics;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     // SmokePlumeParticleSystem is a specialization of ParticleSystem which sends up a
     // plume of smoke. The smoke is blown to the right by the wind.

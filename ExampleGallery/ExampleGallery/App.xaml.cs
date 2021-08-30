@@ -18,9 +18,9 @@ using Windows.Foundation.Collections;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
-using ExampleGalleryDesktop;
+using ExampleGallery;
 
-namespace ExampleGalleryDesktop_2
+namespace ExampleGallery
 {
     public partial class App : Application
     {

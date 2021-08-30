@@ -16,7 +16,7 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 using System.Diagnostics;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     public sealed partial class VirtualControlExample : UserControl
     {

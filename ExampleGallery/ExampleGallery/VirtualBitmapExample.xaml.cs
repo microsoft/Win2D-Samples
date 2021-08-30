@@ -24,7 +24,7 @@ using Windows.UI.Popups;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     public sealed partial class VirtualBitmapExample : UserControl, INotifyPropertyChanged
     {
@@ -109,7 +109,7 @@ namespace ExampleGalleryDesktop
 
         private async Task Open(CanvasVirtualBitmapOptions options)
         {
-            var hwnd = ExampleGalleryDesktop_2.App.m_mainWindowHandle; // temporarily using a static variable to store the handle of the main window.
+            var hwnd = ExampleGallery.App.m_mainWindowHandle; // temporarily using a static variable to store the handle of the main window.
             var filePicker = new FileOpenPicker();
             filePicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
             filePicker.FileTypeFilter.Add("*");

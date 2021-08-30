@@ -8,7 +8,7 @@ using System.Numerics;
 using System.Threading.Tasks;
 using Windows.Foundation;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     class SpriteSheet
     {

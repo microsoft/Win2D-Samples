@@ -14,7 +14,7 @@ using Windows.UI.Popups;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace ExampleGalleryDesktop
+namespace ExampleGallery
 {
     public sealed partial class DeveloperTools : UserControl
     {
@@ -55,7 +55,7 @@ namespace ExampleGalleryDesktop
 
         async Task<StorageFolder> PickOutputFolder(string title)
         {
-            var hwnd = ExampleGalleryDesktop_2.App.m_mainWindowHandle; // temporarily using a static variable to store the handle of the main window.
+            var hwnd = ExampleGallery.App.m_mainWindowHandle; // temporarily using a static variable to store the handle of the main window.
             var folderPicker = new FolderPicker
             {
                 CommitButtonText = title,

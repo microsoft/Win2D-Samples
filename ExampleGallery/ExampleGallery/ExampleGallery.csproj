@@ -3,7 +3,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
-    <RootNamespace>ExampleGalleryDesktop_2</RootNamespace>
+    <RootNamespace>ExampleGallery</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Platforms>x86;x64;arm64</Platforms>
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
@@ -247,6 +247,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Graphics.Win2D" Version="0.8.2.23" />
     <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.2" />
     <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.2" />
     <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.2" />
@@ -254,8 +255,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExampleGallery.BackgroundTask.csproj" />
-    <ProjectReference Include="..\ExampleGallery.Effects.csproj" />
+    <ProjectReference Include="..\BackgroundTask\ExampleGallery.BackgroundTask.csproj" />
+    <ProjectReference Include="..\Effects\ExampleGallery.Effects.csproj" />
   </ItemGroup>
 
   <ItemGroup>
