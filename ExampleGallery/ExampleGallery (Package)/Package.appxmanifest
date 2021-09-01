@@ -39,8 +39,25 @@
         <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="ExampleGallery.BackgroundTask.LiveTileUpdaterTask">
+          <BackgroundTasks>
+            <Task Type="timer"/>
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
     </Application>
   </Applications>
+
+    <!-- To host the BgTaskComponent, you must add this activatable class entry -->
+    <Extensions>
+        <Extension Category="windows.activatableClass.inProcessServer">
+            <InProcessServer>
+                <Path>ExampleGallery\WinRT.Host.dll</Path>
+                <ActivatableClass ActivatableClassId="ExampleGallery.BackgroundTask.LiveTileUpdaterTask" ThreadingModel="both" />
+            </InProcessServer>
+        </Extension>
+    </Extensions>
 
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />

@@ -12,6 +12,7 @@ using Windows.UI.Popups;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media.Imaging;
+using Microsoft.UI.Dispatching;
 
 namespace ExampleGallery
 {
@@ -65,7 +66,8 @@ namespace ExampleGallery
 
         void DispatchUpdateUI()
         {
-            var t = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            // updated from Dispatcher.RunAsync(), which isn't supported in Desktop Apps.
+            var t = this.DispatcherQueue.TryEnqueue(DispatcherQueuePriority.Normal, () =>
             {
                 UpdateUI();
             });
