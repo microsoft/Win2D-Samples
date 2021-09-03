@@ -156,6 +156,12 @@ namespace ExampleGallery
                 return;
             }
 
+            if (svgDocument == null)
+            {
+                canvasControl.Invalidate();
+                return;
+            }
+
             Size viewportSize = new Size() { Width = 1000, Height = 1000 };
 
             if (CurrentEffectType == EffectType.None)
