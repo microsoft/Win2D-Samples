@@ -66,8 +66,7 @@ namespace ExampleGallery
 
         void DispatchUpdateUI()
         {
-            // updated from Dispatcher.RunAsync(), which isn't supported in Desktop Apps.
-            var t = this.DispatcherQueue.TryEnqueue(DispatcherQueuePriority.Normal, () =>
+            var t = DispatcherQueue.TryEnqueue(DispatcherQueuePriority.Normal, () =>
             {
                 UpdateUI();
             });

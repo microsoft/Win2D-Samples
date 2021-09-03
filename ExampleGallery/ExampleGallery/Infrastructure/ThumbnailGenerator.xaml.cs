@@ -27,6 +27,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Media.Imaging;
+using Microsoft.UI.Dispatching;
 
 namespace ExampleGallery
 {
@@ -90,7 +91,7 @@ namespace ExampleGallery
                         continue;
 
                     // Capture a thumbnail for this example.
-                    var generator = new Generator(exampleDefinition, outputFolder, Dispatcher);
+                    var generator = new Generator(exampleDefinition, outputFolder, DispatcherQueue);
                     await generator.GenerateThumbnail(panel);
                 }
 
@@ -114,15 +115,15 @@ namespace ExampleGallery
         {
             ExampleDefinition exampleDefinition;
             StorageFolder outputFolder;
-            CoreDispatcher uiThreadDispatcher;
+            DispatcherQueue dispatcherQueue;
             UserControl exampleControl;
 
 
-            public Generator(ExampleDefinition exampleDefinition, StorageFolder outputFolder, CoreDispatcher uiThreadDispatcher)
+            public Generator(ExampleDefinition exampleDefinition, StorageFolder outputFolder, DispatcherQueue dispatcherQueue)
             {
                 this.exampleDefinition = exampleDefinition;
                 this.outputFolder = outputFolder;
-                this.uiThreadDispatcher = uiThreadDispatcher;
+                this.dispatcherQueue = dispatcherQueue;
             }
 
             
@@ -311,7 +312,7 @@ namespace ExampleGallery
                 // Dispatch the file open operation back onto the UI thread (some machines have issues doing this elsewhere).
                 var streamSource = new TaskCompletionSource<Stream>();
 
-                await uiThreadDispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+                dispatcherQueue.TryEnqueue(DispatcherQueuePriority.Normal, async () =>
                 {
                     try
                     {
