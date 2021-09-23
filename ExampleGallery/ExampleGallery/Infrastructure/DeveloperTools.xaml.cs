@@ -55,7 +55,7 @@ namespace ExampleGallery
 
         async Task<StorageFolder> PickOutputFolder(string title)
         {
-            var hwnd = ExampleGallery.App.m_mainWindowHandle; // temporarily using a static variable to store the handle of the main window.
+            var hwnd = App.m_mainWindowHandle; // temporarily using a static variable to store the handle of the main window.
             var folderPicker = new FolderPicker
             {
                 CommitButtonText = title,
