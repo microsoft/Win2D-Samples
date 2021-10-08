@@ -1,6 +1,7 @@
 obj/
 packages/
 Debug/
+Generated Files/
 Release/
 *sdf
 *suo
