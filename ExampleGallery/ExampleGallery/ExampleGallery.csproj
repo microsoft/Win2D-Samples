@@ -11,34 +11,41 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="BasicVideoEffectExample.xaml.cs" />
+    <Compile Remove="BurningTextExample.xaml.cs" />
     <Compile Remove="CameraEffectExample.xaml.cs" />
+    <Compile Remove="ControlTransforms.xaml.cs" />
+    <Compile Remove="CustomControlExample.xaml.cs" />
+    <Compile Remove="CustomEffects.xaml.cs" />
+    <Compile Remove="CustomFonts.xaml.cs" />
+    <Compile Remove="CustomTextLayouts.xaml.cs" />
+    <Compile Remove="Direct3DInteropExample.xaml.cs" />
+    <Compile Remove="DpiExample.xaml.cs" />
+    <Compile Remove="GameOfLife.xaml.cs" />
+    <Compile Remove="GeometryOperations.xaml.cs" />
     <Compile Remove="InkExample.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\BasicVideoEffectExample.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\BurningTextExample.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\CameraEffectExample.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\ControlTransforms.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\CustomControlExample.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\CustomEffects.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\CustomFonts.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\CustomTextLayouts.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\Direct3DInteropExample.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\DpiExample.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\GameOfLife.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\GeometryOperations.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\InkExample.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\KeyboardInputExample.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\LayersExample.xaml.cs" />
-    <Compile Remove="UnsupportedExamples\SpriteBatchPerf.xaml.cs" />
+    <Compile Remove="KeyboardInputExample.xaml.cs" />
+    <Compile Remove="LayersExample.xaml.cs" />
+    <Compile Remove="SpriteBatchPerf.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="ArcOptions.xaml" />
     <None Remove="BackgroundTaskExample.xaml" />
     <None Remove="BitmapRotation.xaml" />
+    <None Remove="BurningTextExample.xaml" />
     <None Remove="CameraEffectExample.xaml" />
+    <None Remove="ControlTransforms.xaml" />
+    <None Remove="CustomControlExample.xaml" />
+    <None Remove="CustomEffects.xaml" />
+    <None Remove="CustomFonts.xaml" />
+    <None Remove="CustomTextLayouts.xaml" />
+    <None Remove="Direct3DInteropExample.xaml" />
+    <None Remove="DpiExample.xaml" />
     <None Remove="DrawImageEmulations.xaml" />
     <None Remove="EffectRegionMapping.xaml" />
     <None Remove="EffectsExample.xaml" />
     <None Remove="FontMetrics.xaml" />
+    <None Remove="GameOfLife.xaml" />
+    <None Remove="GeometryOperations.xaml" />
     <None Remove="GlyphRotation.xaml" />
     <None Remove="GradientMeshExample.xaml" />
     <None Remove="HistogramExample.xaml" />
@@ -51,11 +58,14 @@
     <None Remove="Infrastructure\SharedResources.xaml" />
     <None Remove="Infrastructure\ThumbnailGenerator.xaml" />
     <None Remove="InkExample.xaml" />
+    <None Remove="KeyboardInputExample.xaml" />
+    <None Remove="LayersExample.xaml" />
     <None Remove="Mandelbrot.xaml" />
     <None Remove="PlatformResources.xaml" />
     <None Remove="PrintingExample.xaml" />
     <None Remove="Shaders\Mandelbrot.bin" />
     <None Remove="ShapesExample.xaml" />
+    <None Remove="SpriteBatchPerf.xaml" />
     <None Remove="StrokeStyles.xaml" />
     <None Remove="SubscriptSuperscript.xaml" />
     <None Remove="SvgExample.xaml" />
@@ -156,46 +166,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="BasicVideoEffectExample.xaml" />
-    <None Remove="UnsupportedExamples\BasicVideoEffectExample.xaml" />
-    <None Remove="UnsupportedExamples\BurningTextExample.xaml" />
-    <None Remove="UnsupportedExamples\CameraEffectExample.xaml" />
-    <None Remove="UnsupportedExamples\ControlTransforms.xaml" />
-    <None Remove="UnsupportedExamples\CustomControlExample.xaml" />
-    <None Remove="UnsupportedExamples\CustomEffects.xaml" />
-    <None Remove="UnsupportedExamples\CustomFonts.xaml" />
-    <None Remove="UnsupportedExamples\CustomTextLayouts.xaml" />
-    <None Remove="UnsupportedExamples\Direct3DInteropExample.xaml" />
-    <None Remove="UnsupportedExamples\DpiExample.xaml" />
-    <None Remove="UnsupportedExamples\GameOfLife.xaml" />
-    <None Remove="UnsupportedExamples\GeometryOperations.xaml" />
-    <None Remove="UnsupportedExamples\InkExample.xaml" />
-    <None Remove="UnsupportedExamples\KeyboardInputExample.xaml" />
-    <None Remove="UnsupportedExamples\LayersExample.xaml" />
-    <None Remove="UnsupportedExamples\SpriteBatchPerf.xaml" />
     <None Remove="VectorArt.xaml" />
     <None Remove="VirtualBitmapExample.xaml" />
     <None Remove="VirtualControlExample.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Page Remove="BasicVideoEffectExample.xaml" />
+    <Page Remove="BurningTextExample.xaml" />
     <Page Remove="CameraEffectExample.xaml" />
+    <Page Remove="ControlTransforms.xaml" />
+    <Page Remove="CustomControlExample.xaml" />
+    <Page Remove="CustomEffects.xaml" />
+    <Page Remove="CustomFonts.xaml" />
+    <Page Remove="CustomTextLayouts.xaml" />
+    <Page Remove="Direct3DInteropExample.xaml" />
+    <Page Remove="DpiExample.xaml" />
+    <Page Remove="GameOfLife.xaml" />
+    <Page Remove="GeometryOperations.xaml" />
     <Page Remove="InkExample.xaml" />
-    <Page Remove="UnsupportedExamples\BasicVideoEffectExample.xaml" />
-    <Page Remove="UnsupportedExamples\BurningTextExample.xaml" />
-    <Page Remove="UnsupportedExamples\CameraEffectExample.xaml" />
-    <Page Remove="UnsupportedExamples\ControlTransforms.xaml" />
-    <Page Remove="UnsupportedExamples\CustomControlExample.xaml" />
-    <Page Remove="UnsupportedExamples\CustomEffects.xaml" />
-    <Page Remove="UnsupportedExamples\CustomFonts.xaml" />
-    <Page Remove="UnsupportedExamples\CustomTextLayouts.xaml" />
-    <Page Remove="UnsupportedExamples\Direct3DInteropExample.xaml" />
-    <Page Remove="UnsupportedExamples\DpiExample.xaml" />
-    <Page Remove="UnsupportedExamples\GameOfLife.xaml" />
-    <Page Remove="UnsupportedExamples\GeometryOperations.xaml" />
-    <Page Remove="UnsupportedExamples\InkExample.xaml" />
-    <Page Remove="UnsupportedExamples\KeyboardInputExample.xaml" />
-    <Page Remove="UnsupportedExamples\LayersExample.xaml" />
-    <Page Remove="UnsupportedExamples\SpriteBatchPerf.xaml" />
+    <Page Remove="KeyboardInputExample.xaml" />
+    <Page Remove="LayersExample.xaml" />
+    <Page Remove="SpriteBatchPerf.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="imageTiger.jpg">
@@ -396,10 +387,6 @@
     <Page Update="VirtualControlExample.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="UnsupportedExamples\" />
   </ItemGroup>
 
   <ItemGroup>
