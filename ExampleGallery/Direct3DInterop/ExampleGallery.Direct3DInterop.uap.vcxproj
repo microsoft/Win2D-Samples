@@ -2,9 +2,6 @@
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\directxtk_uwp.2019.4.26.1\build\native\directxtk_uwp.props" Condition="Exists('..\packages\directxtk_uwp.2019.4.26.1\build\native\directxtk_uwp.props')" />
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="SpriteBatchPerformance.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TeapotRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
@@ -61,6 +58,9 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup Label="Configuration">
     <PlatformToolset>v142</PlatformToolset>
@@ -167,17 +167,14 @@
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\directxtk_uwp.2019.4.26.1\build\native\directxtk_uwp.targets" Condition="Exists('..\packages\directxtk_uwp.2019.4.26.1\build\native\directxtk_uwp.targets')" />
     <Import Project="..\packages\Win2D.uwp.1.26.0\build\native\Win2D.uwp.targets" Condition="Exists('..\packages\Win2D.uwp.1.26.0\build\native\Win2D.uwp.targets')" />
+    <Import Project="..\packages\directxtk_uwp.2021.10.1.1\build\native\directxtk_uwp.targets" Condition="Exists('..\packages\directxtk_uwp.2021.10.1.1\build\native\directxtk_uwp.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <!-- At some point directxtk_uwp dropped its props file.
-    <Error Condition="!Exists('..\..\..\packages\directxtk_uwp.2019.4.26.1\build\native\directxtk_uwp.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\directxtk_uwp.2019.4.26.1\build\native\directxtk_uwp.props'))" />
-    -->
-    <Error Condition="!Exists('..\packages\directxtk_uwp.2019.4.26.1\build\native\directxtk_uwp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\directxtk_uwp.2019.4.26.1\build\native\directxtk_uwp.targets'))" />
     <Error Condition="!Exists('..\packages\Win2D.uwp.1.26.0\build\native\Win2D.uwp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Win2D.uwp.1.26.0\build\native\Win2D.uwp.targets'))" />
+    <Error Condition="!Exists('..\packages\directxtk_uwp.2021.10.1.1\build\native\directxtk_uwp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\directxtk_uwp.2021.10.1.1\build\native\directxtk_uwp.targets'))" />
   </Target>
 </Project>
