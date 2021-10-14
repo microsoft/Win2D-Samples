@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "SimpleSample (Package)", "..\SimpleSampleDesktop\SimpleSample (Package)\SimpleSample (Package).wapproj", "{684A7678-372B-4B9E-87E2-604C70A3F95E}"
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "SimpleSample (Package)", "..\SimpleSample (Package)\SimpleSample (Package).wapproj", "{684A7678-372B-4B9E-87E2-604C70A3F95E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleSample", "..\SimpleSampleDesktop\SimpleSample\SimpleSample.csproj", "{064E6A3B-6068-4A21-BA2B-22F7BDA3B94B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleSample", "SimpleSample.csproj", "{064E6A3B-6068-4A21-BA2B-22F7BDA3B94B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
