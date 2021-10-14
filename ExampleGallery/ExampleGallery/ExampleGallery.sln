@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleGallery", "ExampleGallery\ExampleGallery.csproj", "{8DF04254-84C6-4813-8C48-7E69F043C908}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleGallery", "ExampleGallery.csproj", "{8DF04254-84C6-4813-8C48-7E69F043C908}"
 EndProject
-Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "ExampleGallery (Package)", "ExampleGallery (Package)\ExampleGallery (Package).wapproj", "{F2837CE0-7C8A-4CBD-8406-19C1B50F09CA}"
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "ExampleGallery (Package)", "..\ExampleGallery (Package)\ExampleGallery (Package).wapproj", "{F2837CE0-7C8A-4CBD-8406-19C1B50F09CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleGallery.BackgroundTask", "ExampleGallery\BackgroundTask\ExampleGallery.BackgroundTask.csproj", "{728E5D87-0EFE-4486-8FCA-8D36B7F125ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleGallery.BackgroundTask", "BackgroundTask\ExampleGallery.BackgroundTask.csproj", "{728E5D87-0EFE-4486-8FCA-8D36B7F125ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleGallery.Effects", "ExampleGallery\Effects\ExampleGallery.Effects.csproj", "{F2489B5A-A1BA-43F7-8ACE-75A7E2A4007E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleGallery.Effects", "Effects\ExampleGallery.Effects.csproj", "{F2489B5A-A1BA-43F7-8ACE-75A7E2A4007E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

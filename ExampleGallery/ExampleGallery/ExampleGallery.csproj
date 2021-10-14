@@ -310,7 +310,7 @@
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
-	<!-- In the future, this section will be used to reference the D3DInterop project. -->
+	<!-- In the future, this section will be used to reference the D3DInterop project. This path may need to change based on file reorg. -->
 	<!--<ItemGroup>
 		<CSWinRTInputs Include="..\x64\Debug\ExampleGallery.Direct3DInterop.uap\ExampleGallery.Direct3DInterop.winmd" />
 	</ItemGroup>-->
