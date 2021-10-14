@@ -11,9 +11,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="BackgroundTask\**" />
+    <Compile Remove="Direct3DInterop\**" />
+    <Compile Remove="Effects\**" />
+    <Compile Remove="packages\**" />
     <EmbeddedResource Remove="BackgroundTask\**" />
+    <EmbeddedResource Remove="Direct3DInterop\**" />
+    <EmbeddedResource Remove="Effects\**" />
+    <EmbeddedResource Remove="packages\**" />
     <None Remove="BackgroundTask\**" />
+    <None Remove="Direct3DInterop\**" />
+    <None Remove="Effects\**" />
+    <None Remove="packages\**" />
     <Page Remove="BackgroundTask\**" />
+    <Page Remove="Direct3DInterop\**" />
+    <Page Remove="Effects\**" />
+    <Page Remove="packages\**" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BasicVideoEffectExample.xaml.cs" />
@@ -398,8 +410,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Effects\ExampleGallery.Effects.csproj" />
     <ProjectReference Include="BackgroundTask\ExampleGallery.BackgroundTask.csproj" />
+    <ProjectReference Include="Effects\ExampleGallery.Effects.csproj" />
   </ItemGroup>
 
   <ItemGroup>
