@@ -43,7 +43,7 @@ namespace ExampleGallery
     {
         static ExampleDefinition[] definitions =
         {
-            // Visual demos.
+            // Visual demos. Examples with unsupported components remain here, but are commented out.
             //new ExampleDefinition("Burning Text", typeof(BurningTextExample)),
             new ExampleDefinition("Mandelbrot", typeof(Mandelbrot)),
             //new ExampleDefinition("Game of Life", typeof(GameOfLife)),

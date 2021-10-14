@@ -65,7 +65,7 @@ namespace ExampleGallery
 
         void Canvas_RegionsInvalidated(CanvasVirtualControl sender, CanvasRegionsInvalidatedEventArgs args)
         {
-            //// Configure the Mandelbrot effect to position and scale its output. 
+            // Configure the Mandelbrot effect to position and scale its output. 
             const float baseScale = 0.005f;
             float scale = baseScale * 96 / sender.Dpi;
             Vector2 translate = baseScale * sender.Size.ToVector2() * new Vector2(-0.75f, -0.5f);

@@ -78,7 +78,7 @@ Licensed under the MIT License. See LICENSE.txt in the project root for license 
 
 
         <canvas:CanvasControl Grid.Column="1" x:Name="canvasControl" CreateResources="canvasControl_CreateResources" Draw="canvasControl_Draw" SizeChanged="Canvas_SizeChanged"/>
-        <!--<InkCanvas Grid.Column="1" x:Name="inkCanvas"/>-->
+        <InkCanvas Grid.Column="1" x:Name="inkCanvas"/>
 
     </Grid>
 </UserControl>
