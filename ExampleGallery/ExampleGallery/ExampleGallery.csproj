@@ -10,6 +10,12 @@
     <UseWinUI>true</UseWinUI>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="BackgroundTask\**" />
+    <EmbeddedResource Remove="BackgroundTask\**" />
+    <None Remove="BackgroundTask\**" />
+    <Page Remove="BackgroundTask\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Remove="BasicVideoEffectExample.xaml.cs" />
     <Compile Remove="BurningTextExample.xaml.cs" />
     <Compile Remove="CameraEffectExample.xaml.cs" />
@@ -29,7 +35,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="ArcOptions.xaml" />
-    <None Remove="BackgroundTaskExample.xaml" />
     <None Remove="BitmapRotation.xaml" />
     <None Remove="BurningTextExample.xaml" />
     <None Remove="CameraEffectExample.xaml" />
@@ -302,9 +307,6 @@
     <Page Update="ArcOptions.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Update="BackgroundTaskExample.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Update="BitmapRotation.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -396,7 +398,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BackgroundTask\ExampleGallery.BackgroundTask.csproj" />
     <ProjectReference Include="..\Effects\ExampleGallery.Effects.csproj" />
+    <ProjectReference Include="BackgroundTask\ExampleGallery.BackgroundTask.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="BackgroundTaskExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 </Project>
