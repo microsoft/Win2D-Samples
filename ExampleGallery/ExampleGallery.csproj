@@ -330,7 +330,6 @@
     </Page>
     <Page Update="EffectsExample.xaml">
       <Generator>MSBuild:Compile</Generator>
-      <!--<Generator>MSBuild:Compile</Generator>-->
     </Page>
     <Page Update="FontMetrics.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
