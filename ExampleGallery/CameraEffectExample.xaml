@@ -21,7 +21,7 @@ Licensed under the MIT License. See LICENSE.txt in the project root for license 
     
     <Grid>
         <Viewbox Stretch="Uniform">
-            <!--<CaptureElement x:Name="captureElement" Width="Auto" Height="Auto"/>-->
+            <CaptureElement x:Name="captureElement" Width="Auto" Height="Auto"/>
         </Viewbox>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <ProgressRing x:Name="progressRing"/>

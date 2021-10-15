@@ -26,6 +26,7 @@ namespace ExampleGallery
     {
         // temporary way to access the current window from Example classes
         public static IntPtr m_mainWindowHandle;
+        public static Window m_window;
 
         /// <summary>
         /// Initializes the singleton application object. This is the first line of authored code
@@ -49,9 +50,5 @@ namespace ExampleGallery
             m_window.Activate();
             m_mainWindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(m_window);
         }
-
-
-
-        private Window m_window;
     }
 }

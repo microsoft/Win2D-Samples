@@ -67,8 +67,8 @@ namespace ExampleGallery
         private void UpdateImageSource(bool firstDraw = false)
         {
             // If the window isn't visible then we cannot update the image source
-            //if (!Window.Current.Visible)
-            //    return;
+            if (!App.m_window.Visible)
+                return;
 
             var device = CanvasDevice.GetSharedDevice();
             if (device != imageSource.Device || surfaceContentsLost)
