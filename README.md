@@ -2,12 +2,12 @@
 
 These sample projects show how to use the Win2D graphics API.
 
-- This gallery is currently being updated to use **ProjectReunion**.  UAP is in preview in ProjectReunion.0.5 
-  Because these samples are UAP, they are using **ProjectReunion.0.5.0-prerelease**
-  The exception is Simple Sample Desktop, which is not a UAP but a Desktop App.
-  Simple Sample Desktop uses the latest and greatest verison of Project Reunion at the time of this writing, which is **ProjectReunion.0.5.7**
+- This gallery is currently being updated to use **WindowsAppSDk**. Both SimpleSample and
+  Example Gallery have been updated to use WindowsAppSDK 1.0.0-preview-1, the latest version
+  of WindowsAppSDK at the time of this writing. UAP is in preview in ProjectReunion.0.5. 
+  Because some of the other samples are UAP, they are using **ProjectReunion.0.5.0-prerelease**
 
-- [Not yet updated for ProjectReunion] **Example Gallery** is the main Win2D demo and sample application. This is a C# XAML 
+- **Example Gallery** is the main Win2D demo and sample application. This is a C# XAML 
   application, and contains many different examples showing various capabilities of 
   Win2D, with a menu to select between them. Start here to get an idea of what Win2D can 
   do and how use it.
@@ -23,8 +23,6 @@ These sample projects show how to use the Win2D graphics API.
 
 - **Simple Sample** is, yup, you guessed it! Pretty much the simplest possible app that 
   uses Win2D - it's our version of the venerable "hello world".
-
-- **Simple Smaple Desktop** is the same version of SimpleSample, but updated to be a Reunion Desktop instead of a UAP.
 
 - [Not yet updated for ProjectReunion] **[Win2D-MazeGame](https://github.com/microsoft/Win2DMazeGame)** (in a separate repository)
   is the skeleton of a classic maze chase game for Windows 10, written in C# and using Win2D.
