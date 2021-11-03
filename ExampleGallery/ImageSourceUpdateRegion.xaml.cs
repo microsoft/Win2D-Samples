@@ -8,9 +8,10 @@ using Microsoft.Graphics.Canvas.UI.Xaml;
 using System;
 using Windows.Foundation;
 using Windows.UI;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
+using Microsoft.UI;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
 
 namespace ExampleGallery
 {
@@ -66,7 +67,7 @@ namespace ExampleGallery
         private void UpdateImageSource(bool firstDraw = false)
         {
             // If the window isn't visible then we cannot update the image source
-            if (!Window.Current.Visible)
+            if (!App.m_window.Visible)
                 return;
 
             var device = CanvasDevice.GetSharedDevice();

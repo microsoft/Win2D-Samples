@@ -5,9 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml;
+using Microsoft.UI;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml;
 using Windows.UI;
 
 namespace ExampleGallery
@@ -55,8 +56,8 @@ namespace ExampleGallery
                 colorButtons[i].SetValue(Grid.ColumnProperty, column);
 
                 colorButtons[i].Background = new SolidColorBrush(colors[i]);
-                colorButtons[i].VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Stretch;
-                colorButtons[i].HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Stretch;
+                colorButtons[i].VerticalAlignment = Microsoft.UI.Xaml.VerticalAlignment.Stretch;
+                colorButtons[i].HorizontalAlignment = Microsoft.UI.Xaml.HorizontalAlignment.Stretch;
                 colorButtons[i].Click += ColorPicker_Click;
 
                 grid.Children.Add(colorButtons[i]);
@@ -76,7 +77,7 @@ namespace ExampleGallery
             }
         }
 
-        private void ColorPicker_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void ColorPicker_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
         {
             ResetColorSelectors();
 

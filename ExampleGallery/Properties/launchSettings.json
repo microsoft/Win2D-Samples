@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ExampleGallery": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

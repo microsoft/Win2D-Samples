@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Threading.Tasks;
 using Windows.Foundation;
-using Windows.UI;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 namespace ExampleGallery
 {
@@ -293,7 +293,7 @@ namespace ExampleGallery
 
         async Task Canvas_CreateResourcesAsync(CanvasControl sender)
         {
-            inlineObject.SetBitmap(await CanvasBitmap.LoadAsync(sender, "imageTiger.jpg"));
+            inlineObject.SetBitmap(await CanvasBitmap.LoadAsync(sender, new Uri("ms-appx:///imageTiger.jpg"), 96));
         }
 
         private void Canvas_CreateResources(CanvasControl sender, CanvasCreateResourcesEventArgs args)
@@ -313,7 +313,7 @@ namespace ExampleGallery
             return textLayoutRegion.CharacterIndex;
         }
 
-        private void Canvas_PointerPressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void Canvas_PointerPressed(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             selectionStartIndex = GetHitIndex(e.GetCurrentPoint(canvas).Position);
             selectionEndIndex = selectionStartIndex;
@@ -321,7 +321,7 @@ namespace ExampleGallery
             e.Handled = true;
         }
 
-        private void Canvas_PointerMoved(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void Canvas_PointerMoved(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             foreach (var point in e.GetIntermediatePoints(canvas))
             {

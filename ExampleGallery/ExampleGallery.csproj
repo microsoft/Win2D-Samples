@@ -1,0 +1,421 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>ExampleGallery</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>x86;x64;arm64</Platforms>
+    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    <UseWinUI>true</UseWinUI>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="BackgroundTask\**" />
+    <Compile Remove="Direct3DInterop\**" />
+    <Compile Remove="Effects\**" />
+    <Compile Remove="packages\**" />
+    <EmbeddedResource Remove="BackgroundTask\**" />
+    <EmbeddedResource Remove="Direct3DInterop\**" />
+    <EmbeddedResource Remove="Effects\**" />
+    <EmbeddedResource Remove="packages\**" />
+    <None Remove="BackgroundTask\**" />
+    <None Remove="Direct3DInterop\**" />
+    <None Remove="Effects\**" />
+    <None Remove="packages\**" />
+    <Page Remove="BackgroundTask\**" />
+    <Page Remove="Direct3DInterop\**" />
+    <Page Remove="Effects\**" />
+    <Page Remove="packages\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="BasicVideoEffectExample.xaml.cs" />
+    <Compile Remove="BurningTextExample.xaml.cs" />
+    <Compile Remove="CameraEffectExample.xaml.cs" />
+    <Compile Remove="ControlTransforms.xaml.cs" />
+    <Compile Remove="CustomControlExample.xaml.cs" />
+    <Compile Remove="CustomEffects.xaml.cs" />
+    <Compile Remove="CustomFonts.xaml.cs" />
+    <Compile Remove="CustomTextLayouts.xaml.cs" />
+    <Compile Remove="Direct3DInteropExample.xaml.cs" />
+    <Compile Remove="DpiExample.xaml.cs" />
+    <Compile Remove="GameOfLife.xaml.cs" />
+    <Compile Remove="GeometryOperations.xaml.cs" />
+    <Compile Remove="InkExample.xaml.cs" />
+    <Compile Remove="KeyboardInputExample.xaml.cs" />
+    <Compile Remove="LayersExample.xaml.cs" />
+    <Compile Remove="SpriteBatchPerf.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="ArcOptions.xaml" />
+    <None Remove="BitmapRotation.xaml" />
+    <None Remove="BurningTextExample.xaml" />
+    <None Remove="CameraEffectExample.xaml" />
+    <None Remove="ControlTransforms.xaml" />
+    <None Remove="CustomControlExample.xaml" />
+    <None Remove="CustomEffects.xaml" />
+    <None Remove="CustomFonts.xaml" />
+    <None Remove="CustomTextLayouts.xaml" />
+    <None Remove="Direct3DInteropExample.xaml" />
+    <None Remove="DpiExample.xaml" />
+    <None Remove="DrawImageEmulations.xaml" />
+    <None Remove="EffectRegionMapping.xaml" />
+    <None Remove="EffectsExample.xaml" />
+    <None Remove="FontMetrics.xaml" />
+    <None Remove="GameOfLife.xaml" />
+    <None Remove="GeometryOperations.xaml" />
+    <None Remove="GlyphRotation.xaml" />
+    <None Remove="GradientMeshExample.xaml" />
+    <None Remove="HistogramExample.xaml" />
+    <None Remove="ImageSourceUpdateRegion.xaml" />
+    <None Remove="imageTiger.jpg" />
+    <None Remove="Infrastructure\About.xaml" />
+    <None Remove="Infrastructure\DeveloperTools.xaml" />
+    <None Remove="Infrastructure\ExamplePage.xaml" />
+    <None Remove="Infrastructure\MainPage.xaml" />
+    <None Remove="Infrastructure\SharedResources.xaml" />
+    <None Remove="Infrastructure\ThumbnailGenerator.xaml" />
+    <None Remove="InkExample.xaml" />
+    <None Remove="KeyboardInputExample.xaml" />
+    <None Remove="LayersExample.xaml" />
+    <None Remove="Mandelbrot.xaml" />
+    <None Remove="PlatformResources.xaml" />
+    <None Remove="PrintingExample.xaml" />
+    <None Remove="Shaders\Mandelbrot.bin" />
+    <None Remove="ShapesExample.xaml" />
+    <None Remove="SpriteBatchPerf.xaml" />
+    <None Remove="StrokeStyles.xaml" />
+    <None Remove="SubscriptSuperscript.xaml" />
+    <None Remove="SvgExample.xaml" />
+    <None Remove="TextDirectionsExample.xaml" />
+    <None Remove="TextLayouts.xaml" />
+    <None Remove="TextOutlines.xaml" />
+    <None Remove="Thumbnails\AboutNarrow.png" />
+    <None Remove="Thumbnails\AboutWide.png" />
+    <None Remove="Thumbnails\AnimatedControlNarrow.png" />
+    <None Remove="Thumbnails\AnimatedControlWide.png" />
+    <None Remove="Thumbnails\ArcOptionsNarrow.png" />
+    <None Remove="Thumbnails\ArcOptionsWide.png" />
+    <None Remove="Thumbnails\BackgroundTaskNarrow.png" />
+    <None Remove="Thumbnails\BackgroundTaskWide.png" />
+    <None Remove="Thumbnails\BitmapRotationNarrow.png" />
+    <None Remove="Thumbnails\BitmapRotationWide.png" />
+    <None Remove="Thumbnails\BurningTextNarrow.png" />
+    <None Remove="Thumbnails\BurningTextWide.png" />
+    <None Remove="Thumbnails\CameraEffectNarrow.png" />
+    <None Remove="Thumbnails\CameraEffectWide.png" />
+    <None Remove="Thumbnails\ControlTransformsNarrow.png" />
+    <None Remove="Thumbnails\ControlTransformsWide.png" />
+    <None Remove="Thumbnails\CustomControlNarrow.png" />
+    <None Remove="Thumbnails\CustomControlWide.png" />
+    <None Remove="Thumbnails\CustomEffectsNarrow.png" />
+    <None Remove="Thumbnails\CustomEffectsWide.png" />
+    <None Remove="Thumbnails\CustomFontsNarrow.png" />
+    <None Remove="Thumbnails\CustomFontsWide.png" />
+    <None Remove="Thumbnails\CustomTextLayoutsNarrow.png" />
+    <None Remove="Thumbnails\CustomTextLayoutsWide.png" />
+    <None Remove="Thumbnails\DeveloperToolsNarrow.png" />
+    <None Remove="Thumbnails\DeveloperToolsWide.png" />
+    <None Remove="Thumbnails\Direct3DInteropNarrow.png" />
+    <None Remove="Thumbnails\Direct3DInteropWide.png" />
+    <None Remove="Thumbnails\DPINarrow.png" />
+    <None Remove="Thumbnails\DPIWide.png" />
+    <None Remove="Thumbnails\DrawImageEmulationsNarrow.png" />
+    <None Remove="Thumbnails\DrawImageEmulationsWide.png" />
+    <None Remove="Thumbnails\EffectRegionMappingNarrow.png" />
+    <None Remove="Thumbnails\EffectRegionMappingWide.png" />
+    <None Remove="Thumbnails\EffectsNarrow.png" />
+    <None Remove="Thumbnails\EffectsWide.png" />
+    <None Remove="Thumbnails\FontMetricsNarrow.png" />
+    <None Remove="Thumbnails\FontMetricsWide.png" />
+    <None Remove="Thumbnails\GameofLifeNarrow.png" />
+    <None Remove="Thumbnails\GameofLifeWide.png" />
+    <None Remove="Thumbnails\GeometryOperationsNarrow.png" />
+    <None Remove="Thumbnails\GeometryOperationsWide.png" />
+    <None Remove="Thumbnails\GlyphRotationNarrow.png" />
+    <None Remove="Thumbnails\GlyphRotationWide.png" />
+    <None Remove="Thumbnails\GradientMeshNarrow.png" />
+    <None Remove="Thumbnails\GradientMeshWide.png" />
+    <None Remove="Thumbnails\HistogramNarrow.png" />
+    <None Remove="Thumbnails\HistogramWide.png" />
+    <None Remove="Thumbnails\ImageSourceUpdateRegionNarrow.png" />
+    <None Remove="Thumbnails\ImageSourceUpdateRegionWide.png" />
+    <None Remove="Thumbnails\InkNarrow.png" />
+    <None Remove="Thumbnails\InkWide.png" />
+    <None Remove="Thumbnails\KeyboardInputNarrow.png" />
+    <None Remove="Thumbnails\KeyboardInputWide.png" />
+    <None Remove="Thumbnails\LayersNarrow.png" />
+    <None Remove="Thumbnails\LayersWide.png" />
+    <None Remove="Thumbnails\MandelbrotNarrow.png" />
+    <None Remove="Thumbnails\MandelbrotWide.png" />
+    <None Remove="Thumbnails\ParticleSystemNarrow.png" />
+    <None Remove="Thumbnails\ParticleSystemWide.png" />
+    <None Remove="Thumbnails\PrintingNarrow.png" />
+    <None Remove="Thumbnails\PrintingWide.png" />
+    <None Remove="Thumbnails\ShapesNarrow.png" />
+    <None Remove="Thumbnails\ShapesWide.png" />
+    <None Remove="Thumbnails\SpriteBatchPerformanceNarrow.png" />
+    <None Remove="Thumbnails\SpriteBatchPerformanceWide.png" />
+    <None Remove="Thumbnails\SpriteSheetsNarrow.png" />
+    <None Remove="Thumbnails\SpriteSheetsWide.png" />
+    <None Remove="Thumbnails\StrokeStylesNarrow.png" />
+    <None Remove="Thumbnails\StrokeStylesWide.png" />
+    <None Remove="Thumbnails\SubscriptAndSuperscriptNarrow.png" />
+    <None Remove="Thumbnails\SubscriptAndSuperscriptWide.png" />
+    <None Remove="Thumbnails\SvgNarrow.png" />
+    <None Remove="Thumbnails\SvgWide.png" />
+    <None Remove="Thumbnails\TextDirectionsNarrow.png" />
+    <None Remove="Thumbnails\TextDirectionsWide.png" />
+    <None Remove="Thumbnails\TextLayoutsNarrow.png" />
+    <None Remove="Thumbnails\TextLayoutsWide.png" />
+    <None Remove="Thumbnails\TextOutlinesNarrow.png" />
+    <None Remove="Thumbnails\TextOutlinesWide.png" />
+    <None Remove="Thumbnails\TypographyNarrow.png" />
+    <None Remove="Thumbnails\TypographyWide.png" />
+    <None Remove="Thumbnails\VectorArtNarrow.png" />
+    <None Remove="Thumbnails\VectorArtWide.png" />
+    <None Remove="Thumbnails\VideoEffectNarrow.png" />
+    <None Remove="Thumbnails\VideoEffectWide.png" />
+    <None Remove="Thumbnails\VirtualBitmapNarrow.png" />
+    <None Remove="Thumbnails\VirtualBitmapWide.png" />
+    <None Remove="Thumbnails\VirtualControlNarrow.png" />
+    <None Remove="Thumbnails\VirtualControlWide.png" />
+    <None Remove="TypographyExample.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="BasicVideoEffectExample.xaml" />
+    <None Remove="VectorArt.xaml" />
+    <None Remove="VirtualBitmapExample.xaml" />
+    <None Remove="VirtualControlExample.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Remove="BasicVideoEffectExample.xaml" />
+    <Page Remove="BurningTextExample.xaml" />
+    <Page Remove="CameraEffectExample.xaml" />
+    <Page Remove="ControlTransforms.xaml" />
+    <Page Remove="CustomControlExample.xaml" />
+    <Page Remove="CustomEffects.xaml" />
+    <Page Remove="CustomFonts.xaml" />
+    <Page Remove="CustomTextLayouts.xaml" />
+    <Page Remove="Direct3DInteropExample.xaml" />
+    <Page Remove="DpiExample.xaml" />
+    <Page Remove="GameOfLife.xaml" />
+    <Page Remove="GeometryOperations.xaml" />
+    <Page Remove="InkExample.xaml" />
+    <Page Remove="KeyboardInputExample.xaml" />
+    <Page Remove="LayersExample.xaml" />
+    <Page Remove="SpriteBatchPerf.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="imageTiger.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Shaders\Mandelbrot.bin" />
+    <Content Include="Thumbnails\AboutNarrow.png" />
+    <Content Include="Thumbnails\AboutWide.png" />
+    <Content Include="Thumbnails\AnimatedControlNarrow.png" />
+    <Content Include="Thumbnails\AnimatedControlWide.png" />
+    <Content Include="Thumbnails\ArcOptionsNarrow.png" />
+    <Content Include="Thumbnails\ArcOptionsWide.png" />
+    <Content Include="Thumbnails\BackgroundTaskNarrow.png" />
+    <Content Include="Thumbnails\BackgroundTaskWide.png" />
+    <Content Include="Thumbnails\BitmapRotationNarrow.png" />
+    <Content Include="Thumbnails\BitmapRotationWide.png" />
+    <Content Include="Thumbnails\BurningTextNarrow.png" />
+    <Content Include="Thumbnails\BurningTextWide.png" />
+    <Content Include="Thumbnails\CameraEffectNarrow.png" />
+    <Content Include="Thumbnails\CameraEffectWide.png" />
+    <Content Include="Thumbnails\ControlTransformsNarrow.png" />
+    <Content Include="Thumbnails\ControlTransformsWide.png" />
+    <Content Include="Thumbnails\CustomControlNarrow.png" />
+    <Content Include="Thumbnails\CustomControlWide.png" />
+    <Content Include="Thumbnails\CustomEffectsNarrow.png" />
+    <Content Include="Thumbnails\CustomEffectsWide.png" />
+    <Content Include="Thumbnails\CustomFontsNarrow.png" />
+    <Content Include="Thumbnails\CustomFontsWide.png" />
+    <Content Include="Thumbnails\CustomTextLayoutsNarrow.png" />
+    <Content Include="Thumbnails\CustomTextLayoutsWide.png" />
+    <Content Include="Thumbnails\DeveloperToolsNarrow.png" />
+    <Content Include="Thumbnails\DeveloperToolsWide.png" />
+    <Content Include="Thumbnails\Direct3DInteropNarrow.png" />
+    <Content Include="Thumbnails\Direct3DInteropWide.png" />
+    <Content Include="Thumbnails\DPINarrow.png" />
+    <Content Include="Thumbnails\DPIWide.png" />
+    <Content Include="Thumbnails\DrawImageEmulationsNarrow.png" />
+    <Content Include="Thumbnails\DrawImageEmulationsWide.png" />
+    <Content Include="Thumbnails\EffectRegionMappingNarrow.png" />
+    <Content Include="Thumbnails\EffectRegionMappingWide.png" />
+    <Content Include="Thumbnails\EffectsNarrow.png" />
+    <Content Include="Thumbnails\EffectsWide.png" />
+    <Content Include="Thumbnails\FontMetricsNarrow.png" />
+    <Content Include="Thumbnails\FontMetricsWide.png" />
+    <Content Include="Thumbnails\GameofLifeNarrow.png" />
+    <Content Include="Thumbnails\GameofLifeWide.png" />
+    <Content Include="Thumbnails\GeometryOperationsNarrow.png" />
+    <Content Include="Thumbnails\GeometryOperationsWide.png" />
+    <Content Include="Thumbnails\GlyphRotationNarrow.png" />
+    <Content Include="Thumbnails\GlyphRotationWide.png" />
+    <Content Include="Thumbnails\GradientMeshNarrow.png" />
+    <Content Include="Thumbnails\GradientMeshWide.png" />
+    <Content Include="Thumbnails\HistogramNarrow.png" />
+    <Content Include="Thumbnails\HistogramWide.png" />
+    <Content Include="Thumbnails\ImageSourceUpdateRegionNarrow.png" />
+    <Content Include="Thumbnails\ImageSourceUpdateRegionWide.png" />
+    <Content Include="Thumbnails\InkNarrow.png" />
+    <Content Include="Thumbnails\InkWide.png" />
+    <Content Include="Thumbnails\KeyboardInputNarrow.png" />
+    <Content Include="Thumbnails\KeyboardInputWide.png" />
+    <Content Include="Thumbnails\LayersNarrow.png" />
+    <Content Include="Thumbnails\LayersWide.png" />
+    <Content Include="Thumbnails\MandelbrotNarrow.png" />
+    <Content Include="Thumbnails\MandelbrotWide.png" />
+    <Content Include="Thumbnails\ParticleSystemNarrow.png" />
+    <Content Include="Thumbnails\ParticleSystemWide.png" />
+    <Content Include="Thumbnails\PrintingNarrow.png" />
+    <Content Include="Thumbnails\PrintingWide.png" />
+    <Content Include="Thumbnails\ShapesNarrow.png" />
+    <Content Include="Thumbnails\ShapesWide.png" />
+    <Content Include="Thumbnails\SpriteBatchPerformanceNarrow.png" />
+    <Content Include="Thumbnails\SpriteBatchPerformanceWide.png" />
+    <Content Include="Thumbnails\SpriteSheetsNarrow.png" />
+    <Content Include="Thumbnails\SpriteSheetsWide.png" />
+    <Content Include="Thumbnails\StrokeStylesNarrow.png" />
+    <Content Include="Thumbnails\StrokeStylesWide.png" />
+    <Content Include="Thumbnails\SubscriptAndSuperscriptNarrow.png" />
+    <Content Include="Thumbnails\SubscriptAndSuperscriptWide.png" />
+    <Content Include="Thumbnails\SvgNarrow.png" />
+    <Content Include="Thumbnails\SvgWide.png" />
+    <Content Include="Thumbnails\TextDirectionsNarrow.png" />
+    <Content Include="Thumbnails\TextDirectionsWide.png" />
+    <Content Include="Thumbnails\TextLayoutsNarrow.png" />
+    <Content Include="Thumbnails\TextLayoutsWide.png" />
+    <Content Include="Thumbnails\TextOutlinesNarrow.png" />
+    <Content Include="Thumbnails\TextOutlinesWide.png" />
+    <Content Include="Thumbnails\TypographyNarrow.png" />
+    <Content Include="Thumbnails\TypographyWide.png" />
+    <Content Include="Thumbnails\VectorArtNarrow.png" />
+    <Content Include="Thumbnails\VectorArtWide.png" />
+    <Content Include="Thumbnails\VideoEffectNarrow.png" />
+    <Content Include="Thumbnails\VideoEffectWide.png" />
+    <Content Include="Thumbnails\VirtualBitmapNarrow.png" />
+    <Content Include="Thumbnails\VirtualBitmapWide.png" />
+    <Content Include="Thumbnails\VirtualControlNarrow.png" />
+    <Content Include="Thumbnails\VirtualControlWide.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.27-preview1" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-preview1" />
+    <PackageReference Include="Microsoft.WindowsAppSDK.Foundation" Version="1.0.0-experimental1" />
+	<PackageReference Include="Microsoft.Windows.CSWinRT" Version="1.3.3" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+	<!-- In the future, this section will be used to reference the D3DInterop project. This path may need to change based on file reorg. -->
+	<!--<ItemGroup>
+		<CSWinRTInputs Include="..\x64\Debug\ExampleGallery.Direct3DInterop.uap\ExampleGallery.Direct3DInterop.winmd" />
+	</ItemGroup>-->
+
+  <ItemGroup>
+    <Page Update="ArcOptions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="BitmapRotation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="DrawImageEmulations.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="EffectRegionMapping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="EffectsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="FontMetrics.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="GlyphRotation.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="GradientMeshExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="HistogramExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="ImageSourceUpdateRegion.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Infrastructure\About.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Infrastructure\DeveloperTools.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Infrastructure\ExamplePage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Infrastructure\MainPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Infrastructure\SharedResources.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Infrastructure\ThumbnailGenerator.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Mandelbrot.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="PlatformResources.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="PrintingExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="ShapesExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="StrokeStyles.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="SubscriptSuperscript.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="SvgExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="TextDirectionsExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="TextLayouts.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="TextOutlines.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="TypographyExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="VectorArt.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="VirtualBitmapExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="VirtualControlExample.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="BackgroundTask\ExampleGallery.BackgroundTask.csproj" />
+    <ProjectReference Include="Effects\ExampleGallery.Effects.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="BackgroundTaskExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+</Project>

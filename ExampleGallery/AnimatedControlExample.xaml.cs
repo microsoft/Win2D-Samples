@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft Corporation. All rights reserved.
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 //
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
@@ -15,12 +15,12 @@ using System.Numerics;
 using System.Reflection;
 using System.Threading.Tasks;
 using Windows.Foundation;
-using Windows.UI;
-using Windows.UI.Input;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Input;
+using Microsoft.UI;
+using Microsoft.UI.Input;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
+using Microsoft.UI.Xaml.Input;
 
 namespace ExampleGallery
 {
@@ -223,7 +223,7 @@ namespace ExampleGallery
             var selectedItem = clearColor.SelectedItem as PropertyInfo;
             if (selectedItem != null)
             {
-                var color = (Color)selectedItem.GetValue(null);
+                var color = (Windows.UI.Color)selectedItem.GetValue(null);
                 animatedControl.ClearColor = color;
             }
         }
@@ -464,7 +464,7 @@ namespace ExampleGallery
             foreach (int update in updatesPerDraw)
             {
                 float barHeight = update * heightPerUpdate;
-                Color color = Colors.Gray;
+                Windows.UI.Color color = Colors.Gray;
                 if ((Math.Max(0, drawCount - maxEntries) + index) % 60 == 0)
                     color = Colors.White;
 
@@ -486,7 +486,7 @@ namespace ExampleGallery
 
                 ds.DrawText(
                     maxUpdates.ToString(),
-                    0, 
+                    0,
                     height - maxUpdates * heightPerUpdate - barBottom,
                     Colors.White,
                     new CanvasTextFormat()

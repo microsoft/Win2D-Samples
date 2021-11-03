@@ -11,11 +11,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
 using Windows.Foundation;
-using Windows.UI;
-using Windows.UI.Text;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
+using Microsoft.UI;
+using Microsoft.UI.Text;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
 
 namespace ExampleGallery
 {
@@ -342,7 +342,7 @@ namespace ExampleGallery
                 HorizontalAlignment = CanvasHorizontalAlignment.Left,
                 VerticalAlignment = CanvasVerticalAlignment.Center,
                 FontWeight = UseBoldFace ? FontWeights.Bold : FontWeights.Normal,
-                FontStyle = UseItalicFace ? FontStyle.Italic : FontStyle.Normal
+                FontStyle = UseItalicFace ? Windows.UI.Text.FontStyle.Italic : Windows.UI.Text.FontStyle.Normal
             };
             
             return new CanvasTextLayout(resourceCreator, sampleText, textFormat, canvasWidth, canvasHeight);

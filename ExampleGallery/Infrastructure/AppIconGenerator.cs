@@ -4,6 +4,8 @@
 
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Effects;
+using Microsoft.UI;
+using Microsoft.UI.Xaml.Controls;
 using System;
 using System.IO;
 using System.Linq;
@@ -131,14 +133,17 @@ namespace ExampleGallery
                     }
                 }
 
-                var messageBox = new MessageDialog("Icon generation complete.").ShowAsync();
+                var messageBox = new MessageDialog("Icon generation complete.");
+                WinRT.Interop.InitializeWithWindow.Initialize(messageBox, App.m_mainWindowHandle);
+                await  messageBox.ShowAsync();
             }
             catch (Exception exception)
             {
-                var messageBox = new MessageDialog("Icon generation failed: " + exception).ShowAsync();
+                var messageBox = new MessageDialog("Icon generation failed: " + exception);
+                WinRT.Interop.InitializeWithWindow.Initialize(messageBox, App.m_mainWindowHandle);
+                await messageBox.ShowAsync();
             }
         }
-
 
         async Task GenerateIcon(AppInfo appInfo, IconInfo iconInfo, StorageFolder folder)
         {
@@ -219,14 +224,10 @@ namespace ExampleGallery
         }
 
 
-        // Example Gallery reuses the existing drawing code in BurningTextExample to create its icon.
+        // Example Gallery icon
         static void DrawExampleGalleryIcon(CanvasDrawingSession ds, IconInfo iconInfo)
         {
-            string text = (iconInfo.Width < 42) ? "W" : "Win2D";
-
-            var burningText = new BurningTextExample();
-
-            burningText.DrawIcon(ds, text);
+            ds.DrawText("Win2D", 0, 0, Colors.White);
         }
 
 

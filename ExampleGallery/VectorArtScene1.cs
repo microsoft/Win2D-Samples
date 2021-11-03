@@ -3,6 +3,7 @@
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
 using Microsoft.Graphics.Canvas.Geometry;
+using Microsoft.UI;
 using System;
 using System.Numerics;
 using Windows.Foundation;

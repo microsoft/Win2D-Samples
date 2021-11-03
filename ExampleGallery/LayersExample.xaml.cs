@@ -8,12 +8,13 @@ using Microsoft.Graphics.Canvas.Geometry;
 using Microsoft.Graphics.Canvas.Text;
 using Microsoft.Graphics.Canvas.UI;
 using Microsoft.Graphics.Canvas.UI.Xaml;
+using Microsoft.UI;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
 using Windows.Foundation;
 using Windows.UI;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls;
 
 namespace ExampleGallery
 {
@@ -243,7 +244,7 @@ namespace ExampleGallery
         }
 
 
-        private void control_Unloaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void control_Unloaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
         {
             // Explicitly remove references to allow the Win2D controls to get garbage collected
             canvas.RemoveFromVisualTree();

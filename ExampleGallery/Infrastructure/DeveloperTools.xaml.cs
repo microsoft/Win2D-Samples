@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Popups;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 namespace ExampleGallery
 {
@@ -55,12 +55,14 @@ namespace ExampleGallery
 
         async Task<StorageFolder> PickOutputFolder(string title)
         {
+            var hwnd = App.m_mainWindowHandle; // temporarily using a static variable to store the handle of the main window.
             var folderPicker = new FolderPicker
             {
                 CommitButtonText = title,
                 SuggestedStartLocation = PickerLocationId.Desktop,
                 FileTypeFilter = { ".png" },
             };
+            WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hwnd);
 
             return await folderPicker.PickSingleFolderAsync();
         }
@@ -175,7 +177,7 @@ namespace ExampleGallery
         private async void checkLeaks_Click(object sender, RoutedEventArgs e)
         {
             var leakCheckFrame = new Frame();
-            leakCheckFrame.HorizontalContentAlignment = Windows.UI.Xaml.HorizontalAlignment.Stretch;
+            leakCheckFrame.HorizontalContentAlignment = Microsoft.UI.Xaml.HorizontalAlignment.Stretch;
             leakCheckFrame.Height = 500;
 
             panel.Children.Add(leakCheckFrame);
