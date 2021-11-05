@@ -28,6 +28,7 @@
     <Page Remove="packages\**" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="AnimatedControlExample.xaml.cs" />
     <Compile Remove="BasicVideoEffectExample.xaml.cs" />
     <Compile Remove="BurningTextExample.xaml.cs" />
     <Compile Remove="CameraEffectExample.xaml.cs" />
@@ -46,6 +47,7 @@
     <Compile Remove="SpriteBatchPerf.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="AnimatedControlExample.xaml" />
     <None Remove="ArcOptions.xaml" />
     <None Remove="BitmapRotation.xaml" />
     <None Remove="BurningTextExample.xaml" />
@@ -188,6 +190,7 @@
     <None Remove="VirtualControlExample.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <Page Remove="AnimatedControlExample.xaml" />
     <Page Remove="BasicVideoEffectExample.xaml" />
     <Page Remove="BurningTextExample.xaml" />
     <Page Remove="CameraEffectExample.xaml" />

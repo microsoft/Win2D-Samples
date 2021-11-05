@@ -49,15 +49,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\SplashScreen.scale-200.png" />
-    <Content Include="Images\LockScreenLogo.scale-200.png" />
-    <Content Include="Images\Square150x150Logo.scale-200.png" />
-    <Content Include="Images\Square44x44Logo.scale-200.png" />
-    <Content Include="Images\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Images\StoreLogo.png" />
-    <Content Include="Images\Wide310x150Logo.scale-200.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\SimpleSample\SimpleSample.csproj">
       <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
       <PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
@@ -70,6 +61,14 @@
     <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="[0.8.2]">
       <IncludeAssets>build</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Logo.scale-100.png" />
+    <Content Include="Images\SmallLogo.scale-100.png" />
+    <Content Include="Images\SplashScreen.scale-100.png" />
+    <Content Include="Images\Square71x71Logo.scale-100.png" />
+    <Content Include="Images\StoreLogo.scale-100.png" />
+    <Content Include="Images\WideLogo.scale-100.png" />
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
 </Project>

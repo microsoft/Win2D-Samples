@@ -41,7 +41,7 @@ namespace ExampleGallery
 
         static AppInfo[] apps =
         {
-            new AppInfo("ExampleGallery",     DrawExampleGalleryIcon,     Color.FromArgb(255, 0xE7, 0x59, 0x34)) { AddShadow = true },
+            new AppInfo("ExampleGallery",     DrawExampleGalleryIcon,     Color.FromArgb(255, 0xE7, 0x59, 0x34)) { AddShadow = true, ImageScale = 0.7f },
             new AppInfo("CoreWindowExample",  DrawCoreWindowIcon,         Colors.CornflowerBlue)                 { ImageScale = 0.6f },
             new AppInfo("SimpleSample",       DrawSimpleSampleIcon,       Colors.CornflowerBlue)                 { ImageScale = 0.6f },
             new AppInfo("CompositionExample", DrawCompositionExampleIcon, Colors.Goldenrod)                      { AddShadow = true, ImageScale = 0.6f },
@@ -74,12 +74,12 @@ namespace ExampleGallery
 
         static IconInfo[] requiredIcons =
         {
-            new IconInfo("UAP",          "Logo.scale-100.png",            150,  150)  { BottomPadding = 0.25f },
-            new IconInfo("UAP",          "WideLogo.scale-100.png",        310,  150)  { BottomPadding = 0.25f },
-            new IconInfo("UAP",          "SmallLogo.scale-100.png",       44,   44),
-            new IconInfo("UAP",          "Square71x71Logo.scale-100.png", 71,   71),
-            new IconInfo("UAP",          "SplashScreen.scale-100.png",    620,  300)  { BottomPadding = 0.1f, TransparentBackground = true },
-            new IconInfo("UAP",          "StoreLogo.scale-100.png",       50,   50),
+            new IconInfo("App",          "Logo.scale-100.png",            150,  150)  { BottomPadding = 0.25f },
+            new IconInfo("App",          "WideLogo.scale-100.png",        310,  150)  { BottomPadding = 0.25f },
+            new IconInfo("App",          "SmallLogo.scale-100.png",       44,   44),
+            new IconInfo("App",          "Square71x71Logo.scale-100.png", 71,   71),
+            new IconInfo("App",          "SplashScreen.scale-100.png",    620,  300)  { BottomPadding = 0.1f, TransparentBackground = true },
+            new IconInfo("App",          "StoreLogo.scale-100.png",       50,   50),
 
             new IconInfo("Store",        "300x300.png",                   300,  300),
             new IconInfo("Store",        "358x173.png",                   358,  173),
