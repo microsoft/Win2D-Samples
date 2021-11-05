@@ -60,7 +60,7 @@ namespace ExampleGallery
         }
     }
 
-    // vvvvvvvv the below method is commented out because CustomControlExample is not supported in WinUI3 yet.
+    // The below method is commented out because CustomControlExample is not supported in WinUI3 yet.
     // CustomControlExample replaces its normal UI with a single glow control when generating thumbnails.
     //partial class CustomControlExample
     //{
