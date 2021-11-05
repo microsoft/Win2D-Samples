@@ -55,20 +55,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.ProjectReunion" Version="[0.8.2]">
-      <IncludeAssets>build</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="[0.8.2]">
-      <IncludeAssets>build</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Images\Logo.scale-100.png" />
     <Content Include="Images\SmallLogo.scale-100.png" />
     <Content Include="Images\SplashScreen.scale-100.png" />
     <Content Include="Images\Square71x71Logo.scale-100.png" />
     <Content Include="Images\StoreLogo.scale-100.png" />
     <Content Include="Images\WideLogo.scale-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="[1.0.0-preview1]">
+      <IncludeAssets>build</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="[10.0.22494-preview]">
+      <IncludeAssets>build</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
 </Project>
