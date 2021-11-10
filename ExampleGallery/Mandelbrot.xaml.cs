@@ -12,9 +12,10 @@ using System.Threading.Tasks;
 using Windows.Devices.Input;
 using Windows.Graphics.Display;
 using Windows.System;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Input;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Input;
+using System.Diagnostics;
 
 namespace ExampleGallery
 {
@@ -110,9 +111,10 @@ namespace ExampleGallery
         }
 
 
-        void Display_DpiChanged(DisplayInformation sender, object args)
+        void Display_DpiChanged(XamlRoot sender, object args)
         {
-            displayDpi = sender.LogicalDpi;
+            // in Reunion, DPI is represented in the XamlRoot
+            displayDpi = (float) sender.RasterizationScale * 96;
 
             // Manually call the ViewChanged handler to update DpiScale.
             ScrollViewer_ViewChanged(null, null);
@@ -153,8 +155,9 @@ namespace ExampleGallery
         void control_Loaded(object sender, RoutedEventArgs e)
         {
             // Initialize the display DPI, and listen for events in case this changes.
-            var display = DisplayInformation.GetForCurrentView();
-            display.DpiChanged += Display_DpiChanged;
+            // In WinUI3, DPI info found in XamlRoot
+            var display = XamlRoot;
+            display.Changed += Display_DpiChanged;
             Display_DpiChanged(display, null);
 
             // Initialize the help text depending on what input devices are available.
@@ -188,7 +191,7 @@ namespace ExampleGallery
             canvas.RemoveFromVisualTree();
             canvas = null;
 
-            DisplayInformation.GetForCurrentView().DpiChanged -= Display_DpiChanged;
+            XamlRoot.Changed -= Display_DpiChanged;
         }
     }
 }

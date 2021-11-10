@@ -3,42 +3,27 @@
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
 using System;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Navigation;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Navigation;
 
 namespace ExampleGallery
 {
     public sealed partial class ExamplePage : Page
     {
-        private NavigationHelper navigationHelper;
 
         public ExamplePage()
         {
             this.InitializeComponent();         
 
-            this.navigationHelper = new NavigationHelper(this);
-
             if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
             {
                 this.DataContext = new ExampleDefinition("An Example", null);
             }
-
-            if (this.navigationHelper.HasHardwareButtons)
-            {
-                this.backButton.Visibility = Visibility.Collapsed;
-            }
-        }
-
-        public NavigationHelper NavigationHelper
-        {
-            get { return this.navigationHelper; }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {            
-            this.navigationHelper.OnNavigatedTo(e);
-
             var example = e.Parameter as ExampleDefinition;
             if (example != null)
             {
@@ -50,11 +35,6 @@ namespace ExampleGallery
                     DeveloperTools.ExampleControlCreated(example.Name, (UserControl)control);
                 }                
             }
-        }
-
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
-        {
-            this.navigationHelper.OnNavigatedFrom(e);
         }
     }
 }

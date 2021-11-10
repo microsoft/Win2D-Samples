@@ -12,8 +12,8 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.Storage;
 using Windows.Storage.Streams;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 namespace ExampleGallery
 {
@@ -212,8 +212,6 @@ namespace ExampleGallery
         /// that can still be useful when restoring pages that have been discarded from the
         /// navigation cache.
         /// </summary>
-        /// <remarks>Apps may choose to rely on <see cref="NavigationHelper"/> to manage
-        /// page-specific state instead of working with frame session state directly.</remarks>
         /// <param name="frame">The instance for which session state is desired.</param>
         /// <returns>A collection of state subject to the same serialization mechanism as
         /// <see cref="SessionState"/>.</returns>

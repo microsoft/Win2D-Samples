@@ -4,6 +4,7 @@
 
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Effects;
+using Microsoft.UI;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
@@ -12,7 +13,6 @@ using Windows.Foundation.Collections;
 using Windows.Graphics.DirectX.Direct3D11;
 using Windows.Media.Effects;
 using Windows.Media.MediaProperties;
-using Windows.UI;
 
 namespace ExampleGallery.Effects
 {

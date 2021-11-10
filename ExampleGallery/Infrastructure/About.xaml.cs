@@ -2,8 +2,8 @@
 //
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Documents;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Documents;
 
 namespace ExampleGallery
 {

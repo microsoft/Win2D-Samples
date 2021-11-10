@@ -4,10 +4,11 @@
 
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Text;
+using Microsoft.UI;
+using Microsoft.UI.Xaml;
 using System;
 using Windows.Storage.Streams;
 using Windows.UI;
-using Windows.UI.Xaml;
 
 namespace ExampleGallery
 {
@@ -59,26 +60,26 @@ namespace ExampleGallery
         }
     }
 
-
+    // The below method is commented out because CustomControlExample is not supported in WinUI3 yet.
     // CustomControlExample replaces its normal UI with a single glow control when generating thumbnails.
-    partial class CustomControlExample
-    {
-        private void InitializeThumbnail()
-        {
-            if (ThumbnailGenerator.IsDrawingThumbnail)
-            {
-                Content = new GlowTextCustomControl()
-                {
-                    Text = "Glow",
-                    GlowAmount = 30,
-                    GlowColor = Colors.Yellow,
-                    TextColor = Colors.White,
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Center
-                };
-            }
-        }
-    }
+    //partial class CustomControlExample
+    //{
+    //    private void InitializeThumbnail()
+    //    {
+    //        if (ThumbnailGenerator.IsDrawingThumbnail)
+    //        {
+    //            Content = new GlowTextCustomControl()
+    //            {
+    //                Text = "Glow",
+    //                GlowAmount = 30,
+    //                GlowColor = Colors.Yellow,
+    //                TextColor = Colors.White,
+    //                HorizontalAlignment = HorizontalAlignment.Center,
+    //                VerticalAlignment = VerticalAlignment.Center
+    //            };
+    //        }
+    //    }
+    //}
 
 
     // Printing example doesn't have any Win2D content, so we need to draw one

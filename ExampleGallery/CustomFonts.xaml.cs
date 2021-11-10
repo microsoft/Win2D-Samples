@@ -10,10 +10,10 @@ using Microsoft.Graphics.Canvas.UI;
 using Microsoft.Graphics.Canvas.UI.Xaml;
 using System;
 using System.Numerics;
-using Windows.UI;
+using Microsoft.UI;
 using Windows.UI.Core;
 using Windows.UI.Input;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls;
 
 namespace ExampleGallery
 {
@@ -256,7 +256,7 @@ namespace ExampleGallery
             }
         }
 
-        private void UserControl_Unloaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void UserControl_Unloaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
         {
             // Explicitly remove references to allow the Win2D controls to get
             // garbage collected

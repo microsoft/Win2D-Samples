@@ -18,8 +18,9 @@ using Windows.Foundation;
 using Windows.Storage.Streams;
 using Windows.UI;
 using Windows.UI.Core;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 namespace ExampleGallery
 {

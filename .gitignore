@@ -1,9 +1,11 @@
 obj/
 packages/
 Debug/
+Generated Files/
 Release/
 *sdf
 *suo
+*.cache
 *.user
 *.opendb
 *.VC.db

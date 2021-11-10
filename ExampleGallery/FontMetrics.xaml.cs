@@ -11,10 +11,11 @@ using System.Collections.Generic;
 using System.Numerics;
 using Windows.Foundation;
 using Windows.UI;
-using Windows.UI.Text;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
+using Microsoft.UI.Text;
+using Microsoft.UI;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
 
 namespace ExampleGallery
 {
@@ -184,7 +185,7 @@ namespace ExampleGallery
                 HorizontalAlignment = CanvasHorizontalAlignment.Center,
                 VerticalAlignment = CanvasVerticalAlignment.Center,
                 FontWeight = UseBoldFace ? FontWeights.Bold : FontWeights.Normal,
-                FontStyle = UseItalicFace ? FontStyle.Italic : FontStyle.Normal
+                FontStyle = UseItalicFace ? Windows.UI.Text.FontStyle.Italic : Windows.UI.Text.FontStyle.Normal
             };
 
             string testString = "Ajc";

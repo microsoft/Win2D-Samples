@@ -9,9 +9,10 @@ using Windows.ApplicationModel.Background;
 using Windows.UI.Core;
 using Windows.UI.Notifications;
 using Windows.UI.Popups;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media.Imaging;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media.Imaging;
+using Microsoft.UI.Dispatching;
 
 namespace ExampleGallery
 {
@@ -65,7 +66,7 @@ namespace ExampleGallery
 
         void DispatchUpdateUI()
         {
-            var t = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            var t = DispatcherQueue.TryEnqueue(DispatcherQueuePriority.Normal, () =>
             {
                 UpdateUI();
             });

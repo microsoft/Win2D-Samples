@@ -19,8 +19,9 @@ using Windows.ApplicationModel;
 using Windows.Foundation;
 using Windows.Graphics.DirectX;
 using Windows.UI;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 
 namespace ExampleGallery
@@ -124,7 +125,7 @@ namespace ExampleGallery
 
         async Task canvasControl_CreateResourcesAsync(CanvasControl sender)
         {
-            tiger = await CanvasBitmap.LoadAsync(sender, "imageTiger.jpg");
+            tiger = await CanvasBitmap.LoadAsync(sender, new Uri("ms-appx:///imageTiger.jpg"), 96);
         }
 
         private void canvasControl_Draw(CanvasControl sender, CanvasDrawEventArgs args)

@@ -19,10 +19,10 @@ using Windows.Foundation;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
-using Windows.UI;
+using Microsoft.UI;
 using Windows.UI.Popups;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 namespace ExampleGallery
 {
@@ -109,9 +109,11 @@ namespace ExampleGallery
 
         private async Task Open(CanvasVirtualBitmapOptions options)
         {
+            var hwnd = App.m_mainWindowHandle; // temporarily using a static variable to store the handle of the main window.
             var filePicker = new FileOpenPicker();
             filePicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
             filePicker.FileTypeFilter.Add("*");
+            WinRT.Interop.InitializeWithWindow.Initialize(filePicker, hwnd);
 
             var file = await filePicker.PickSingleFileAsync();
 

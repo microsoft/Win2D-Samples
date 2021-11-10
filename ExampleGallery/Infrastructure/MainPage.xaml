@@ -57,7 +57,6 @@ Licensed under the MIT License. See LICENSE.txt in the project root for license 
     </Page.Resources>
 
     <ScrollViewer x:Name="scrollViewer" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" VerticalScrollMode="Enabled">
-
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="SizeStates">
                 <VisualState x:Name="Tiny">
@@ -86,7 +85,6 @@ Licensed under the MIT License. See LICENSE.txt in the project root for license 
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-
 
 
         <Grid Margin="10">

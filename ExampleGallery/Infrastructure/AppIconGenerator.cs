@@ -4,6 +4,8 @@
 
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Effects;
+using Microsoft.UI;
+using Microsoft.UI.Xaml.Controls;
 using System;
 using System.IO;
 using System.Linq;
@@ -39,7 +41,7 @@ namespace ExampleGallery
 
         static AppInfo[] apps =
         {
-            new AppInfo("ExampleGallery",     DrawExampleGalleryIcon,     Color.FromArgb(255, 0xE7, 0x59, 0x34)) { AddShadow = true },
+            new AppInfo("ExampleGallery",     DrawExampleGalleryIcon,     Color.FromArgb(255, 0xE7, 0x59, 0x34)) { AddShadow = true, ImageScale = 0.7f },
             new AppInfo("CoreWindowExample",  DrawCoreWindowIcon,         Colors.CornflowerBlue)                 { ImageScale = 0.6f },
             new AppInfo("SimpleSample",       DrawSimpleSampleIcon,       Colors.CornflowerBlue)                 { ImageScale = 0.6f },
             new AppInfo("CompositionExample", DrawCompositionExampleIcon, Colors.Goldenrod)                      { AddShadow = true, ImageScale = 0.6f },
@@ -72,12 +74,12 @@ namespace ExampleGallery
 
         static IconInfo[] requiredIcons =
         {
-            new IconInfo("UAP",          "Logo.scale-100.png",            150,  150)  { BottomPadding = 0.25f },
-            new IconInfo("UAP",          "WideLogo.scale-100.png",        310,  150)  { BottomPadding = 0.25f },
-            new IconInfo("UAP",          "SmallLogo.scale-100.png",       44,   44),
-            new IconInfo("UAP",          "Square71x71Logo.scale-100.png", 71,   71),
-            new IconInfo("UAP",          "SplashScreen.scale-100.png",    620,  300)  { BottomPadding = 0.1f, TransparentBackground = true },
-            new IconInfo("UAP",          "StoreLogo.scale-100.png",       50,   50),
+            new IconInfo("App",          "Logo.scale-100.png",            150,  150)  { BottomPadding = 0.25f },
+            new IconInfo("App",          "WideLogo.scale-100.png",        310,  150)  { BottomPadding = 0.25f },
+            new IconInfo("App",          "SmallLogo.scale-100.png",       44,   44),
+            new IconInfo("App",          "Square71x71Logo.scale-100.png", 71,   71),
+            new IconInfo("App",          "SplashScreen.scale-100.png",    620,  300)  { BottomPadding = 0.1f, TransparentBackground = true },
+            new IconInfo("App",          "StoreLogo.scale-100.png",       50,   50),
 
             new IconInfo("Store",        "300x300.png",                   300,  300),
             new IconInfo("Store",        "358x173.png",                   358,  173),
@@ -131,14 +133,17 @@ namespace ExampleGallery
                     }
                 }
 
-                var messageBox = new MessageDialog("Icon generation complete.").ShowAsync();
+                var messageBox = new MessageDialog("Icon generation complete.");
+                WinRT.Interop.InitializeWithWindow.Initialize(messageBox, App.m_mainWindowHandle);
+                await  messageBox.ShowAsync();
             }
             catch (Exception exception)
             {
-                var messageBox = new MessageDialog("Icon generation failed: " + exception).ShowAsync();
+                var messageBox = new MessageDialog("Icon generation failed: " + exception);
+                WinRT.Interop.InitializeWithWindow.Initialize(messageBox, App.m_mainWindowHandle);
+                await messageBox.ShowAsync();
             }
         }
-
 
         async Task GenerateIcon(AppInfo appInfo, IconInfo iconInfo, StorageFolder folder)
         {
@@ -219,14 +224,10 @@ namespace ExampleGallery
         }
 
 
-        // Example Gallery reuses the existing drawing code in BurningTextExample to create its icon.
+        // Example Gallery icon
         static void DrawExampleGalleryIcon(CanvasDrawingSession ds, IconInfo iconInfo)
         {
-            string text = (iconInfo.Width < 42) ? "W" : "Win2D";
-
-            var burningText = new BurningTextExample();
-
-            burningText.DrawIcon(ds, text);
+            ds.DrawText("Win2D", 0, 0, Colors.White);
         }
 
 

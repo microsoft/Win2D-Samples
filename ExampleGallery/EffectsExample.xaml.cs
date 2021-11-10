@@ -18,8 +18,9 @@ using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Graphics.Effects;
 using Windows.UI;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 namespace ExampleGallery
 {
@@ -106,7 +107,7 @@ namespace ExampleGallery
 
         async Task Canvas_CreateResourcesAsync(CanvasControl sender)
         {
-            bitmapTiger = await CanvasBitmap.LoadAsync(sender, "imageTiger.jpg");
+            bitmapTiger = await CanvasBitmap.LoadAsync(sender, new Uri("ms-appx:///imageTiger.jpg"), 96);
 
             CreateEffect();
         }
@@ -816,13 +817,13 @@ namespace ExampleGallery
             // Animation changes the light directions.
             animationFunction = elapsedTime =>
             {
-                distantDiffuseEffect.Azimuth = 
+                distantDiffuseEffect.Azimuth =
                 distantSpecularEffect.Azimuth = elapsedTime % ((float)Math.PI * 2);
 
                 distantDiffuseEffect.Elevation =
                 distantSpecularEffect.Elevation = (float)Math.PI / 4 + (float)Math.Sin(elapsedTime / 2) * (float)Math.PI / 8;
 
-                pointDiffuseEffect.LightPosition = 
+                pointDiffuseEffect.LightPosition =
                 pointSpecularEffect.LightPosition =
                 spotDiffuseEffect.LightPosition =
                 spotSpecularEffect.LightPosition = new Vector3((float)Math.Cos(elapsedTime), (float)Math.Sin(elapsedTime), 1) * 100;
@@ -902,7 +903,7 @@ namespace ExampleGallery
                         Size = new Vector2(turbulenceSize),
                         Tileable = true
                     },
-                    SourceRectangle= new Rect(0, 0, turbulenceSize, turbulenceSize)
+                    SourceRectangle = new Rect(0, 0, turbulenceSize, turbulenceSize)
                 },
                 SourceRectangle = new Rect((bitmapTiger.Size.ToVector2() * -0.5f).ToPoint(),
                                            (bitmapTiger.Size.ToVector2() * 1.5f).ToPoint())
@@ -1576,7 +1577,7 @@ namespace ExampleGallery
             return new CompositeEffect
             {
                 Sources = { softEdge, effect },
-                Mode = CanvasComposite.SourceIn 
+                Mode = CanvasComposite.SourceIn
             };
         }
 

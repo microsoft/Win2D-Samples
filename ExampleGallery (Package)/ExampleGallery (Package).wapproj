@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0'">
+    <VisualStudioVersion>15.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|arm64">
+      <Configuration>Debug</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|arm64">
+      <Configuration>Release</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup>
+    <WapProjPath Condition="'$(WapProjPath)'==''">$(MSBuildExtensionsPath)\Microsoft\DesktopBridge\</WapProjPath>
+    <PathToXAMLWinRTImplementations>ExampleGallery\</PathToXAMLWinRTImplementations>
+  </PropertyGroup>
+  <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.props" />
+  <PropertyGroup>
+    <ProjectGuid>f2837ce0-7c8a-4cbd-8406-19c1b50f09ca</ProjectGuid>
+    <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <AssetTargetFallback>net5.0-windows$(TargetPlatformVersion);$(AssetTargetFallback)</AssetTargetFallback>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+    <EntryPointProjectUniqueName>..\ExampleGallery\ExampleGallery.csproj</EntryPointProjectUniqueName>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExampleGallery\ExampleGallery.csproj">
+      <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
+      <PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.27-preview1" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-preview1">
+      <IncludeAssets>build</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Logo.scale-100.png" />
+    <Content Include="Images\SmallLogo.scale-100.png" />
+    <Content Include="Images\SplashScreen.scale-100.png" />
+    <Content Include="Images\Square71x71Logo.scale-100.png" />
+    <Content Include="Images\StoreLogo.scale-100.png" />
+    <Content Include="Images\WideLogo.scale-100.png" />
+  </ItemGroup>
+  <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
+</Project>
