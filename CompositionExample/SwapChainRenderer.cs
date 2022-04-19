@@ -45,11 +45,12 @@ namespace CompositionExample
                 return swapChain.Size;
             }
         }
-
+        
         public SwapChainRenderer(Compositor compositor)
         {
             this.compositor = compositor;
             swapChainVisual = compositor.CreateSpriteVisual();
+           
         }
 
         public void Dispose()
@@ -117,6 +118,7 @@ namespace CompositionExample
 
             using (var ds = swapChain.CreateDrawingSession(Colors.Transparent))
             {
+
                 var size = swapChain.Size.ToVector2();
                 var radius = (Math.Min(size.X, size.Y) / 2.0f) - 4.0f;
 

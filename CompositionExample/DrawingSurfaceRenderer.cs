@@ -22,14 +22,14 @@ namespace CompositionExample
         public Visual Visual { get { return drawingSurfaceVisual; } }
 
         public Size Size { get { return drawingSurface.Size; } }
-
+        //public RelationshipHandler RH;
         public DrawingSurfaceRenderer(Compositor compositor, CompositionGraphicsDevice compositionGraphicsDevice)
         {
             drawingSurfaceVisual = compositor.CreateSpriteVisual();
             drawingSurface = compositionGraphicsDevice.CreateDrawingSurface(new Size(256, 256), DirectXPixelFormat.B8G8R8A8UIntNormalized, DirectXAlphaMode.Premultiplied);
             drawingSurfaceVisual.Brush = compositor.CreateSurfaceBrush(drawingSurface);
             DrawDrawingSurface();
-
+            //RH = new RelationshipHandler();
             compositionGraphicsDevice.RenderingDeviceReplaced += CompositionGraphicsDevice_RenderingDeviceReplaced;
         }
 
@@ -45,7 +45,7 @@ namespace CompositionExample
             using (var ds = CanvasComposition.CreateDrawingSession(drawingSurface))
             {
                 ds.Clear(Colors.Transparent);
-
+                
                 var rect = new Rect(new Point(2, 2), (drawingSurface.Size.ToVector2() - new Vector2(4, 4)).ToSize());
 
                 ds.FillRoundedRectangle(rect, 15, 15, Colors.LightBlue);

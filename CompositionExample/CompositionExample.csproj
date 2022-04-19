@@ -128,7 +128,13 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="DrawingSurfaceRenderer.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Graph.cs" />
+    <Compile Include="GraphNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relationship.cs" />
+    <Compile Include="RelationshipLine.cs" />
+    <Compile Include="RelationshipHandler.cs" />
     <Compile Include="SwapChainRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
