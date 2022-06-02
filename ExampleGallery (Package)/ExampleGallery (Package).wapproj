@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.27-preview1" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-preview1">
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.0-preview4">
       <IncludeAssets>build</IncludeAssets>
     </PackageReference>
   </ItemGroup>
