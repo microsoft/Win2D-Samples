@@ -41,7 +41,7 @@ namespace ExampleGallery
 
         private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
-            if ((string) args.InvokedItem == "Home")
+            if ((string)args.InvokedItem == "Home")
             {
                 ContentFrame.Navigate(typeof(MainPage));
             }

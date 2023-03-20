@@ -22,7 +22,7 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace ExampleGallery
+namespace SimpleSample
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -46,10 +46,8 @@ namespace ExampleGallery
         {
             m_window = new MainWindow();
             m_window.Activate();
-            //m_mainWindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(m_window);
         }
 
-        internal static Window m_window;
-        internal static IntPtr m_mainWindowHandle;
+        private Window m_window;
     }
 }
