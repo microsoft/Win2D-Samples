@@ -1,9 +1,9 @@
 {
   "profiles": {
-    "ExampleGallery (Package)": {
+    "SimpleSample (Package)": {
       "commandName": "MsixPackage"
     },
-    "ExampleGallery (Unpackaged)": {
+    "SimpleSample (Unpackaged)": {
       "commandName": "Project"
     }
   }
